@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+
+# Runtime output and local camera captures
+logs/
+*.log
+captures/
+recordings/
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
