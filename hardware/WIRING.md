@@ -2,13 +2,13 @@
 
 # My wiring and pin assignment
 
-This is the connection layout for my prototype, updated on **28 October 2026**.
+This is my final documented wiring layout for **Just One More Moment**, revision 03, **28 October 2026**.
 
 **All numbered header pins are physical positions on the Pi's 40-pin header. GPIO labels use BCM numbering.** In the drawing I show a top view with the GPIO header above the board and USB ports on the right. Pin 1 is the lower-left pin of that header.
 
 ![My labelled Raspberry Pi 5 wiring](diagrams/wiring-overview.svg)
 
-[SVG](diagrams/wiring-overview.svg) · [PNG](diagrams/wiring-overview.png) · [A3 landscape PDF](diagrams/wiring-overview.pdf) · [Drawing source and notes](diagrams/README.md)
+[SVG](diagrams/wiring-overview.svg) · [PNG](diagrams/wiring-overview.png) · [A3 landscape PDF](diagrams/wiring-overview.pdf) · [Drawing source](diagrams/README.md)
 
 ## My connections
 
@@ -21,41 +21,52 @@ This is the connection layout for my prototype, updated on **28 October 2026**.
 | Button LED+ | **13** | GPIO27 |
 | Button LED- | **14** | GND |
 | NeoPixel DIN, **12 LEDs** | **19** | GPIO10 directly to DIN |
-| NeoPixel supply + | **Still to record** | Pi 5 V through the diode to strip +V |
-| NeoPixel supply - | **Still to record** | Pi GND directly to strip GND; common ground |
-| Toggle switch 1 signal | **15** | GPIO22 |
-| Toggle switch 1 return | **20** | GND |
-| Toggle switch 2 signal | **16** | GPIO23 |
-| Toggle switch 2 return | **25** | GND |
-| Logitech C270 | USB | Visual context for the model |
-| Display video/touch | DSI / FFC | Separate ribbon cable; I still need to record the actual CAM/DISP socket |
+| NeoPixel supply + | **4** | Pi 5 V through D1 to strip +V |
+| NeoPixel supply - | **34** | Pi GND directly to strip GND |
+| SW01 signal | **15** | GPIO22 - Local AI / Cloud AI + Cam selector |
+| SW01 return | **20** | GND |
+| SW02 signal | **16** | GPIO23 - EN / DE selector |
+| SW02 return | **25** | GND |
+| Logitech C270 | USB | Visual context for Cloud AI + Cam mode |
+| Display video/touch | DSI / FFC | Separate ribbon connection to a CAM/DISP port |
 
-## My NeoPixel supply
+I have selected the unused **physical pin 34** as the NeoPixel ground in this documented layout. All GND pins share the same electrical ground inside the Pi.
 
-My strip contains exactly **12 LEDs**. It works with data on **physical pin 19 / GPIO10** and power from my Pi's 5 V/GND header connections.
+## D1: my MIC 1N4001 diode
 
-I put the diode **in series with the 5 V lead**. Its **ring / cathode (K) faces the LED strip**. The unbanded anode (A) faces the Pi's 5 V supply. Ground connects directly to the strip's GND. The diode is **not in the data lead**.
+I use a **MIC 1N4001** in series with the NeoPixel **5 V supply lead**:
 
-I still need to record the diode model and the exact physical pins I use for NeoPixel 5 V and GND. The drawing labels those connections as **PIN TBD** rather than assigning unconfirmed pin numbers.
+- **Physical pin 4 / 5 V** connects to the unbanded **anode (A)**.
+- The **cathode (K), marked by the ring**, connects to the strip's **+V** input.
+- **Physical pin 34 / GND** connects directly to strip **GND**.
+- **Physical pin 19 / GPIO10** connects directly to **DIN**. The diode is not in the data lead.
+
+### Why it helps
+
+I use the [diode method described by Adafruit](https://learn.adafruit.com/neopixels-on-raspberry-pi/raspberry-pi-wiring). The diode lowers the strip's supply voltage, which also lowers its input-HIGH threshold. This helps the strip recognize the Pi's **3.3 V** data signal. For example, a 0.7 V forward drop would reduce 5 V to about 4.3 V; a threshold of 70% of that supply would be about 3.0 V.
+
+The actual forward drop depends on operating conditions. This is a supply-voltage workaround, not an active level shifter: GPIO10 still outputs 3.3 V. Adafruit also notes that the diode must carry the strip's total current and that reduced supply voltage can reduce brightness.
+
+## My mode selectors
+
+| Control | Label | GPIO / physical pin |
+| --- | --- | --- |
+| **SW01** | **Local AI / Cloud AI + Cam** | GPIO22 / P15, return P20 |
+| **SW02** | **EN / DE** | GPIO23 / P16, return P25 |
+
+These are software mode inputs. The webcam connects by USB; SW01 does not switch its USB supply or data wires.
 
 ## How I read the drawing
 
-- Red leads carry the 5 V supply. The strip side of the diode is labelled +V because its voltage is reduced by the diode's forward drop.
+- Red leads carry the 5 V supply. The strip side of D1 is labelled +V because the diode reduces its voltage.
 - Black leads are ground connections.
 - Black leads with white dashes are GPIO signals.
 - Line crossings are not electrical junctions.
-- Component shapes and USB/DSI port positions are illustrative. I use the numbered header pins and connection labels as the wiring reference.
+- Component shapes and USB/DSI port positions are illustrative. The physical header numbers and terminal labels define the connections.
 - I disconnect power before changing connections.
 
-## Details I am still completing
+## References
 
-- My exact NeoPixel supply pins and diode model.
-- A photograph of the wiring in the finished enclosure.
-- The display's actual CAM/DISP socket and cable details.
-- Each switch's function, contact selection, position mapping and software pull configuration.
-- The button LED rating and actual drive arrangement.
-- The LED driver and required Pi 5 interfaces from my code.
-
-## Technical references
-
-I use Raspberry Pi's [GPIO documentation](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#gpio-and-the-40-pin-header) to check physical/BCM numbering, and its [Touch Display 2 documentation](https://www.raspberrypi.com/documentation/accessories/touch-display-2.html) for the separate display data connection. My table records my own project connections.
+- [Adafruit: NeoPixels on Raspberry Pi - wiring and diode method](https://learn.adafruit.com/neopixels-on-raspberry-pi/raspberry-pi-wiring)
+- [Raspberry Pi: GPIO header documentation](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#gpio-and-the-40-pin-header)
+- [Raspberry Pi: Touch Display 2 connection](https://www.raspberrypi.com/documentation/accessories/touch-display-2.html)

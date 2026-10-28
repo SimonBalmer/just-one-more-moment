@@ -9,8 +9,10 @@
 - [x] Document my concept and question.
 - [x] Record my parts and pin assignment.
 - [x] Confirm my 12-pixel strip and Pi-powered NeoPixel setup.
-- [x] Document the diode in the 5 V lead, cathode band toward the strip.
-- [x] Record my USB webcam use and planned optional input.
+- [x] Document my MIC 1N4001 in the 5 V lead, cathode band toward the strip.
+- [x] Fix the documented NeoPixel supply connections: P4 / 5 V and free P34 / GND.
+- [x] Label SW01 as Local AI / Cloud AI + Cam and SW02 as EN / DE.
+- [x] Record my USB webcam for Cloud AI + Cam mode.
 - [x] Add my labelled wiring illustration as SVG, PNG and PDF.
 - [x] Set up my documentation folders and retro graphic style.
 - [x] Write the documentation from my own perspective.
@@ -23,7 +25,6 @@
 - [ ] Upload my STL and editable CAD/STEP files.
 - [ ] Add real project photographs, including the interior and assembly stages.
 - [ ] Record my exact toggle switch model and contact arrangement.
-- [ ] Record my diode model and exact NeoPixel supply pins.
 - [ ] Record my display's actual CAM/DISP socket.
 - [ ] Complete quantities, fasteners, print settings and material consumption.
 
@@ -31,7 +32,7 @@
 
 - [ ] Write software/model setup instructions from my working installation.
 - [ ] Write printing, mounting and assembly instructions.
-- [ ] Compare the drawing with my code and photographs, then fill in the open connections.
+- [ ] Compare the final wiring drawing with my code and assembly photographs.
 - [ ] Document my switch functions, startup, shutdown, reset and zero-countdown behavior.
 - [ ] Document webcam operation and any image retention.
 - [ ] Add troubleshooting from issues I encounter.

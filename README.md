@@ -8,7 +8,7 @@ With **Just One More Moment**, I explore how AI-generated emotional language cha
 
 My device has a countdown, a screen and a button. Visitors can give it more time or let its remaining runtime run out. I want them to notice how a simple technical decision can start to feel like a moral choice.
 
-I combine a Raspberry Pi, local AI, a custom 3D-printed enclosure and physical controls. A USB webcam gives the model visual context so it can respond to visitors and their surroundings. I plan to make this input optional through a physical switch.
+I combine a Raspberry Pi, a custom 3D-printed enclosure and physical controls. My mode selector **SW01** is labelled **Local AI / Cloud AI + Cam**; **SW02** selects **EN / DE**. A USB webcam provides visual context in Cloud AI + Cam mode so the model can respond to visitors and their surroundings.
 
 ## My question
 
@@ -24,7 +24,7 @@ Read more in my [project concept](docs/concept.md).
 
 [Open the SVG](hardware/diagrams/wiring-overview.svg) · [PNG](hardware/diagrams/wiring-overview.png) · [Printable PDF](hardware/diagrams/wiring-overview.pdf) · [Connection table](hardware/WIRING.md)
 
-I use exactly **12 NeoPixels**. Their data input connects to **physical pin 19 / GPIO10**. I place the diode in the **5 V supply lead**, with its **cathode band facing the LED strip**. I still need to record the exact NeoPixel supply pins and diode model.
+I use exactly **12 NeoPixels**. DIN connects to **physical pin 19 / GPIO10**. Their supply runs from **P4 / 5 V** through a **MIC 1N4001** diode, with its **cathode band facing the strip**. I select the free **P34 / GND** as the strip return in this documented layout.
 
 ## Where I am now
 
@@ -36,9 +36,9 @@ I have documented my concept, parts and connections and added a wiring illustrat
 | --- | --- |
 | Concept | Documented |
 | Parts and pin assignment | Recorded; some exact part details remain open |
-| Wiring illustration | SVG, PNG and PDF available; open details labelled |
-| NeoPixel strip | 12 LEDs, working from my Pi's 5 V/GND supply with a diode in the 5 V lead |
-| Webcam | Connected by USB and used for visual context; physical disable switch planned |
+| Wiring illustration | Final revision 03 available as SVG, PNG and PDF |
+| NeoPixel strip | 12 LEDs; P4 / 5 V through MIC 1N4001, P34 / GND, P19 / GPIO10 data |
+| Webcam | Connected by USB for Cloud AI + Cam mode; SW01 selects AI mode |
 | Software and model setup | I still need to upload my working files and exact configuration |
 | Enclosure and photographs | I still need to add my files |
 | Complete reproduction guide | In progress |

@@ -6,7 +6,7 @@ I am assembling a step-by-step guide for reproducing my installation. This page 
 
 ## 1. Gather the components
 
-I list the parts in my [bill of materials](../hardware/BOM.md). I still need to complete exact switch/diode details, fixings and some quantities.
+I list the parts in my [bill of materials](../hardware/BOM.md). I still need to complete exact switch details, fixings and some quantities.
 
 ## 2. Print the enclosure
 
@@ -14,7 +14,7 @@ I will add my STL files and editable CAD exports to the [mechanical folder](../m
 
 ## 3. Assemble and wire
 
-My [wiring illustration and connection table](../hardware/WIRING.md) show the pin assignment, including the diode in the NeoPixel 5 V lead. I still need to add enclosure assembly photographs and record the two NeoPixel supply pins.
+My [final wiring illustration and connection table](../hardware/WIRING.md) define the connections, including P4 / 5 V through the MIC 1N4001 diode and P34 / GND for the NeoPixel return. I still need to add enclosure assembly photographs.
 
 ## 4. Install the software and local model
 

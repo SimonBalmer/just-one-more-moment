@@ -14,9 +14,9 @@ How does an AI device's technical or emotional language affect visitors' empathy
 
 ## The experience I am creating
 
-I am building a small physical installation with a countdown, generated text and a button to add time. Visitors choose whether to extend its runtime or let it run out. By using local AI, I want to connect its words and apparent feelings to the physical object itself.
+I am building a small physical installation with a countdown, generated text and a button to add time. Visitors choose whether to extend its runtime or let it run out. The physical object gives its words and apparent feelings a tangible presence, while the AI mode selector makes the technical setup part of the experience.
 
-I use a USB webcam to provide visual context so the model can respond specifically to visitors and their environment. I plan to make this input optional through a physical switch.
+I use a USB webcam to provide visual context so the model can respond specifically to visitors and their environment in **Cloud AI + Cam** mode. My **SW01** selector is labelled **Local AI / Cloud AI + Cam**, and **SW02** selects **EN / DE**.
 
 As the designer, I shape how the device behaves and how visitors encounter it.
 
@@ -44,7 +44,7 @@ I build and assemble the physical device and its case, make the visual and inter
 
 - My exact local model, inference pipeline and technical setup.
 - The final behavior when the timer reaches zero.
-- Control functions, mode assignments and the planned webcam disable option.
+- How my implementation handles the selected AI mode and language.
 - Visitor reactions that I observe and document.
 
 I keep my original intentions separate from the observations I make during testing.

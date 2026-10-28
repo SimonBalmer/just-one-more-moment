@@ -29,7 +29,7 @@ PIN_NAMES = ['3V3','5V','GPIO2','5V','GPIO3','GND','GPIO4','GPIO14',
              '3V3','GPIO24','GPIO10','GND','GPIO9','GPIO25','GPIO11','GPIO8',
              'GND','GPIO7','GPIO0','GPIO1','GPIO5','GND','GPIO6','GPIO12',
              'GPIO13','GND','GPIO19','GPIO16','GPIO26','GPIO20','GND','GPIO21']
-USED = {2,6,9,11,13,14,15,16,19,20,25}
+USED = {2,4,6,9,11,13,14,15,16,19,20,25,34}
 
 pdfmetrics.registerFont(TTFont('JOMMMono', FONT_PATH))
 font = Font(FONT_PATH)
@@ -167,7 +167,8 @@ def main():
     desc=('My Raspberry Pi 5 wiring: display power pins 2/6; button COM/NO pins 9/11; '
           'button LED pins 13/14; switch 1 pins 15/20; switch 2 pins 16/25; '
           '12 NeoPixels DIN pin 19 GPIO10. The diode is in the 5 V supply with its cathode band toward the strip. '
-          'Exact NeoPixel 5 V/GND header pins and diode model remain open. USB webcam and DSI display link included.')
+          'NeoPixel power uses physical pin 4 through a MIC 1N4001 diode; pin 34 is the ground selected for this plan. '
+          'SW01 is local AI or cloud AI plus camera; SW02 selects English or German. USB webcam and DSI display link included.')
     a=Art(W,H,OUT/'wiring-overview.pdf',desc)
     a.rect(0,0,W,H,WHITE,None)
     a.rect(55,45,2490,1810,WHITE,BLACK,2)
@@ -175,7 +176,7 @@ def main():
     end=pixel(a,85,112,'JUST ONE MORE MOMENT',7)
     a.rect(end+12,112,22,49,RED,None)
     a.text(1850,110,'WIRING OVERVIEW',30)
-    a.text(1850,149,'REV 02 / 28 OCT 2026',21,RED)
+    a.text(1850,149,'REV 03 / 28 OCT 2026',21,RED)
 
     # Recognisable top-view components; neutral technical geometry, not to scale.
     a.text(100,250,'01 / TOUCH DISPLAY 2',27,RED)
@@ -198,15 +199,15 @@ def main():
     a.text(214,1012,'+TIME',24,RED)
     a.text(130,1158,'33 mm / WHITE LED',21)
 
-    for label,y in [('03 / TOGGLE SWITCH 1',300),('04 / TOGGLE SWITCH 2',700)]:
+    for label,y in [('03 / SW01 / AI MODE',300),('04 / SW02 / LANGUAGE',700)]:
         a.text(1970,y-20,label,27,RED)
         a.rect(1970,y,460,180,LIGHT,BLACK,3,8)
         a.circle(2240,y+90,46,BLACK,BLACK,2)
         a.circle(2240,y+90,34,MID,BLACK,2)
         a.line([(2240,y+90),(2215,y+26)],BLACK,20)
         a.circle(2215,y+26,13,WHITE,BLACK,3)
-        a.text(2010,y+160,'GPIO / GND',19)
-    a.text(1970,934,'Switch functions: to document',19,GREY)
+    a.text(2000,460,'LOCAL AI / CLOUD AI + CAM',19)
+    a.text(2000,860,'EN / DE',23)
 
     a.text(1110,220,'05 / LOGITECH C270',27,RED)
     a.rect(1110,245,350,145,BLACK,BLACK,3,20)
@@ -240,7 +241,7 @@ def main():
     a.text(1490,1115,'CAM/DISP',17,WHITE)
     a.rect(1460,1040,28,88,LIGHT,GREY,2)
     a.rect(1000,1125,72,36,MID,WHITE,2,4)
-    a.text(1000,1198,'USB-C',20)
+    a.text(930,1198,'USB-C',20)
     a.text(990,1110,'RASPBERRY PI 5 / 8 GB',26,WHITE)
 
     # External leads. A break/halo at each crossing means no electrical junction.
@@ -256,6 +257,9 @@ def main():
     a.wire([pin(25),(1408,880),(1880,880),(1880,830),(1970,830)],'ground')
     a.wire([pin(19),(1306,910),(1700,910),(1700,1240),(1760,1240)])
     a.wire([(1460,315),(1920,315),(1920,800),(1790,800)],'ground')
+    # P4 and the free ground P34 define the NeoPixel supply in this plan.
+    a.wire([pin(4),(1034,240),(2470,240),(2470,1395),(1600,1395),(1600,1160),(1760,1160)],'power')
+    a.wire([pin(34),(1544,525),(2505,525),(2505,1460),(1645,1460),(1645,1320),(1760,1320)],'ground')
     # DSI ribbon: wider grey flat cable, not a GPIO lead.
     ribbon=[(660,500),(850,500),(850,1220),(1474,1220),(1474,1128)]
     a.line(ribbon,BLACK,28);a.line(ribbon,MID,22);a.line(ribbon,WHITE,2)
@@ -274,7 +278,7 @@ def main():
         a.text(x-(6 if n<10 else 11),y+6,str(n),17,WHITE if n in USED else GREY)
     a.text(963,710,'J8 / PIN 1',18,WHITE)
     a.line([(988,689),(988,680),(1000,666)],RED,2)
-    a.text(1410,558,'GPIO / TOP VIEW',21)
+    a.text(1410,505,'GPIO / TOP VIEW',21)
 
     # Component-side terminal labels keep BCM and physical numbering together.
     terminal(a,660,350,'P2 / 5 V','right',RED)
@@ -297,21 +301,16 @@ def main():
         a.rect(x+9,1184,18,18,RED,None,0,2)
         a.text(x+7,1240,f'{i+1:02}',17,WHITE)
     a.text(1830,1294,'DIN -> PIXEL 01 -> ... -> PIXEL 12',20,WHITE)
-    a.text(1760,1388,'P19 / GPIO10 -> DIN',24)
-    a.text(1760,1422,'Common ground with my Pi.',21)
+    a.text(1760,1375,'P19 / GPIO10 -> DIN',24)
 
-    # Supply is shown as a net, not an invented physical header attachment.
-    a.text(1280,1325,'PI 5 V / PIN TBD',21,RED)
-    a.wire([(1280,1345),(1600,1345),(1600,1160),(1760,1160)],'power')
-    a.rect(1280,1337,16,16,WHITE,RED,3)
+    # D1 is in the 5 V lead only; the band faces upward toward strip +V.
+    a.text(1250,1372,'P4 / 5 V -> D1 -> STRIP +V',21,RED)
     a.rect(1583,1194,34,90,BLACK,BLACK,2,5)
     a.rect(1583,1204,34,12,MID,None)
-    a.text(1330,1170,'D1',22,RED)
-    a.text(1330,1202,'BAND / K',20)
-    a.line([(1460,1195),(1567,1210)],GREY,2)
-    a.text(1280,1442,'PI GND / PIN TBD',21)
-    a.wire([(1280,1460),(1645,1460),(1645,1320),(1760,1320)],'ground')
-    a.rect(1280,1452,16,16,WHITE,BLACK,3)
+    a.text(1260,1288,'D1 / MIC 1N4001',22,RED)
+    a.text(1330,1320,'BAND / K',20)
+    a.line([(1460,1310),(1567,1210)],GREY,2)
+    a.text(1760,1440,'P34 / COMMON GND',21)
     terminal(a,1760,1160,'+V','left',RED)
     terminal(a,1760,1240,'DIN','left',textcolor=WHITE)
     terminal(a,1760,1320,'GND','left',textcolor=WHITE)
@@ -326,7 +325,7 @@ def main():
     a.text(90,1785,'Crossings do not join wires.',21)
     a.text(90,1820,'Component views are not to scale.',19,GREY)
 
-    a.text(790,1556,'D1 / DIODE IN THE 5 V LEAD',25,RED)
+    a.text(790,1556,'D1 / MIC 1N4001 / 5 V LEAD',25,RED)
     a.line([(800,1630),(1310,1630)],RED,8)
     a.rect(970,1592,180,76,BLACK,BLACK,2,10)
     a.rect(1116,1592,17,76,MID,None)
@@ -335,13 +334,13 @@ def main():
     a.text(978,1710,'A',22);a.text(1110,1710,'K',22)
     a.text(790,1760,'Cathode band faces the strip.',22)
     a.text(790,1795,'DIN connects directly to GPIO10.',21)
-    a.text(790,1825,'Diode model: still to record.',19,GREY)
+    a.text(790,1825,'I use the Adafruit supply-drop method.',19,GREY)
 
-    a.text(1700,1556,'MY CONNECTION NOTES',25,RED)
-    a.text(1700,1607,'NeoPixel supply pins: still open.',21)
-    a.text(1700,1652,'Display power: P2 + P6.',21)
-    a.text(1700,1697,'DSI socket: CAM/DISP 0/1 TBD.',21)
-    a.text(1700,1742,'Switch functions: to document.',21)
+    a.text(1700,1556,'WHY I USE THE DIODE',25,RED)
+    a.text(1700,1607,'D1 lowers the strip supply voltage.',21)
+    a.text(1700,1652,'This helps it read 3.3 V data as HIGH.',21)
+    a.text(1700,1697,'GPIO10 itself stays at 3.3 V.',21)
+    a.text(1700,1742,'P4 = 5 V / P34 = common GND.',21)
     a.text(1700,1787,'Power off before changing wires.',21)
     a.text(1700,1825,'USB/DSI port positions: illustrative.',19,GREY)
 
@@ -355,7 +354,7 @@ def main():
     banner.text(52,48,'SIMON BALMER / PHKI / HSLU',22,WHITE)
     end=pixel(banner,52,78,'JUST ONE MORE MOMENT',7,WHITE)
     banner.rect(end+12,78,22,49,RED,None)
-    banner.text(52,187,'LOCAL AI / EMPATHY / RESPONSIBILITY',23,RED)
+    banner.text(52,187,'AI / EMPATHY / RESPONSIBILITY',23,RED)
     banner.save(OUT/'project-banner.svg')
     print('Generated wiring SVG, PDF, PNG and retro project banner.')
 

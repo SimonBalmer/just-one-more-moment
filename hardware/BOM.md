@@ -20,9 +20,9 @@ These are the components I have collected for my prototype. I keep the [Galaxus 
 | Component | Quantity / use | My notes |
 | --- | --- | --- |
 | Purecrea illuminated arcade button, 33 mm, white | 1 | Separate switch and LED connections |
-| Toggle switches | 2 | Exact model, contacts and function mapping still to document |
-| Purecrea WS2812B NeoPixel strip | **12 LEDs** | I use GPIO10 for DIN and power from Pi 5 V/GND |
-| Diode | 1 in the NeoPixel 5 V lead | Cathode band toward the strip; model still to record |
+| Toggle switches | 2 | SW01: Local AI / Cloud AI + Cam; SW02: EN / DE. Exact part model and contacts still to document |
+| Purecrea WS2812B NeoPixel strip | **12 LEDs** | I use P19 / GPIO10 for DIN, P4 / 5 V through D1, and P34 / GND in my documented layout |
+| MIC 1N4001 diode | 1 in the NeoPixel 5 V lead | Anode to P4 / 5 V; cathode band toward strip +V |
 | Purecrea jumper wires | As used | I still need to record connectors, lengths and quantity |
 
 I have counted **12 LEDs on my actual strip**. I use that count for the build and software configuration, regardless of the length in the shopping-list product wording.
@@ -39,7 +39,6 @@ A spool's 1000 g weight is its purchase size, not the material needed for one en
 
 ## What I still need to record
 
-- Exact switch and diode models.
+- Exact toggle switch models.
 - Display signal cable type, length and actual CAM/DISP socket.
-- Exact NeoPixel supply pins.
 - Fasteners, connectors, tools and print settings.

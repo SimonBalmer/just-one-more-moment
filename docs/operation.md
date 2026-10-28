@@ -8,15 +8,15 @@ Visitors see my device's remaining runtime and generated language. They can pres
 
 ## Visual context
 
-I connect a Logitech C270 to my Raspberry Pi through USB. It provides visual context so the model can respond to visitors and their surroundings. I plan to make this input optional through a physical switch.
+I connect a Logitech C270 to my Raspberry Pi through USB. In **Cloud AI + Cam** mode it provides visual context so the model can respond to visitors and their surroundings. **SW01** selects **Local AI / Cloud AI + Cam**.
 
 ## My controls
 
 | Control | What I have documented |
 | --- | --- |
 | Arcade button | Extends the countdown; I still need to document the exact increment and handling from my code |
-| Toggle switch 1 | GPIO22; I still need to record its actual function and position mapping |
-| Toggle switch 2 | GPIO23; I still need to record its actual function and position mapping |
+| SW01 | Local AI / Cloud AI + Cam - GPIO22 / P15, GND / P20 |
+| SW02 | EN / DE - GPIO23 / P16, GND / P25 |
 
 ## Behavior I still need to document
 
@@ -24,7 +24,7 @@ I connect a Logitech C270 to my Raspberry Pi through USB. It provides visual con
 - Initial runtime, time added per press, limits and reset behavior.
 - What happens when the countdown reaches zero.
 - The technical/emotional mode and any language selection.
-- My webcam processing pipeline, update frequency and planned disable option.
+- My webcam processing pipeline and update frequency in Cloud AI + Cam mode.
 - Whether I retain image frames, how I indicate camera operation and how I inform visitors.
 - What the device does when the model or camera is unavailable.
 
