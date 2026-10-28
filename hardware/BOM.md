@@ -29,6 +29,8 @@ I have counted **12 LEDs on my actual strip**. I use that count for the build an
 
 ## Printed parts and assembly materials
 
+My enclosure uses [13 numbered print files, one of each](../mechanical/README.md). The [print pack](../mechanical/enclosure-print-pack.zip) includes the matching four-page illustrated enclosure guide. Purchased-component placeholders are excluded.
+
 | Material | My listed product | What I still need to add |
 | --- | --- | --- |
 | Dark filament | Bambu Lab PLA Matte - Charcoal, 1.75 mm, 1000 g spool | Part/color mapping and grams used |

@@ -2,7 +2,7 @@
 
 # My build guide
 
-I am assembling a step-by-step guide for reproducing my installation. This page links the material I have documented so far. I still need to add the detailed printing, assembly and software instructions from my actual build.
+I am assembling a step-by-step guide for reproducing my installation. This page links the material I have documented so far. My [enclosure guide](../mechanical/README.md) provides 13 numbered STL files and illustrated geometric assembly views. Tested printer settings, fixings and the application setup are separate from that file set.
 
 ## 1. Gather the components
 
@@ -10,11 +10,13 @@ I list the parts in my [bill of materials](../hardware/BOM.md). I still need to 
 
 ## 2. Print the enclosure
 
-I will add my STL files and editable CAD exports to the [mechanical folder](../mechanical/README.md), together with the print orientation, supports, layer settings, colors and material consumption I use.
+Download my [complete enclosure print pack](../mechanical/enclosure-print-pack.zip), or select the [individual numbered STLs](../mechanical/stl/). Print each of the 13 parts once at 100% scale, interpreting the coordinates as mm. Centre, orient and place parts on the bed individually; the exports retain the CAD assembly coordinates.
+
+Use my [four-page enclosure assembly guide](../mechanical/assembly/assembly-guide.pdf) for the part relationships. I include separate display, base and camera views. Purchased-component placeholders and the complete assembly mesh are excluded from the print pack. See the [mechanical notes](../mechanical/README.md) for scale checks, mesh validation and the limits of what the STL geometry specifies.
 
 ## 3. Assemble and wire
 
-My [final wiring illustration and connection table](../hardware/WIRING.md) define the connections, including P4 / 5 V through the MIC 1N4001 diode and P34 / GND for the NeoPixel return. I still need to add enclosure assembly photographs.
+My [final wiring illustration and connection table](../hardware/WIRING.md) define the connections, including P4 / 5 V through the MIC 1N4001 diode and P34 / GND for the NeoPixel return. The [enclosure drawings](../mechanical/assembly/assembly-guide.pdf) identify the printed parts and their locations. Fit the purchased components and route cables before closing the shells; the drawings do not specify screw dimensions or an experimentally verified fixing sequence.
 
 ## 4. Install the software and local model
 

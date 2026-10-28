@@ -22,7 +22,8 @@
 - [ ] Upload my working application, startup scripts and non-secret configuration.
 - [ ] Record my OS, Python, dependencies and exact local model versions.
 - [ ] Document my webcam processing/inference pipeline.
-- [ ] Upload my STL and editable CAD/STEP files.
+- [x] Upload my 13 numbered enclosure STLs, print pack and illustrated geometric assembly guide.
+- [ ] Upload editable CAD/STEP files.
 - [ ] Add real project photographs, including the interior and assembly stages.
 - [ ] Record my exact toggle switch model and contact arrangement.
 - [ ] Record my display's actual CAM/DISP socket.
@@ -31,7 +32,8 @@
 ## My reproduction guide
 
 - [ ] Write software/model setup instructions from my working installation.
-- [ ] Write printing, mounting and assembly instructions.
+- [x] Document part names, print scope, import scale and geometric assembly relationships.
+- [ ] Validate printer settings, fasteners and physical assembly against my actual build.
 - [ ] Compare the final wiring drawing with my code and assembly photographs.
 - [ ] Document my switch functions, startup, shutdown, reset and zero-countdown behavior.
 - [ ] Document webcam operation and any image retention.

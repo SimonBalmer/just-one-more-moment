@@ -26,11 +26,19 @@ Read more in my [project concept](docs/concept.md).
 
 I use exactly **12 NeoPixels**. DIN connects to **physical pin 19 / GPIO10**. Their supply runs from **P4 / 5 V** through a **MIC 1N4001** diode, with its **cathode band facing the strip**. I select the free **P34 / GND** as the strip return in this documented layout.
 
+## My enclosure
+
+![Exploded view of my 13 printed enclosure parts](mechanical/assembly/exploded-overview.png)
+
+[Download all 13 print files](mechanical/enclosure-print-pack.zip) · [Illustrated assembly guide (PDF)](mechanical/assembly/assembly-guide.pdf) · [Individual STL files and print notes](mechanical/README.md)
+
+Each number in the drawings matches a numbered STL filename. The guide includes separate display, base and camera details. Purchased-component placeholders and the complete assembly mesh are excluded from the print pack.
+
 ## Where I am now
 
 **Physical prototype in development / documentation in progress**
 
-I have documented my concept, parts and connections and added a wiring illustration. I still need to upload my application code, CAD/STL files and project photographs, then complete the build instructions.
+I have documented my concept, parts and connections and added a wiring illustration. I have added 13 enclosure STL files, a downloadable print pack and a four-page enclosure assembly guide. My application code, editable CAD exports, project photographs and tested build settings are separate project deliverables.
 
 | Area | My current status |
 | --- | --- |
@@ -40,7 +48,8 @@ I have documented my concept, parts and connections and added a wiring illustrat
 | NeoPixel strip | 12 LEDs; P4 / 5 V through MIC 1N4001, P34 / GND, P19 / GPIO10 data |
 | Webcam | Connected by USB for Cloud AI + Cam mode; SW01 selects AI mode |
 | Software and model setup | I still need to upload my working files and exact configuration |
-| Enclosure and photographs | I still need to add my files |
+| Enclosure | 13 numbered STLs, print pack and four-page illustrated geometry guide available |
+| Photographs and editable CAD | Separate from the STL file set |
 | Complete reproduction guide | In progress |
 
 ## Build your own
@@ -49,9 +58,10 @@ I want to make this installation reproducible, including printable parts, electr
 
 1. [Parts list](hardware/BOM.md)
 2. [Wiring and pin assignment](hardware/WIRING.md)
-3. [Build guide](docs/build-guide.md)
-4. [Software setup](software/README.md)
-5. [Operation and interaction](docs/operation.md)
+3. [Printable enclosure and illustrated assembly guide](mechanical/README.md)
+4. [Build guide](docs/build-guide.md)
+5. [Software setup](software/README.md)
+6. [Operation and interaction](docs/operation.md)
 
 ## Repository contents
 
@@ -59,7 +69,7 @@ I want to make this installation reproducible, including printable parts, electr
 | --- | --- |
 | [`software/`](software/) | My application and local model setup - files to follow |
 | [`hardware/`](hardware/) | Parts, connections and wiring graphics |
-| [`mechanical/`](mechanical/) | Printable and editable enclosure files - files to follow |
+| [`mechanical/`](mechanical/) | 13 enclosure STLs, print pack, numbered assembly drawings and source mapping |
 | [`docs/`](docs/) | Concept, build guide, operation and remaining work |
 | [`media/`](media/) | Project photos and demo material - files to follow |
 

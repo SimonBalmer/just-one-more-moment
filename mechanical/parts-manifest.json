@@ -1,0 +1,452 @@
+{
+  "author": "Simon Balmer",
+  "revision": "2026-10-28",
+  "coordinate_units": "mm (CAD export convention; STL itself is unitless)",
+  "parts": [
+    {
+      "id": "01",
+      "file": "01-base-housing.stl",
+      "name": "Basisgehäuse",
+      "group": "base",
+      "color": "#e7ab98",
+      "quantity": 1,
+      "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_SoulHousing.stl",
+      "sha256": "a1f0c8bbcedc8552387bf8e3e0568464c9e43e8db889b9bd8e8fcf6f1fc18de2",
+      "bounds": [
+        [
+          -105.0,
+          -112.5,
+          -121.91577911376953
+        ],
+        [
+          20.0,
+          112.5,
+          -71.91577911376953
+        ]
+      ],
+      "size_mm": [
+        125.0,
+        225.0,
+        50.0
+      ],
+      "triangle_count": 8826,
+      "mesh_check": {
+        "finite_coordinates": true,
+        "edge_incidence_two": true,
+        "duplicate_triangles": 0,
+        "signed_volume_mm3": 101671.123
+      }
+    },
+    {
+      "id": "02",
+      "file": "02-base-bottom-cover.stl",
+      "name": "Bodenabdeckung",
+      "group": "base",
+      "color": "#f3c6b7",
+      "quantity": 1,
+      "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_SoulHousing_BottomCover.stl",
+      "sha256": "e68ae3ed8ed16a5369f231a652d5e7e3fcf2b7457e120023da7676cf6f909b4e",
+      "bounds": [
+        [
+          -105.0,
+          -109.25,
+          -121.91577911376953
+        ],
+        [
+          11.75,
+          109.25,
+          -75.16577911376953
+        ]
+      ],
+      "size_mm": [
+        116.75,
+        218.5,
+        46.75
+      ],
+      "triangle_count": 1096,
+      "mesh_check": {
+        "finite_coordinates": true,
+        "edge_incidence_two": true,
+        "duplicate_triangles": 0,
+        "signed_volume_mm3": 83142.825
+      }
+    },
+    {
+      "id": "03",
+      "file": "03-base-front-trim-left.stl",
+      "name": "Front-Zierleiste links",
+      "group": "base",
+      "color": "#deb67c",
+      "quantity": 1,
+      "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_SoulHousing_ReliefL.stl",
+      "sha256": "cbf0e993bf6798977081e528f5e30b0f3d6454b254085efee90d1bae7e274b93",
+      "bounds": [
+        [
+          19.0,
+          -107.5,
+          -116.91577911376953
+        ],
+        [
+          22.0,
+          60.27035903930664,
+          -76.91577911376953
+        ]
+      ],
+      "size_mm": [
+        3.0,
+        167.77000427246094,
+        40.0
+      ],
+      "triangle_count": 200,
+      "mesh_check": {
+        "finite_coordinates": true,
+        "edge_incidence_two": true,
+        "duplicate_triangles": 0,
+        "signed_volume_mm3": 2513.512
+      }
+    },
+    {
+      "id": "04",
+      "file": "04-base-front-trim-right.stl",
+      "name": "Front-Zierleiste rechts",
+      "group": "base",
+      "color": "#deb67c",
+      "quantity": 1,
+      "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_SoulHousing_ReliefR.stl",
+      "sha256": "50e1e922632a798f711cce46f4887f3a883c30be414e3058c64248ac0ee8a22a",
+      "bounds": [
+        [
+          19.0,
+          76.05009460449219,
+          -116.91577911376953
+        ],
+        [
+          22.0,
+          107.5,
+          -76.91577911376953
+        ]
+      ],
+      "size_mm": [
+        3.0,
+        31.450000762939453,
+        40.0
+      ],
+      "triangle_count": 200,
+      "mesh_check": {
+        "finite_coordinates": true,
+        "edge_incidence_two": true,
+        "duplicate_triangles": 0,
+        "signed_volume_mm3": 605.026
+      }
+    },
+    {
+      "id": "05",
+      "file": "05-rear-cable-guide-upper.stl",
+      "name": "Kabeldurchführung oben",
+      "group": "base",
+      "color": "#ad9cc5",
+      "quantity": 1,
+      "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_SoulHousing_PlugL.stl",
+      "sha256": "f3cfd21e761ce28587b0b6d3da6d79ffc77a4154caa0f010c20b0baa8baad557",
+      "bounds": [
+        [
+          -114.0,
+          -84.89281463623047,
+          -96.91577911376953
+        ],
+        [
+          -105.0,
+          -54.89281463623047,
+          -81.941162109375
+        ]
+      ],
+      "size_mm": [
+        9.0,
+        30.0,
+        14.970000267028809
+      ],
+      "triangle_count": 666,
+      "mesh_check": {
+        "finite_coordinates": true,
+        "edge_incidence_two": true,
+        "duplicate_triangles": 0,
+        "signed_volume_mm3": 1023.067
+      }
+    },
+    {
+      "id": "06",
+      "file": "06-rear-cable-guide-lower.stl",
+      "name": "Kabeldurchführung unten",
+      "group": "base",
+      "color": "#c5b8d5",
+      "quantity": 1,
+      "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_SoulHousing_PlugR.stl",
+      "sha256": "b3e386b9da522b397c52db5091b4e8399ebb7cdd116b310e17990f344a91e45b",
+      "bounds": [
+        [
+          -114.0,
+          -84.89281463623047,
+          -111.8904037475586
+        ],
+        [
+          -105.0,
+          -54.89281463623047,
+          -96.91577911376953
+        ]
+      ],
+      "size_mm": [
+        9.0,
+        30.0,
+        14.970000267028809
+      ],
+      "triangle_count": 666,
+      "mesh_check": {
+        "finite_coordinates": true,
+        "edge_incidence_two": true,
+        "duplicate_triangles": 0,
+        "signed_volume_mm3": 1023.068
+      }
+    },
+    {
+      "id": "07",
+      "file": "07-display-main-bracket.stl",
+      "name": "Display-Haupthalter",
+      "group": "display",
+      "color": "#7eacc8",
+      "quantity": 1,
+      "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_Screen_MainBraket.stl",
+      "sha256": "36065733203f8234dd63afe3b772660d465f4f0e332d7074ad5fd77f1061ff7e",
+      "bounds": [
+        [
+          -33.68138885498047,
+          -102.5,
+          -68.39940643310547
+        ],
+        [
+          10.844682693481445,
+          102.5,
+          68.59065246582031
+        ]
+      ],
+      "size_mm": [
+        44.529998779296875,
+        205.0,
+        136.99000549316406
+      ],
+      "triangle_count": 7374,
+      "mesh_check": {
+        "finite_coordinates": true,
+        "edge_incidence_two": true,
+        "duplicate_triangles": 0,
+        "signed_volume_mm3": 62156.373
+      }
+    },
+    {
+      "id": "08",
+      "file": "08-display-inner-bezel.stl",
+      "name": "Display-Innenrahmen",
+      "group": "display",
+      "color": "#8f9caa",
+      "quantity": 1,
+      "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_Screen_InnerFrame.stl",
+      "sha256": "a3613b1c17df9827c37e6ac8e57aaa5aa184404d654c368c66955a14e10639df",
+      "bounds": [
+        [
+          -13.641738891601562,
+          -87.69236755371094,
+          -50.73659896850586
+        ],
+        [
+          16.388057708740234,
+          87.69236755371094,
+          54.03191375732422
+        ]
+      ],
+      "size_mm": [
+        30.030000686645508,
+        175.3800048828125,
+        104.7699966430664
+      ],
+      "triangle_count": 1088,
+      "mesh_check": {
+        "finite_coordinates": true,
+        "edge_incidence_two": true,
+        "duplicate_triangles": 0,
+        "signed_volume_mm3": 26136.265
+      }
+    },
+    {
+      "id": "09",
+      "file": "09-display-outer-frame.stl",
+      "name": "Display-Aussenrahmen",
+      "group": "display",
+      "color": "#b0d2e6",
+      "quantity": 1,
+      "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_Screen_OuterFrame.stl",
+      "sha256": "644ac75385166d79eaf0edf384ed6d0567d26be9330e6d4f61f808afbd1cd26a",
+      "bounds": [
+        [
+          -16.201051712036133,
+          -102.5,
+          -65.31715393066406
+        ],
+        [
+          19.204252243041992,
+          102.5,
+          70.266357421875
+        ]
+      ],
+      "size_mm": [
+        35.40999984741211,
+        205.0,
+        135.5800018310547
+      ],
+      "triangle_count": 1600,
+      "mesh_check": {
+        "finite_coordinates": true,
+        "edge_incidence_two": true,
+        "duplicate_triangles": 0,
+        "signed_volume_mm3": 43832.434
+      }
+    },
+    {
+      "id": "10",
+      "file": "10-display-rear-cover.stl",
+      "name": "Display-Rückschale",
+      "group": "display",
+      "color": "#7d9bb4",
+      "quantity": 1,
+      "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_Screen_BackCover.stl",
+      "sha256": "1f2b1cd7cdffc5aea0c0b39e31ea2a7881c4fc001e15f64bc3246461caf7e765",
+      "bounds": [
+        [
+          -91.59264373779297,
+          -102.5,
+          -73.91577911376953
+        ],
+        [
+          -8.550202369689941,
+          102.5,
+          65.49103546142578
+        ]
+      ],
+      "size_mm": [
+        83.04000091552734,
+        205.0,
+        139.41000366210938
+      ],
+      "source_sha256": "e20fa7775e46ea1a9634d22d0b82e6f40b2feeb5dbb2ee52c88ac58c4a146de8",
+      "processing": "Removed four facets: two pairs of coincident triangles with opposite winding. All other facet records and every retained coordinate are unchanged.",
+      "original_export": "source/10-display-rear-cover-original.stl",
+      "triangle_count": 5846,
+      "mesh_check": {
+        "finite_coordinates": true,
+        "edge_incidence_two": true,
+        "duplicate_triangles": 0,
+        "signed_volume_mm3": 149468.123
+      }
+    },
+    {
+      "id": "11",
+      "file": "11-camera-lower-shell.stl",
+      "name": "Kamera-Unterschale",
+      "group": "camera",
+      "color": "#91b7a2",
+      "quantity": 1,
+      "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_Cam_Lower.stl",
+      "sha256": "afc91f7448cdc2f73f8b970670c75debc6ba5a4edcb567326875a1e850d126a8",
+      "bounds": [
+        [
+          -47.89308166503906,
+          -42.47661590576172,
+          65.28958892822266
+        ],
+        [
+          -3.8930823802948,
+          42.47661590576172,
+          95.90742492675781
+        ]
+      ],
+      "size_mm": [
+        44.0,
+        84.94999694824219,
+        30.6200008392334
+      ],
+      "triangle_count": 3904,
+      "mesh_check": {
+        "finite_coordinates": true,
+        "edge_incidence_two": true,
+        "duplicate_triangles": 0,
+        "signed_volume_mm3": 28515.534
+      }
+    },
+    {
+      "id": "12",
+      "file": "12-camera-upper-shell.stl",
+      "name": "Kamera-Oberschale",
+      "group": "camera",
+      "color": "#b7d6c0",
+      "quantity": 1,
+      "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_Cam_Upper.stl",
+      "sha256": "1eb4c9e3a3338bc8179852b836e6dcd1373feb4c22604afd66fb2198ef81bcf3",
+      "bounds": [
+        [
+          -47.89308166503906,
+          -42.47661590576172,
+          89.90742492675781
+        ],
+        [
+          -3.8930823802948,
+          42.47661590576172,
+          115.38404083251953
+        ]
+      ],
+      "size_mm": [
+        44.0,
+        84.94999694824219,
+        25.479999542236328
+      ],
+      "triangle_count": 2834,
+      "mesh_check": {
+        "finite_coordinates": true,
+        "edge_incidence_two": true,
+        "duplicate_triangles": 0,
+        "signed_volume_mm3": 16180.372
+      }
+    },
+    {
+      "id": "13",
+      "file": "13-camera-lens-ring.stl",
+      "name": "Kamera-Frontring",
+      "group": "camera",
+      "color": "#6a8979",
+      "quantity": 1,
+      "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_Cam_Ring.stl",
+      "sha256": "26a4c27b4b6a57ff27550e0303eabeb5574ee80665b54285cf634363a907b71e",
+      "bounds": [
+        [
+          -4.893082618713379,
+          -36.247501373291016,
+          73.55992889404297
+        ],
+        [
+          -0.8930824398994446,
+          2.447499990463257,
+          112.25492858886719
+        ]
+      ],
+      "size_mm": [
+        4.0,
+        38.70000076293945,
+        38.70000076293945
+      ],
+      "triangle_count": 572,
+      "mesh_check": {
+        "finite_coordinates": true,
+        "edge_incidence_two": true,
+        "duplicate_triangles": 0,
+        "signed_volume_mm3": 1409.443
+      }
+    }
+  ]
+}
