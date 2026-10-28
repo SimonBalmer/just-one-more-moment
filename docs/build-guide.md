@@ -12,7 +12,7 @@ I list the parts in my [bill of materials](../hardware/BOM.md). I still need to 
 
 Download my [complete enclosure print pack](../mechanical/enclosure-print-pack.zip), or select the [individual numbered STLs](../mechanical/stl/). Print each of the 13 parts once at 100% scale, interpreting the coordinates as mm. Centre, orient and place parts on the bed individually; the exports retain the CAD assembly coordinates.
 
-Use my [four-page enclosure assembly guide](../mechanical/assembly/assembly-guide.pdf) for the part relationships. I include separate display, base and camera views. Purchased-component placeholders and the complete assembly mesh are excluded from the print pack. See the [mechanical notes](../mechanical/README.md) for scale checks, mesh validation and the limits of what the STL geometry specifies.
+Use my [six-page enclosure assembly guide](../mechanical/assembly/assembly-guide.pdf) for the part relationships. I include separate display, base and camera views. Purchased-component placeholders and the complete assembly mesh are excluded from the print pack. See the [mechanical notes](../mechanical/README.md) for scale checks, mesh validation and the limits of what the STL geometry specifies.
 
 ## 3. Assemble and wire
 

@@ -6,9 +6,9 @@
     {
       "id": "01",
       "file": "01-base-housing.stl",
-      "name": "Basisgehäuse",
+      "name": "Base housing",
       "group": "base",
-      "color": "#e7ab98",
+      "color": "#eeeeee",
       "quantity": 1,
       "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_SoulHousing.stl",
       "sha256": "a1f0c8bbcedc8552387bf8e3e0568464c9e43e8db889b9bd8e8fcf6f1fc18de2",
@@ -40,9 +40,9 @@
     {
       "id": "02",
       "file": "02-base-bottom-cover.stl",
-      "name": "Bodenabdeckung",
+      "name": "Bottom and rear cover",
       "group": "base",
-      "color": "#f3c6b7",
+      "color": "#c7c7c7",
       "quantity": 1,
       "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_SoulHousing_BottomCover.stl",
       "sha256": "e68ae3ed8ed16a5369f231a652d5e7e3fcf2b7457e120023da7676cf6f909b4e",
@@ -74,9 +74,9 @@
     {
       "id": "03",
       "file": "03-base-front-trim-left.stl",
-      "name": "Front-Zierleiste links",
+      "name": "Front trim, left",
       "group": "base",
-      "color": "#deb67c",
+      "color": "#bf1827",
       "quantity": 1,
       "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_SoulHousing_ReliefL.stl",
       "sha256": "cbf0e993bf6798977081e528f5e30b0f3d6454b254085efee90d1bae7e274b93",
@@ -108,9 +108,9 @@
     {
       "id": "04",
       "file": "04-base-front-trim-right.stl",
-      "name": "Front-Zierleiste rechts",
+      "name": "Front trim, right",
       "group": "base",
-      "color": "#deb67c",
+      "color": "#bf1827",
       "quantity": 1,
       "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_SoulHousing_ReliefR.stl",
       "sha256": "50e1e922632a798f711cce46f4887f3a883c30be414e3058c64248ac0ee8a22a",
@@ -142,9 +142,9 @@
     {
       "id": "05",
       "file": "05-rear-cable-guide-upper.stl",
-      "name": "Kabeldurchführung oben",
+      "name": "Cable guide, upper",
       "group": "base",
-      "color": "#ad9cc5",
+      "color": "#656565",
       "quantity": 1,
       "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_SoulHousing_PlugL.stl",
       "sha256": "f3cfd21e761ce28587b0b6d3da6d79ffc77a4154caa0f010c20b0baa8baad557",
@@ -176,9 +176,9 @@
     {
       "id": "06",
       "file": "06-rear-cable-guide-lower.stl",
-      "name": "Kabeldurchführung unten",
+      "name": "Cable guide, lower",
       "group": "base",
-      "color": "#c5b8d5",
+      "color": "#999999",
       "quantity": 1,
       "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_SoulHousing_PlugR.stl",
       "sha256": "b3e386b9da522b397c52db5091b4e8399ebb7cdd116b310e17990f344a91e45b",
@@ -210,9 +210,9 @@
     {
       "id": "07",
       "file": "07-display-main-bracket.stl",
-      "name": "Display-Haupthalter",
+      "name": "Display main bracket",
       "group": "display",
-      "color": "#7eacc8",
+      "color": "#b9b9b9",
       "quantity": 1,
       "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_Screen_MainBraket.stl",
       "sha256": "36065733203f8234dd63afe3b772660d465f4f0e332d7074ad5fd77f1061ff7e",
@@ -244,9 +244,9 @@
     {
       "id": "08",
       "file": "08-display-inner-bezel.stl",
-      "name": "Display-Innenrahmen",
+      "name": "Display inner bezel",
       "group": "display",
-      "color": "#8f9caa",
+      "color": "#555555",
       "quantity": 1,
       "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_Screen_InnerFrame.stl",
       "sha256": "a3613b1c17df9827c37e6ac8e57aaa5aa184404d654c368c66955a14e10639df",
@@ -278,9 +278,9 @@
     {
       "id": "09",
       "file": "09-display-outer-frame.stl",
-      "name": "Display-Aussenrahmen",
+      "name": "Display outer frame",
       "group": "display",
-      "color": "#b0d2e6",
+      "color": "#eeeeee",
       "quantity": 1,
       "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_Screen_OuterFrame.stl",
       "sha256": "644ac75385166d79eaf0edf384ed6d0567d26be9330e6d4f61f808afbd1cd26a",
@@ -312,9 +312,9 @@
     {
       "id": "10",
       "file": "10-display-rear-cover.stl",
-      "name": "Display-Rückschale",
+      "name": "Display rear cover",
       "group": "display",
-      "color": "#7d9bb4",
+      "color": "#c7c7c7",
       "quantity": 1,
       "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_Screen_BackCover.stl",
       "sha256": "1f2b1cd7cdffc5aea0c0b39e31ea2a7881c4fc001e15f64bc3246461caf7e765",
@@ -349,9 +349,9 @@
     {
       "id": "11",
       "file": "11-camera-lower-shell.stl",
-      "name": "Kamera-Unterschale",
+      "name": "Camera lower shell",
       "group": "camera",
-      "color": "#91b7a2",
+      "color": "#dddddd",
       "quantity": 1,
       "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_Cam_Lower.stl",
       "sha256": "afc91f7448cdc2f73f8b970670c75debc6ba5a4edcb567326875a1e850d126a8",
@@ -383,9 +383,9 @@
     {
       "id": "12",
       "file": "12-camera-upper-shell.stl",
-      "name": "Kamera-Oberschale",
+      "name": "Camera upper shell",
       "group": "camera",
-      "color": "#b7d6c0",
+      "color": "#eeeeee",
       "quantity": 1,
       "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_Cam_Upper.stl",
       "sha256": "1eb4c9e3a3338bc8179852b836e6dcd1373feb4c22604afd66fb2198ef81bcf3",
@@ -417,9 +417,9 @@
     {
       "id": "13",
       "file": "13-camera-lens-ring.stl",
-      "name": "Kamera-Frontring",
+      "name": "Camera front ring",
       "group": "camera",
-      "color": "#6a8979",
+      "color": "#bf1827",
       "quantity": 1,
       "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_Cam_Ring.stl",
       "sha256": "26a4c27b4b6a57ff27550e0303eabeb5574ee80665b54285cf634363a907b71e",
@@ -448,5 +448,54 @@
         "signed_volume_mm3": 1409.443
       }
     }
-  ]
+  ],
+  "illustration_references": [
+    {
+      "id": "E1",
+      "name": "Raspberry Pi Touch Display 2",
+      "geometry": "Simplified envelope measured from the supplied display reference model.",
+      "print": false
+    },
+    {
+      "id": "E2",
+      "name": "Raspberry Pi 5 and cooler",
+      "geometry": "Envelope from the supplied Pi placeholder; chip and port details are symbols only.",
+      "print": false
+    },
+    {
+      "id": "E3",
+      "name": "Logitech C270 camera",
+      "geometry": "Approximate body and lens, aligned to the lens opening. No camera CAD model was supplied.",
+      "print": false
+    },
+    {
+      "id": "E4",
+      "name": "Illuminated arcade button, including its LED",
+      "geometry": "Front centre from the supplied button reference; rear body is schematic.",
+      "quantity": 1,
+      "print": false
+    },
+    {
+      "id": "E5",
+      "name": "SW01: Local AI / Cloud AI + Cam",
+      "geometry": "Schematic toggle in the left small front opening; match the wiring labels.",
+      "quantity": 1,
+      "print": false
+    },
+    {
+      "id": "E6",
+      "name": "SW02: EN / DE",
+      "geometry": "Schematic toggle in the right small front opening; match the wiring labels.",
+      "quantity": 1,
+      "print": false
+    },
+    {
+      "id": "E7",
+      "name": "WS2812B NeoPixels",
+      "geometry": "12 LEDs under the inside ceiling of the base, shining through the side vents. Position confirmed by Simon; spacing is schematic.",
+      "quantity_leds": 12,
+      "print": false
+    }
+  ],
+  "drawing_revision": "02"
 }
