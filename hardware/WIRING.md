@@ -32,6 +32,14 @@ This is my final documented wiring layout for **Just One More Moment**, revision
 
 I have selected the unused **physical pin 34** as the NeoPixel ground in this documented layout. All GND pins share the same electrical ground inside the Pi.
 
+## Wire preparation and assembly
+
+I used jumper wires with female connectors plugged directly onto the Raspberry Pi header pins. At the button and switch ends, I cut off the connectors, stripped the wire ends and soldered them to the correct terminals shown in the wiring diagram. Each solder joint was insulated and secured with heat-shrink tubing.
+
+![Wiring and assembly photos: soldering the button contacts, prepared wiring, parts before assembly and the Raspberry Pi mounted behind the display](../media/photos/wiring-assembly.jpg)
+
+*From left to right: soldering the button contacts; prepared wires and controls; parts laid out before assembly; Raspberry Pi and wiring mounted behind the display.*
+
 ## D1: my MIC 1N4001 diode
 
 I use a **MIC 1N4001** in series with the NeoPixel **5 V supply lead**:
