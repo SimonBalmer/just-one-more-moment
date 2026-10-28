@@ -10,7 +10,7 @@ This is my final documented wiring layout for **Just One More Moment**, revision
 
 [SVG](diagrams/wiring-overview.svg) · [PNG](diagrams/wiring-overview.png) · [A3 landscape PDF](diagrams/wiring-overview.pdf) · [Drawing source](diagrams/README.md)
 
-## My connections
+## Connections
 
 | Component / lead | Physical header pin | Function |
 | --- | --- | --- |
