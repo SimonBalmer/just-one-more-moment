@@ -2,7 +2,7 @@
 
 # My wiring illustration
 
-This is the final documented wiring layout for my installation, revision 03. I show a top view of the Pi with the GPIO header above the board and USB ports on the right. Every GPIO attachment is labelled by physical pin number, and the component terminals also identify the relevant BCM GPIO.
+This is the final documented wiring layout for my installation, revision 04. I group the main connection view by component, with no crossing GPIO leads. Each lead ends at a labelled component terminal and a labelled Pi connection, including its physical pin and BCM function. The separate **J8 physical pin locator** shows the real 40-pin arrangement in top view, with USB ports on the right and pin 1 at the lower left.
 
 ![My Raspberry Pi 5 wiring, including the MIC 1N4001 in the NeoPixel supply](wiring-overview.svg)
 
@@ -12,7 +12,7 @@ This is the final documented wiring layout for my installation, revision 03. I s
 - [PNG - raster preview](wiring-overview.png)
 - [PDF - one A3 landscape page](wiring-overview.pdf)
 
-The component shapes and USB/DSI port positions are illustrative, not mechanical drawings. The physical GPIO pin numbers and terminal labels define my documented connections. I selected free **GND pin 34** for the NeoPixel return in this layout; it is electrically equivalent to the other GND pins.
+The Pi block is a functional connection view; its terminals are grouped by device, not in physical header order. I use the J8 locator for the actual pin positions. Component shapes and USB/DSI port positions are illustrative. The physical GPIO pin numbers and terminal labels define my documented connections. I selected free **GND pin 34** for the NeoPixel return in this layout; it is electrically equivalent to the other GND pins.
 
 ## My controls and supply
 

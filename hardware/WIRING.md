@@ -2,9 +2,9 @@
 
 # My wiring and pin assignment
 
-This is my final documented wiring layout for **Just One More Moment**, revision 03, **28 October 2026**.
+This is my final documented wiring layout for **Just One More Moment**, revision 04, **28 October 2026**.
 
-**All numbered header pins are physical positions on the Pi's 40-pin header. GPIO labels use BCM numbering.** In the drawing I show a top view with the GPIO header above the board and USB ports on the right. Pin 1 is the lower-left pin of that header.
+**All numbered header pins are physical positions on the Pi's 40-pin header. GPIO labels use BCM numbering.** I group the main drawing by component so each connection runs directly between its two labelled terminals. The Pi block is a connection view, not the physical order of the pins. The separate **J8 physical pin locator** shows the actual 40-pin arrangement in a top view with USB ports on the right; pin 1 is at the lower left.
 
 ![My labelled Raspberry Pi 5 wiring](diagrams/wiring-overview.svg)
 
@@ -61,8 +61,9 @@ These are software mode inputs. The webcam connects by USB; SW01 does not switch
 - Red leads carry the 5 V supply. The strip side of D1 is labelled +V because the diode reduces its voltage.
 - Black leads are ground connections.
 - Black leads with white dashes are GPIO signals.
-- Line crossings are not electrical junctions.
-- Component shapes and USB/DSI port positions are illustrative. The physical header numbers and terminal labels define the connections.
+- Each GPIO lead has its component terminal name at one end and its physical pin plus function at the Pi end. The leads do not cross.
+- Wide grey cables are USB or DSI connections, labelled at both ends.
+- I use the J8 locator to find the physical pins. Component shapes and port positions in the main connection view are grouped for clarity, rather than drawn to scale.
 - I disconnect power before changing connections.
 
 ## References

@@ -154,209 +154,210 @@ def pixel(a,x,y,value,scale=7,color=BLACK):
     return x
 
 
-def pin(n):return (1000+((n-1)//2)*34,610 if n%2==0 else 650)
+# Connection view: endpoints are grouped by component rather than drawn at their
+# physical positions. The separate pin locator is the physical top view of J8.
+# Each tuple is (physical pin, component terminal, y, side, wire kind).
+CONNECTIONS = [
+    (2, '+5 V', 350, 'left', 'power'),
+    (6, 'GND', 405, 'left', 'ground'),
+    (9, 'COM', 665, 'left', 'ground'),
+    (11, 'NO', 720, 'left', 'signal'),
+    (13, 'LED+', 800, 'left', 'signal'),
+    (14, 'LED-', 855, 'left', 'ground'),
+    (15, 'SIGNAL', 1040, 'left', 'signal'),
+    (20, 'GND', 1090, 'left', 'ground'),
+    (16, 'SIGNAL', 1250, 'left', 'signal'),
+    (25, 'GND', 1300, 'left', 'ground'),
+    (4, '+V', 360, 'right', 'power'),
+    (19, 'DIN', 500, 'right', 'signal'),
+    (34, 'GND', 620, 'right', 'ground'),
+]
 
 
-def terminal(a,x,y,label,side='left',color=BLACK,textcolor=None):
-    a.circle(x,y,7,WHITE,color,3)
-    a.text(x+16 if side=='left' else x-220,y-11,label,19,textcolor or color)
+def right_text(a, x, y, value, size=24, color=BLACK):
+    width = sum(metrics[cmap.get(ord(c), cmap[ord('?')])][0] for c in value)*size/units
+    a.text(x-width, y, value, size, color)
+
+
+def end_dot(a, x, y, color=BLACK):
+    a.circle(x, y, 7, WHITE, color, 3)
+
+
+def cable(a, x1, x2, y, kind='usb'):
+    a.line([(x1,y),(x2,y)], BLACK, 18 if kind=='usb' else 24)
+    a.line([(x1,y),(x2,y)], MID, 10 if kind=='usb' else 17)
+    if kind=='ribbon':
+        a.line([(x1,y-4),(x2,y-4)], WHITE, 2)
+        a.line([(x1,y+4),(x2,y+4)], WHITE, 2)
+
+
+def toggle(a, y, title, mode):
+    a.text(90,y-24,title,27,RED)
+    a.rect(90,y,610,145,LIGHT,BLACK,3,12)
+    a.circle(165,y+68,36,BLACK,None)
+    a.circle(165,y+68,26,MID,None)
+    a.line([(165,y+68),(145,y+25)],BLACK,16)
+    a.circle(145,y+25,11,WHITE,BLACK,2)
+    a.text(230,y+52,mode[0],23)
+    a.text(230,y+91,mode[1],23)
 
 
 def main():
     OUT.mkdir(parents=True,exist_ok=True)
-    desc=('My Raspberry Pi 5 wiring: display power pins 2/6; button COM/NO pins 9/11; '
-          'button LED pins 13/14; switch 1 pins 15/20; switch 2 pins 16/25; '
-          '12 NeoPixels DIN pin 19 GPIO10. The diode is in the 5 V supply with its cathode band toward the strip. '
-          'NeoPixel power uses physical pin 4 through a MIC 1N4001 diode; pin 34 is the ground selected for this plan. '
-          'SW01 is local AI or cloud AI plus camera; SW02 selects English or German. USB webcam and DSI display link included.')
+    assert {c[0] for c in CONNECTIONS} == USED
+    assert len(CONNECTIONS) == len(USED)
+    desc=('My wiring for Just One More Moment, by Simon Balmer. '
+          'Connection view grouped by component; separate physical 40-pin J8 locator. '
+          'Display P2/P6 plus DSI; button COM P9, NO P11 GPIO17, LED+ P13 GPIO27, LED- P14. '
+          'SW01 P15 GPIO22/P20 GND; SW02 P16 GPIO23/P25 GND. '
+          '12 NeoPixels: P4 through MIC 1N4001 to +V, cathode ring toward strip; '
+          'P19 GPIO10 directly to DIN; P34 to GND. Webcam USB; official PSU USB-C.')
     a=Art(W,H,OUT/'wiring-overview.pdf',desc)
     a.rect(0,0,W,H,WHITE,None)
-    a.rect(55,45,2490,1810,WHITE,BLACK,2)
-    a.text(85,88,'PHKI / HSLU / SIMON BALMER',21,RED)
-    end=pixel(a,85,112,'JUST ONE MORE MOMENT',7)
-    a.rect(end+12,112,22,49,RED,None)
-    a.text(1850,110,'WIRING OVERVIEW',30)
-    a.text(1850,149,'REV 03 / 28 OCT 2026',21,RED)
+    a.rect(45,35,2510,1825,WHITE,BLACK,2)
+    a.text(85,83,'PHKI / HSLU / SIMON BALMER',22,RED)
+    end=pixel(a,85,108,'JUST ONE MORE MOMENT',7)
+    a.rect(end+12,108,22,49,RED,None)
+    a.text(1870,108,'WIRING OVERVIEW',29)
+    a.text(1870,150,'REV 04 / 28 OCT 2026',22,RED)
+    a.text(90,200,'Connections grouped by component. Physical J8 pin positions: locator below.',23)
 
-    # Recognisable top-view components; neutral technical geometry, not to scale.
-    a.text(100,250,'01 / TOUCH DISPLAY 2',27,RED)
-    a.rect(100,275,560,285,BLACK,BLACK,4,14)
-    a.rect(122,296,510,225,WHITE,MID,2,6)
-    a.rect(142,315,470,187,BLACK,None,0,3)
-    a.text(173,368,'JUST ONE MORE',30,WHITE)
-    a.text(173,411,'MOMENT_',36,RED)
-    a.text(173,468,'remaining: ...',21,WHITE)
-    for x in [116,644]:
-        for y in [289,545]:a.circle(x,y,5,WHITE,None)
-    a.text(110,600,'POWER: P2 / P6',21)
-    a.text(110,628,'VIDEO + TOUCH: DSI / FFC',21)
+    # Main functional view. The central block explicitly does not depict the
+    # physical arrangement of pins or USB/DSI ports.
+    a.rect(1010,230,580,1140,BLACK,BLACK,3,18)
+    a.text(1040,273,'RASPBERRY PI 5',30,WHITE)
+    a.text(1040,309,'8 GB / CONNECTION VIEW',21,MID)
+    a.text(1040,1340,'Pxx = physical header pin',21,WHITE)
+    a.text(1320,725,'J8 / GPIO',24,WHITE)
+    a.rect(1350,755,180,140,GREY,MID,3,8)
+    a.rect(1378,777,124,95,BLACK,MID,2,3)
+    a.text(1392,837,'PI 5',26,WHITE)
+    a.text(1320,1035,'BCM numbering',21,MID)
+    a.text(1320,1068,'for GPIOxx',21,MID)
 
-    a.text(100,850,'02 / ILLUMINATED ARCADE BUTTON',27,RED)
-    a.rect(100,875,500,320,LIGHT,BLACK,3,10)
-    a.circle(260,1010,101,BLACK,BLACK,3)
-    a.circle(260,1004,85,WHITE,MID,7)
-    a.circle(260,1004,70,WHITE,BLACK,2)
-    a.text(214,1012,'+TIME',24,RED)
-    a.text(130,1158,'33 mm / WHITE LED',21)
+    # Display with distinct power and ribbon terminals.
+    a.text(90,260,'01 / TOUCH DISPLAY 2',27,RED)
+    a.rect(90,285,610,255,LIGHT,BLACK,3,12)
+    a.rect(113,307,410,209,BLACK,BLACK,2,9)
+    a.rect(131,325,374,171,WHITE,MID,2,3)
+    a.rect(144,337,348,146,BLACK,None)
+    a.text(165,382,'JUST ONE MORE',25,WHITE)
+    a.text(165,419,'MOMENT_',32,RED)
+    a.text(165,459,'+ one more moment',19,WHITE)
+    a.text(552,487,'DSI',23)
+    cable(a,700,1010,480,'ribbon')
+    a.text(730,462,'VIDEO + TOUCH',21)
+    a.text(1040,488,'CAM/DISP / DSI',24,WHITE)
 
-    for label,y in [('03 / SW01 / AI MODE',300),('04 / SW02 / LANGUAGE',700)]:
-        a.text(1970,y-20,label,27,RED)
-        a.rect(1970,y,460,180,LIGHT,BLACK,3,8)
-        a.circle(2240,y+90,46,BLACK,BLACK,2)
-        a.circle(2240,y+90,34,MID,BLACK,2)
-        a.line([(2240,y+90),(2215,y+26)],BLACK,20)
-        a.circle(2215,y+26,13,WHITE,BLACK,3)
-    a.text(2000,460,'LOCAL AI / CLOUD AI + CAM',19)
-    a.text(2000,860,'EN / DE',23)
+    # Button: contact pair and LED pair have generous separation.
+    a.text(90,584,'02 / ILLUMINATED ARCADE BUTTON',27,RED)
+    a.rect(90,610,610,300,LIGHT,BLACK,3,12)
+    a.circle(285,748,101,BLACK,None)
+    a.circle(285,743,85,WHITE,MID,7)
+    a.circle(285,743,70,WHITE,BLACK,2)
+    a.text(239,753,'+TIME',24,RED)
+    a.text(151,885,'33 mm / WHITE LED',21)
+    a.line([(535,757),(677,757)],MID,2)
 
-    a.text(1110,220,'05 / LOGITECH C270',27,RED)
-    a.rect(1110,245,350,145,BLACK,BLACK,3,20)
-    a.rect(1130,263,310,100,GREY,None,0,12)
-    a.circle(1285,314,45,BLACK,WHITE,3)
-    a.circle(1285,314,27,BLACK,RED,3)
-    a.circle(1275,304,7,WHITE,None)
-    a.rect(1238,390,95,30,BLACK,None,0,4)
-    a.text(1110,454,'USB / VISUAL CONTEXT',21)
+    # Two software inputs, not switches in the USB or supply wiring.
+    toggle(a,995,'03 / SW01 / AI MODE',('LOCAL AI /','CLOUD AI + CAM'))
+    toggle(a,1205,'04 / SW02 / LANGUAGE',('EN / DE',''))
 
-    # Pi board in the same orientation as the reference: GPIO top, USB right.
-    a.rect(930,580,830,570,BLACK,BLACK,4,24)
-    a.rect(945,595,800,540,None,GREY,2,15)
-    for x,y in [(955,606),(1732,607),(956,1123),(1730,1122)]:
-        a.circle(x,y,14,MID,WHITE,3);a.circle(x,y,7,WHITE,None)
-    a.rect(987,590,676,80,GREY,WHITE,2,5)
-    a.rect(1000,850,175,110,MID,WHITE,2,3)
-    a.rect(1230,945,145,140,MID,WHITE,2,3)
-    a.rect(1248,962,109,104,LIGHT,GREY,3,2)
-    a.rect(1475,785,140,110,GREY,MID,2,3)
-    for x in range(1000,1150,25):
-        a.rect(x,1000,15,28,MID,None)
-        a.rect(x,1045,15,14,MID,None)
-    for y in [750,900]:
-        a.rect(1690,y,100,100,MID,WHITE,2,3)
-        a.rect(1701,y+12,79,27,BLACK,None)
-        a.rect(1701,y+58,79,27,BLACK,None)
-    a.rect(1670,1030,125,112,MID,WHITE,2,3)
-    a.rect(1680,1060,105,62,BLACK,None)
-    a.text(1495,722,'USB',18,WHITE)
-    a.text(1490,1115,'CAM/DISP',17,WHITE)
-    a.rect(1460,1040,28,88,LIGHT,GREY,2)
-    a.rect(1000,1125,72,36,MID,WHITE,2,4)
-    a.text(930,1198,'USB-C',20)
-    a.text(990,1110,'RASPBERRY PI 5 / 8 GB',26,WHITE)
-
-    # External leads. A break/halo at each crossing means no electrical junction.
-    a.wire([(660,350),(750,350),(750,180),(1000,180),pin(2)],'power')
-    a.wire([(660,390),(785,390),(785,210),(1068,210),pin(6)],'ground')
-    a.wire([pin(9),(1136,730),(700,730),(700,940),(600,940)],'ground')
-    a.wire([pin(11),(1170,760),(730,760),(730,980),(600,980)])
-    a.wire([pin(13),(1204,790),(760,790),(760,1060),(600,1060)])
-    a.wire([pin(14),(1204,550),(900,550),(900,1100),(600,1100)],'ground')
-    a.wire([pin(15),(1238,850),(1850,850),(1850,390),(1970,390)])
-    a.wire([pin(20),(1306,510),(1880,510),(1880,430),(1970,430)],'ground')
-    a.wire([pin(16),(1238,480),(1820,480),(1820,790),(1970,790)])
-    a.wire([pin(25),(1408,880),(1880,880),(1880,830),(1970,830)],'ground')
-    a.wire([pin(19),(1306,910),(1700,910),(1700,1240),(1760,1240)])
-    a.wire([(1460,315),(1920,315),(1920,800),(1790,800)],'ground')
-    # P4 and the free ground P34 define the NeoPixel supply in this plan.
-    a.wire([pin(4),(1034,240),(2470,240),(2470,1395),(1600,1395),(1600,1160),(1760,1160)],'power')
-    a.wire([pin(34),(1544,525),(2505,525),(2505,1460),(1645,1460),(1645,1320),(1760,1320)],'ground')
-    # DSI ribbon: wider grey flat cable, not a GPIO lead.
-    ribbon=[(660,500),(850,500),(850,1220),(1474,1220),(1474,1128)]
-    a.line(ribbon,BLACK,28);a.line(ribbon,MID,22);a.line(ribbon,WHITE,2)
-    a.text(1120,1264,'DSI / FFC',21)
-    # USB-C power supply and cable.
-    a.line([(1036,1161),(1036,1300)],BLACK,16)
-    a.rect(935,1300,205,140,BLACK,BLACK,3,9)
-    a.text(963,1345,'OFFICIAL',22,WHITE)
-    a.text(971,1382,'27 W',28,WHITE)
-    a.text(962,1415,'USB-C PSU',18,WHITE)
-
-    # Header drawn last to make every attachment and physical number explicit.
-    for n in range(1,41):
-        x,y=pin(n)
-        a.rect(x-14,y-14,28,28,RED if n in USED else LIGHT,WHITE,1.5,2)
-        a.text(x-(6 if n<10 else 11),y+6,str(n),17,WHITE if n in USED else GREY)
-    a.text(963,710,'J8 / PIN 1',18,WHITE)
-    a.line([(988,689),(988,680),(1000,666)],RED,2)
-    a.text(1410,505,'GPIO / TOP VIEW',21)
-
-    # Component-side terminal labels keep BCM and physical numbering together.
-    terminal(a,660,350,'P2 / 5 V','right',RED)
-    terminal(a,660,390,'P6 / GND','right',textcolor=WHITE)
-    terminal(a,600,940,'COM / P9','right')
-    terminal(a,600,980,'NO / P11 / GPIO17','right')
-    terminal(a,600,1060,'LED+ P13 / GPIO27','right')
-    terminal(a,600,1100,'LED- / P14','right')
-    terminal(a,1970,390,'P15 / GPIO22')
-    terminal(a,1970,430,'P20 / GND')
-    terminal(a,1970,790,'P16 / GPIO23')
-    terminal(a,1970,830,'P25 / GND')
-
-    # NeoPixel strip: exactly 12 visible emitters and three distinct rails.
-    a.text(1810,1080,'06 / WS2812B / 12 LEDs',27,RED)
-    a.rect(1760,1120,670,220,BLACK,BLACK,3,5)
+    # Twelve emitters are shown in a recognisable vertical strip. Terminal
+    # positions on this illustration are functional, not a solder-pad template.
+    a.text(1910,260,'05 / WS2812B / 12 LEDs',27,RED)
+    a.rect(1910,285,600,445,LIGHT,BLACK,3,12)
+    a.rect(2255,316,150,382,BLACK,BLACK,2,6)
     for i in range(12):
-        x=1808+i*49
-        a.rect(x,1175,36,36,LIGHT,GREY,2,3)
-        a.rect(x+9,1184,18,18,RED,None,0,2)
-        a.text(x+7,1240,f'{i+1:02}',17,WHITE)
-    a.text(1830,1294,'DIN -> PIXEL 01 -> ... -> PIXEL 12',20,WHITE)
-    a.text(1760,1375,'P19 / GPIO10 -> DIN',24)
+        y=330+i*29
+        a.rect(2281,y,23,23,WHITE,MID,1,2)
+        a.rect(2287,y+6,11,11,RED,None)
+        a.text(2323,y+18,f'{i+1:02}',20,WHITE)
+    a.text(1940,692,'DIN -> PIXEL 01',23)
+    a.text(1940,721,'-> ... -> 12',20)
 
-    # D1 is in the 5 V lead only; the band faces upward toward strip +V.
-    a.text(1250,1372,'P4 / 5 V -> D1 -> STRIP +V',21,RED)
-    a.rect(1583,1194,34,90,BLACK,BLACK,2,5)
-    a.rect(1583,1204,34,12,MID,None)
-    a.text(1260,1288,'D1 / MIC 1N4001',22,RED)
-    a.text(1330,1320,'BAND / K',20)
-    a.line([(1460,1310),(1567,1210)],GREY,2)
-    a.text(1760,1440,'P34 / COMMON GND',21)
-    terminal(a,1760,1160,'+V','left',RED)
-    terminal(a,1760,1240,'DIN','left',textcolor=WHITE)
-    terminal(a,1760,1320,'GND','left',textcolor=WHITE)
+    # Camera and PSU have their own cable category, unlike GND wires.
+    a.text(1910,823,'06 / LOGITECH C270',27,RED)
+    a.rect(1910,848,600,220,LIGHT,BLACK,3,12)
+    a.rect(2130,883,320,126,BLACK,BLACK,3,18)
+    a.rect(2147,899,285,85,GREY,None,0,9)
+    a.circle(2290,941,42,BLACK,WHITE,3)
+    a.circle(2290,941,24,BLACK,RED,3)
+    a.circle(2280,931,6,WHITE,None)
+    a.rect(2250,1009,80,20,BLACK,None,0,3)
+    a.text(1940,1047,'USB / VISUAL CONTEXT',22)
+    cable(a,1590,1910,950)
+    a.text(1680,930,'USB',23)
+    a.text(1495,958,'USB',24,WHITE)
+    a.text(1940,938,'USB',23)
 
-    # Notes / enlarged diode detail are part of the drawing, not assumed wiring.
-    a.line([(85,1510),(2515,1510)],BLACK,2)
-    a.text(90,1556,'READ THE DRAWING',25,RED)
-    a.wire([(95,1600),(190,1600)],'power');a.text(220,1607,'5 V supply',21)
-    a.wire([(95,1645),(190,1645)],'ground');a.text(220,1652,'GND / common return',21)
-    a.wire([(95,1690),(190,1690)]);a.text(220,1697,'GPIO signal (3.3 V)',21)
-    a.text(90,1750,'Pxx = physical header pin.',21)
-    a.text(90,1785,'Crossings do not join wires.',21)
-    a.text(90,1820,'Component views are not to scale.',19,GREY)
+    a.text(1910,1158,'07 / OFFICIAL POWER SUPPLY',27,RED)
+    a.rect(1910,1185,600,170,LIGHT,BLACK,3,12)
+    a.rect(2140,1205,300,130,BLACK,BLACK,3,10)
+    a.text(2180,1257,'27 W',33,WHITE)
+    a.text(2170,1304,'USB-C PSU',24,WHITE)
+    cable(a,1590,1910,1270)
+    a.text(1660,1250,'USB-C',23)
+    a.text(1460,1278,'USB-C',24,WHITE)
+    a.text(1940,1258,'USB-C',23)
 
-    a.text(790,1556,'D1 / MIC 1N4001 / 5 V LEAD',25,RED)
-    a.line([(800,1630),(1310,1630)],RED,8)
-    a.rect(970,1592,180,76,BLACK,BLACK,2,10)
-    a.rect(1116,1592,17,76,MID,None)
-    a.text(795,1592,'PI 5 V',21,RED)
-    a.text(1180,1592,'STRIP +V',21,RED)
-    a.text(978,1710,'A',22);a.text(1110,1710,'K',22)
-    a.text(790,1760,'Cathode band faces the strip.',22)
-    a.text(790,1795,'DIN connects directly to GPIO10.',21)
-    a.text(790,1825,'I use the Adafruit supply-drop method.',19,GREY)
+    # Every GPIO lead is one horizontal line with a terminal name at the
+    # component and the physical pin plus BCM function on the Pi.
+    for n,label,y,side,kind in CONNECTIONS:
+        x1,x2=(700,1010) if side=='left' else (1590,1910)
+        a.wire([(x1,y),(x2,y)],kind)
+        color=RED if kind=='power' else BLACK
+        end_dot(a,x1,y,color);end_dot(a,x2,y,color)
+        pin_label=f'P{n} / {PIN_NAMES[n-1]}'
+        if side=='left':
+            right_text(a,677,y+8,label,23)
+            a.text(1040,y+8,pin_label,24,WHITE)
+        else:
+            right_text(a,1560,y+8,pin_label,24,WHITE)
+            a.text(1938,y+8,label,24)
 
-    a.text(1700,1556,'WHY I USE THE DIODE',25,RED)
-    a.text(1700,1607,'D1 lowers the strip supply voltage.',21)
-    a.text(1700,1652,'This helps it read 3.3 V data as HIGH.',21)
-    a.text(1700,1697,'GPIO10 itself stays at 3.3 V.',21)
-    a.text(1700,1742,'P4 = 5 V / P34 = common GND.',21)
-    a.text(1700,1787,'Power off before changing wires.',21)
-    a.text(1700,1825,'USB/DSI port positions: illustrative.',19,GREY)
+    # Realistic D1 body inserted directly in the red P4 -> +V lead. The band
+    # is on the strip/right side. Separate labels never cover a conductor.
+    a.text(1610,305,'D1 / MIC 1N4001',22,RED)
+    a.rect(1670,339,145,42,BLACK,BLACK,2,6)
+    a.rect(1783,339,14,42,MID,None)
+    a.text(1675,414,'A',23)
+    a.text(1785,414,'K',23)
+    a.text(1660,449,'RING -> STRIP',21)
 
+    # Dedicated locator: actual physical pin positions in a clearly oriented
+    # top view, independent of the grouped connection view above.
+    a.line([(85,1425),(2515,1425)],BLACK,2)
+    a.text(90,1473,'J8 / PHYSICAL PIN LOCATOR',27,RED)
+    a.rect(110,1500,1240,195,LIGHT,BLACK,2,10)
+    a.text(150,1537,'TOP VIEW / USB PORTS AT RIGHT',22)
+    for n in range(1,41):
+        x=165+((n-1)//2)*57
+        y=1580 if n%2==0 else 1640
+        a.rect(x-21,y-21,42,42,RED if n in USED else WHITE,BLACK,3 if n==1 else 1,3)
+        right_text(a,x+(8 if n<10 else 16),y+9,str(n),26,WHITE if n in USED else GREY)
+    for y in (1563,1623):
+        a.rect(1314,y,55,40,BLACK,None,0,3)
+    a.text(90,1732,'P1 = lower left. Red pins are used in my wiring.',22)
+    a.line([(1410,1457),(1410,1828)],MID,2)
+
+    a.text(1470,1473,'WHY I USE D1',27,RED)
+    a.text(1470,1522,'I lower the strip supply with D1 so it can',23)
+    a.text(1470,1561,'recognize 3.3 V data more reliably.',23)
+    a.text(1470,1600,'GPIO10 itself stays at 3.3 V.',23)
+    a.text(1470,1658,'Cathode ring -> strip +V. DIN -> GPIO10.',23)
+    a.text(1470,1715,'SW01 and SW02 are software inputs.',23)
+    a.text(1470,1754,'SW01 does not switch the USB camera cable.',23)
+    a.text(1470,1812,'I disconnect power before changing wires.',22)
+
+    # Compact key using the exact line styles in the main drawing.
+    for x,label,kind in [(90,'5 V / +V','power'),(485,'GND','ground'),(800,'GPIO / 3.3 V','signal')]:
+        a.wire([(x,1790),(x+75,1790)],kind)
+        a.text(x+93,1798,label,22)
+    a.text(90,1840,'Component and port positions in the main view are grouped for clarity.',21,GREY)
     a.save(OUT/'wiring-overview.svg')
-    subprocess.run(['pdftoppm','-singlefile','-scale-to','2600','-png',str(OUT/'wiring-overview.pdf'),str(OUT/'wiring-overview')],check=True)
-
-    # Shared retro graphic for the Markdown documentation.
-    banner=Art(1600,220,description='Just One More Moment - my PHKI project documentation')
-    banner.rect(0,0,1600,220,BLACK,None)
-    banner.rect(0,0,14,220,RED,None)
-    banner.text(52,48,'SIMON BALMER / PHKI / HSLU',22,WHITE)
-    end=pixel(banner,52,78,'JUST ONE MORE MOMENT',7,WHITE)
-    banner.rect(end+12,78,22,49,RED,None)
-    banner.text(52,187,'AI / EMPATHY / RESPONSIBILITY',23,RED)
-    banner.save(OUT/'project-banner.svg')
-    print('Generated wiring SVG, PDF, PNG and retro project banner.')
+    subprocess.run(['pdftoppm','-singlefile','-scale-to','3000','-png',str(OUT/'wiring-overview.pdf'),str(OUT/'wiring-overview')],check=True)
+    print('Generated wiring SVG, A3 PDF and PNG. All 13 GPIO connections are explicit.')
 
 
 if __name__=='__main__':main()
