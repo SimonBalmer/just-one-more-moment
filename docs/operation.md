@@ -1,29 +1,31 @@
-# Operation and interaction
+![Just One More Moment](../hardware/diagrams/project-banner.svg)
 
-## Core experience
+# How my installation works
 
-Visitors see the device's remaining runtime and generated language. They can press a physical button to extend its countdown or let the timer run out. The project explores the difference between technical and emotional language and its effect on empathy and responsibility.
+## The core experience
+
+Visitors see my device's remaining runtime and generated language. They can press the physical button to extend its countdown or let the timer run out. I use this interaction to explore the effect of technical or emotional language on empathy and responsibility.
 
 ## Visual context
 
-A Logitech C270 is connected to the Raspberry Pi through USB. The builder reports that it provides visual context for the model, allowing responses to refer to spectators and their surroundings. Disabling this input through a physical switch is planned.
+I connect a Logitech C270 to my Raspberry Pi through USB. It provides visual context so the model can respond to visitors and their surroundings. I plan to make this input optional through a physical switch.
 
-## Physical controls
+## My controls
 
-| Control | Current documentation |
+| Control | What I have documented |
 | --- | --- |
-| Arcade button | Extends the countdown; exact increment and handling to document from code |
-| Toggle switch 1 | GPIO22; actual function and position mapping pending |
-| Toggle switch 2 | GPIO23; actual function and position mapping pending |
+| Arcade button | Extends the countdown; I still need to document the exact increment and handling from my code |
+| Toggle switch 1 | GPIO22; I still need to record its actual function and position mapping |
+| Toggle switch 2 | GPIO23; I still need to record its actual function and position mapping |
 
-## Behavior to document with the implementation
+## Behavior I still need to document
 
-- Startup and shutdown procedure.
+- My startup and shutdown procedure.
 - Initial runtime, time added per press, limits and reset behavior.
-- Behavior at zero: this is not yet specified in the supplied material.
-- Technical/emotional mode and any language selection.
-- Webcam processing pipeline, update frequency and planned disable switch.
-- Whether image frames are retained, how camera operation is indicated and how visitors are informed.
-- Error behavior if the model or camera is unavailable.
+- What happens when the countdown reaches zero.
+- The technical/emotional mode and any language selection.
+- My webcam processing pipeline, update frequency and planned disable option.
+- Whether I retain image frames, how I indicate camera operation and how I inform visitors.
+- What the device does when the model or camera is unavailable.
 
-This page distinguishes the interaction intent and builder-confirmed camera use from details awaiting the code.
+I keep the experience I intend to create separate from the details I still need to check in my implementation.

@@ -1,22 +1,26 @@
-# Mechanical files
+![Just One More Moment](../hardware/diagrams/project-banner.svg)
 
-Printable enclosure files and editable design exports will be added here.
+# My mechanical files
+
+I will add my printable enclosure files and editable design exports here.
 
 ## Planned file groups
 
-| Path | Purpose |
+| Path | What I will add |
 | --- | --- |
-| `stl/` | Print-ready meshes, with units and revision documented |
-| `cad/` | Editable source and/or STEP exports |
+| `stl/` | My print-ready meshes, with units and revision |
+| `cad/` | My editable source and/or STEP exports |
 
-These subfolders will be created when actual files are uploaded.
+I will create these subfolders when I upload the actual files.
 
-## Information to include with the files
+## My print and assembly notes
+
+I still need to record:
 
 - Part names and assembly order.
-- Print orientation, supports, layer height, walls and infill actually used.
-- Filament/color mapping and grams required.
+- The print orientation, supports, layer height, walls and infill I use.
+- My filament/color mapping and grams required.
 - Screws, inserts, mounting details and tolerances.
-- Assembly photographs and any post-processing steps.
+- Assembly photographs and post-processing steps.
 
-The supplied materials list includes Bambu Lab PLA Matte in Charcoal and Ivory White. The part/color mapping and print settings are pending documentation.
+My materials include Bambu Lab PLA Matte in Charcoal and Ivory White. I still need to document which parts use each color and the final print settings.

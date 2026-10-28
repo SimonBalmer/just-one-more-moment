@@ -1,29 +1,31 @@
-# Build guide — in progress
+![Just One More Moment](../hardware/diagrams/project-banner.svg)
 
-The goal is a step-by-step guide for reproducing the finished installation. This page currently provides the route through the available material. Detailed assembly and installation steps will be added from the actual build.
+# My build guide
+
+I am assembling a step-by-step guide for reproducing my installation. This page links the material I have documented so far. I still need to add the detailed printing, assembly and software instructions from my actual build.
 
 ## 1. Gather the components
 
-Use the [parts list](../hardware/BOM.md). Exact switch/diode details, fixings and remaining quantities still need to be recorded before the list is complete.
+I list the parts in my [bill of materials](../hardware/BOM.md). I still need to complete exact switch/diode details, fixings and some quantities.
 
 ## 2. Print the enclosure
 
-The [mechanical folder](../mechanical/README.md) will hold STL files and editable CAD exports, with orientation, supports, layer settings, color mapping and material consumption. Files are pending upload.
+I will add my STL files and editable CAD exports to the [mechanical folder](../mechanical/README.md), together with the print orientation, supports, layer settings, colors and material consumption I use.
 
 ## 3. Assemble and wire
 
-The [pin assignment](../hardware/WIRING.md) records the builder's connections. Assembly photographs, mounting instructions and the final circuit diagram are pending.
+My [wiring illustration and connection table](../hardware/WIRING.md) show the pin assignment, including the diode in the NeoPixel 5 V lead. I still need to add enclosure assembly photographs and record the two NeoPixel supply pins.
 
 ## 4. Install the software and local model
 
-Follow the [software documentation](../software/README.md) once the working code and exact environment are added. Installation commands have not been supplied yet.
+I will document my working installation process in the [software folder](../software/README.md) after uploading the application and exact environment. I have not included installation commands yet.
 
 ## 5. Check the installation
 
-The final verification procedure will cover display output, button input, button lighting, all 12 NeoPixels, both switches, camera context and countdown behavior. It will be written against the actual code and device.
+I am preparing a verification sequence for the display, button, button lighting, all 12 NeoPixels, both switches, camera context and countdown behavior. I will check it against my actual code and device.
 
 ## 6. Run the experience
 
-See [operation](operation.md) for the interaction concept and the behavior still to document.
+I describe the interaction and remaining behavior details in my [operation notes](operation.md).
 
-Track missing inputs in the [publication checklist](TODO.md).
+I track the remaining work in my [publication checklist](TODO.md).

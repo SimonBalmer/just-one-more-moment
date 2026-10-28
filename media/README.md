@@ -1,13 +1,15 @@
-# Project media
+![Just One More Moment](../hardware/diagrams/project-banner.svg)
 
-Real photographs, screenshots, diagrams and demonstration material will be added here.
+# My project media
 
-Useful first additions:
+I keep my project photographs, screenshots, diagrams and demonstration material here as I add them. My generated [wiring illustration and retro banner](../hardware/diagrams/README.md) are maintained alongside the hardware documentation.
 
-- Front view of the finished device.
-- Interior and wiring photographs before the enclosure is closed.
+## Images and video I still need to add
+
+- A front view of my finished device.
+- Interior and wiring photographs before I close the enclosure.
 - Assembly stages and control details.
-- Screen showing the live interaction.
+- My screen during a live interaction.
 - A short demonstration video or a link to one.
 
-Name files descriptively and link the main project image from the repository README once it is available. Label concept renders as renders so they remain distinguishable from the actual prototype.
+I name the files descriptively and distinguish concept renders from photographs of my actual prototype.

@@ -1,14 +1,20 @@
-# Documentation
+![Just One More Moment](../hardware/diagrams/project-banner.svg)
 
-| Document | Purpose |
+# My project documentation
+
+I am documenting the concept, construction and operation of my installation here. I write in English so others can follow the project and eventually build their own version.
+
+| Document | What I document |
 | --- | --- |
-| [Concept](concept.md) | Artistic question, themes and audience experience |
-| [Build guide](build-guide.md) | Route through parts, printing, assembly and setup |
-| [Operation](operation.md) | Interaction and implemented/planned behavior |
-| [Publication checklist](TODO.md) | Missing inputs and verification work |
-| [Parts list](../hardware/BOM.md) | Hardware and materials |
+| [Concept](concept.md) | My question, themes and intended experience |
+| [Build guide](build-guide.md) | Parts, printing, assembly and setup |
+| [Operation](operation.md) | Interaction, controls and planned behavior |
+| [Publication checklist](TODO.md) | What I still need to add or check |
+| [Visual language](design.md) | My colors, type and writing conventions |
+| [Parts list](../hardware/BOM.md) | My hardware and materials |
 | [Wiring](../hardware/WIRING.md) | Physical pins, BCM labels and circuit details |
-| [Software](../software/README.md) | Application and local model setup |
-| [Mechanical files](../mechanical/README.md) | Enclosure exports and print documentation |
+| [Wiring illustration](../hardware/diagrams/README.md) | SVG, PNG, PDF and the drawing generator |
+| [Software](../software/README.md) | My application and local model setup |
+| [Mechanical files](../mechanical/README.md) | My enclosure exports and print documentation |
 
-The initial documentation is in English. Entries marked as pending will be completed from the actual device and its working files.
+I mark incomplete details explicitly and fill them in from my actual device and working files.

@@ -1,19 +1,21 @@
-# Software
+![Just One More Moment](../hardware/diagrams/project-banner.svg)
 
-Working application files will be added from the Raspberry Pi. This folder currently documents what the software package needs to include.
+# My software
 
-## Intended contents
+I still need to upload my working application from the Raspberry Pi. I will use this folder to document my implementation and the exact environment needed to run it.
 
-- Application and user interface.
-- Prompts and non-secret configuration examples.
+## What I will include
+
+- My application and user interface.
+- Prompts and non-secret example configuration.
 - Dependency specifications.
-- Local language/vision model setup and exact identifiers.
+- My local language/vision model setup and exact identifiers.
 - Camera input and visual-context processing.
 - GPIO, button, switch and LED integration.
 - Startup scripts and installation/run instructions.
 
-## Status
+## Current status
 
-No application code or installation commands are included yet. Exact libraries, model versions, runtime requirements and entry points will be documented from the working files rather than inferred from earlier experiments.
+I have not uploaded my application code or installation commands yet. I will record the libraries, models, runtime requirements and entry points from my working files.
 
-See the [pin assignment](../hardware/WIRING.md) and [operation notes](../docs/operation.md) for the current hardware and interaction context.
+My [pin assignment](../hardware/WIRING.md) and [operation notes](../docs/operation.md) provide the hardware and interaction context.
