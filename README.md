@@ -32,13 +32,13 @@ I use exactly **12 NeoPixels**. DIN connects to **physical pin 19 / GPIO10**. Th
 
 [Download all 13 print files](mechanical/enclosure-print-pack.zip) · [Illustrated assembly guide (PDF)](mechanical/assembly/assembly-guide.pdf) · [Individual STL files and print notes](mechanical/README.md)
 
-Each number in the drawings matches a numbered STL filename. Red labels E1-E7 show purchased parts: display, Pi, webcam, illuminated button, two switches and the 12 NeoPixels. The guide includes display, base and camera details, plus installed electronics, button, switch and LED views. Purchased-component placeholders and the complete assembly mesh are excluded from the print pack.
+Each number in the drawings matches a numbered STL filename. Red labels E1-E7 show purchased parts: display, Pi, webcam, illuminated button, two switches and the 12 NeoPixels. The guide includes display, base and camera details with the confirmed mounting, gluing, wiring and closing steps. Purchased-component placeholders and the complete assembly mesh are excluded from the print pack.
 
 ## Where I am now
 
 **Physical prototype in development / documentation in progress**
 
-I have documented my concept, parts and connections and added a wiring illustration. I have added 13 enclosure STL files, a downloadable print pack and a six-page enclosure assembly guide. My application code, editable CAD exports, project photographs and tested build settings are separate project deliverables.
+I have documented my concept, parts and connections and added a wiring illustration. I have added 13 enclosure STL files, a downloadable print pack and a four-page enclosure assembly guide. My application code, editable CAD exports, project photographs and tested build settings are separate project deliverables.
 
 | Area | My current status |
 | --- | --- |
@@ -48,7 +48,7 @@ I have documented my concept, parts and connections and added a wiring illustrat
 | NeoPixel strip | 12 LEDs; P4 / 5 V through MIC 1N4001, P34 / GND, P19 / GPIO10 data |
 | Webcam | Connected by USB for Cloud AI + Cam mode; SW01 selects AI mode |
 | Software and model setup | I still need to upload my working files and exact configuration |
-| Enclosure | 13 numbered STLs, print pack and six-page illustrated geometry guide available |
+| Enclosure | 13 numbered STLs, print pack and four-page illustrated assembly guide with confirmed fixings available |
 | Photographs and editable CAD | Separate from the STL file set |
 | Complete reproduction guide | In progress |
 

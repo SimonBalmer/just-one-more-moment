@@ -8,7 +8,9 @@ import json, math, os
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 ROOT=Path(__file__).resolve().parents[1]
-PARTS=json.loads((ROOT/'parts-manifest.json').read_text())['parts']
+MANIFEST=json.loads((ROOT/'parts-manifest.json').read_text())
+PARTS=MANIFEST['parts']
+STEPS=MANIFEST['assembly_steps']
 OUT=ROOT/'assembly'
 COLORS={p['id']:p['color'] for p in PARTS};COLORS.update(D='#c7c7c7',P='#656565',C='#656565',B='#111111',S='#656565',T='#656565',L='#111111')
 REF_LABELS={'D':'E1','P':'E2','C':'E3','B':'E4','S':'E5','T':'E6','L':'E7'}
@@ -72,7 +74,7 @@ component('P',[
  (box([-29,34,-25],[-12.8,45,-6],BASIS),'#999999'),
  (box([-29,34,4],[-12.8,45,23],BASIS),'#999999')])
 component('C',[
- (rounded_body(-38,-9,-36,36,80.5,105.5),'#656565'),
+ (rounded_body(-25.89,-9,-36,36,80.5,105.5),'#656565'),
  (cylinder(-10,-4.8,-16.9,92.9,13.5),'#111111'),
  (cylinder(-4.8,-4.5,-16.9,92.9,9.5),'#999999'),
  (cylinder(-4.5,-4.2,-16.9,92.9,6.5),'#111111'),
@@ -102,8 +104,17 @@ for y in [-101.5,101.5]:
   led_segments.extend([(box([x-2.8,y-2.8,-77.2],[x+2.8,y+2.8,-75.3]),'#ffffff'),(box([x-1.2,y-1.2,-77.4],[x+1.2,y+1.2,-77.2]),'#bf1827')])
 component('L',led_segments)
 
+# All E-parts are red; neutral printed parts keep their physical enclosure colours.
+for reference in REF_LABELS:
+ shades=FACE_COLORS.get(reference,np.tile([191,24,39],(len(MESHES[reference]),1)))
+ brightness=shades.mean(axis=1)/255.0
+ factor=.60+.50*brightness
+ FACE_COLORS[reference]=np.clip(np.array([191,24,39])[None,:]*factor[:,None],0,255)
+ COLORS[reference]='#bf1827'
+
+
 # Illustration cutaway only: remove the lower base lip that hides the far LED row.
-# This does not alter part 01 or any STL file. Page 06 explicitly labels the cutaway.
+# This does not alter part 01 or any STL file. The base-page inset explicitly labels the cutaway.
 def clip_above(mesh,zcut):
  triangles=[]
  for triangle in mesh:
@@ -254,12 +265,12 @@ def header(section,title,subtitle,page):
  rect(0,0,1600,1131,WHITE);rect(18,18,1564,1095,WHITE,BLACK,1)
  text(45,36,'PHKI / HSLU / SIMON BALMER',14,color=RED)
  pixel_title(45,64,'JUST ONE MORE MOMENT',5)
- text(1120,65,'ENCLOSURE / ASSEMBLY',20);text(1120,99,'REV 02 / 28 OCT 2026',14,color=RED)
+ text(1120,65,'ENCLOSURE / ASSEMBLY',20);text(1120,99,'REV 03 / 28 OCT 2026',14,color=RED)
  text(45,131,title,25,bold=True);text(45,168,subtitle,15)
  line(45,198,1555,198,GREY,.8)
  line(45,1055,1555,1055,BLACK,.8)
- text(45,1074,'SIMON BALMER / '+section+' / REV 02',13,color=GREY)
- text(1400,1074,f'{page:02d} / 06',14,color=RED)
+ text(45,1074,'SIMON BALMER / '+section+' / REV 03',13,color=GREY)
+ text(1400,1074,f'{page:02d} / 04',14,color=RED)
 
 def bubble(x,y,label,radius=17):
  if label.startswith('E'):
@@ -309,20 +320,34 @@ def band(x,y,w,title,body):
 
 def finish():C.restoreState();C.showPage()
 
+
+def steps_block(group,x,y,width=545,size=15.5,leading=22.5):
+ for step in STEPS[group]:
+  text(x,y,step['title'],17,True,color=RED)
+  y=wrap(x,y+29,step['body'],width=width,size=size,leading=leading,color=BLACK)+20
+ return y
+
+def clickable(x,y,label,url,size=14):
+ text(x,y,label,size,color=RED)
+ w=pdfmetrics.stringWidth(label,'Guide',size)
+ C.linkURL(url,(x,1131-y-size*1.05,x+w,1131-y+3),relative=1,thickness=0)
+
+
 def build():
  global C
  C=canvas.Canvas(str(OUT/'assembly-guide.pdf'),pagesize=PAGE)
- C.setAuthor('Simon Balmer');C.setTitle('Just One More Moment - Enclosure Assembly');C.setSubject('13 printed parts and the display, Raspberry Pi and Logitech camera positions')
+ C.setAuthor('Simon Balmer');C.setTitle('Just One More Moment - Enclosure Assembly');C.setSubject('Four-page build guide with confirmed mounting, wiring, glue and fixing steps')
  n=np.array([math.cos(math.radians(10)),0,math.sin(math.radians(10))])
  def off(d,z=0):return (n*d+np.array([0,0,z])).tolist()
- # 1 / All printed parts and the three purchased component references.
+ # 1 / Overview: cable guides are outside the rear plate, at the far left.
  ids=[p['id'] for p in PARTS]+['D','P','C','B','S','T','L']
  offsets={'01':[0,0,0],'02':[-205,0,-25],'03':[65,0,0],'04':[65,0,0],
- '05':[-48,0,22],'06':[-48,0,-22],'07':off(0,60),'08':off(105,60),'09':off(165,60),
+ '05':[-250,0,-13],'06':[-250,0,-37],'07':off(0,60),'08':off(105,60),'09':off(165,60),
  '10':off(-120,60),'D':off(50,60),'P':off(-55,60),'11':[0,0,120],'12':[0,0,218],'13':[60,0,120],'C':[0,0,167],'B':[65,0,0],'S':[90,0,0],'T':[120,0,0],'L':[0,0,-78]}
- header('OVERVIEW','01 / EXPLODED ENCLOSURE','13 printed parts, one of each. E1-E7 are purchased components. Numbers match the STL filenames.',1)
- annotated(ids,offsets,(1,-1.05,.60),(45,219,1080,780),[
- ([-20,0,-72],[-20,0,320]),([-100,0,60],[170,0,109]),([-8,-17,213],[52,-17,213])],padding=.075,anchor_sides={'07':-1,'P':-1})
+ header('OVERVIEW','01 / EXPLODED ENCLOSURE','13 printed parts, one of each. Red E1-E7 parts are purchased. Printed parts use white, grey and black.',1)
+ annotated(ids,offsets,(1,-1.05,.60),(45,219,1080,765),[
+ ([-20,0,-72],[-20,0,320]),([-100,0,60],[170,0,109]),([-8,-17,213],[52,-17,213]),
+ ([-310,-69.89,-121.92],[-359,-69.89,-102.43]),([-310,-69.89,-121.92],[-359,-69.89,-141.40])],padding=.075,anchor_sides={'07':-1,'P':-1,'05':-1,'06':-1})
  text(1173,218,'PRINT EACH PART ONCE',19,True,color=RED);yy=255
  for group,title in [('base','BASE'),('display','DISPLAY'),('camera','CAMERA')]:
   text(1173,yy,title,15,True);yy+=22
@@ -332,85 +357,59 @@ def build():
  text(1173,yy,'PURCHASED / DO NOT PRINT',15,True,color=RED);yy+=32
  for label,name in [('E1','Touch Display 2'),('E2','Raspberry Pi 5 + cooler'),('E3','Logitech C270 camera'),('E4','Arcade button + LED'),('E5','SW01 / AI mode'),('E6','SW02 / EN-DE'),('E7','12 NeoPixels / WS2812B')]:
   bubble(1194,yy+10,label);text(1227,yy,name,15);yy+=34
- yy+=8;wrap(1173,yy,'Grey shapes and red details identify parts, not filament colours. Dashed lines link the positions. Not to scale.',width=365,size=15,leading=22)
- text(65,1020,'BASE > DISPLAY > CAMERA / Positions come from the shared CAD assembly coordinates.',14,color=GREY)
+ yy+=7;wrap(1173,yy,'05 and 06 fit from OUTSIDE rear plate 02. All red shapes are purchased parts. Dashed lines link the positions. Not to scale.',width=365,size=15,leading=22)
+ wrap(65,1000,'Before closing 10: prepare the camera and base controls (pages 03-04) and connect every Pi lead (page 02). Close base cover 02 last.',width=1040,size=14,leading=21)
  finish()
- # 2 / Opened display stack, including the Pi behind the display.
+ # 2 / Detailed screen build. Gluing 10 to 01 is independent of the front unit.
+ header('DISPLAY','02 / DISPLAY AND RASPBERRY PI','Build the front screen unit first. Glue 10 to 01 before wiring. Finish every Pi connection before closing 10.',2)
  ids=['07','08','09','10','D','P'];offsets={'07':off(0),'10':off(-165),'P':off(-85),'D':off(65),'08':off(130),'09':off(195)}
- header('DISPLAY','02 / DISPLAY AND RASPBERRY PI','From rear to front: cover 10, Pi E2, bracket 07, display E1, inner bezel 08 and outer frame 09.',2)
  guides=[]
  for yy in [-68,68]:
   start=np.array([-5,yy,0]);guides.append(((start+n*(-165)).tolist(),(start+n*195).tolist()))
- annotated(ids,offsets,(1,-1.1,.6),(45,235,1080,665),guides,anchor_sides={'07':-1,'P':-1})
- text(1173,219,'PRINTED PARTS',18,True,color=RED);yy=252
- for id in ['07','08','09','10']:yy=partrow(id,yy)
- yy=refrow('E1','Touch Display 2','Screen faces the front.',yy+4)
- yy=refrow('E2','Raspberry Pi 5','Behind the display, inside cover 10.',yy)
- yy=note('1 / PLACE THE DISPLAY','Fit E1 into bracket 07. Put bezel 08 and outer frame 09 on the front side.',yy)
- yy=note('2 / PLACE THE PI','Position E2 behind the display. Check the cooler, USB plugs and ribbon cable space before fitting cover 10.',yy)
- note('3 / CLOSE THE BACK','Fit cover 10 after routing the wires. Use the mounting features in the model.',yy)
- band(65,935,1040,'E1 + E2 / SCHEMATIC COMPONENTS','Their envelopes follow the supplied CAD references. Pi chips and ports are simple symbols. See page 05 for their installed position.')
+ annotated(ids,offsets,(1,-1.1,.6),(45,240,875,555),guides,anchor_sides={'07':-1,'P':-1})
+ text(65,822,'GLUE 10 TO 01 / BEFORE WIRING',16,True,color=RED)
+ annotated(['01','10'],{},(1,-1.05,.55),(60,847,405,180),padding=.08,label_ids=['01','10'],anchor_sides={'01':-1,'10':1})
+ text(505,840,'DISPLAY FIXINGS',16,True)
+ wrap(505,872,'Supplied display screws: Pi to E1, then the four outer points on 07.',width=405,size=15,leading=22)
+ wrap(505,934,'Final closure: 3 x 2.9 x 9.5 mm sheet-metal / wood screws, or similar.',width=405,size=15,leading=22)
+ y=steps_block('display',975,225,width=570,size=15.2,leading=22)
+ clickable(975,1010,'Official Touch Display 2 setup guide',MANIFEST['assembly_sources']['display_instructions'],14)
  finish()
- # 3 / Base details.
- ids=['01','02','03','04','B','S','T'];offsets={'01':[0,0,0],'02':[-205,0,0],'03':[70,0,0],'04':[70,0,0],'B':[65,0,0],'S':[90,0,0],'T':[120,0,0]}
- header('BASE','03 / BASE, FRONT TRIMS AND CABLE GUIDE','The bottom cover also forms the rear closing wall. The cable guide is split into upper and lower halves.',3)
- annotated(ids,offsets,(1,-1.2,.85),(45,225,1080,515),[
- ([20,-40,-96],[87,-40,-96]),([20,90,-96],[87,90,-96]),([-80,0,-120],[-285,0,-120])])
- text(78,760,'REAR CABLE GUIDE / 05 + 06',17,True,color=RED)
- annotated(['05','06'],{'05':[0,0,14],'06':[0,0,-14]},(-1,-1.4,.5),(80,792,440,225),[
- ([-109,-69.89,-111],[-109,-69.89,-79])])
- wrap(565,813,'Put the cable between the two guide halves. Align the guide with the hole in the rear wall of bottom cover 02. Upper half: 05. Lower half: 06.',width=500,size=17,leading=27)
- text(1173,219,'PRINTED PARTS',18,True,color=RED);yy=252
- for id in ['01','02','03','04','05','06']:yy=partrow(id,yy)-8
- for ref,name in [('E4','Illuminated button'),('E5','SW01 / AI mode'),('E6','SW02 / EN-DE')]:
-  bubble(1195,yy+13,ref);text(1228,yy+3,name,15);yy+=36
- text(1173,yy+2,'LED placement: page 06.',14,color=GREY);yy+=31
- yy=note('1 / PREPARE THE FRONT','Fit trims 03/04. Put E4 in the large hole and E5/E6 in the two small holes.',yy+8)
- yy=note('2 / ADD THE CABLE GUIDE','Put 05 above 06 at the rear cable outlet. Route the cable before closing.',yy)
- note('3 / CLOSE THE BASE','Check the cables, then fit cover 02 with its closing wall at the back.',yy)
+ # 3 / Base controls and closure. Switches enter from inside; button enters from front.
+ header('BASE','03 / BASE, FRONT CONTROLS AND CABLES','Complete steps 1-3 while the Pi is accessible. After closing 10 (page 02), finish the cable routing and close 02.',3)
+ ids=['01','02','03','04','05','06','B','S','T']
+ offsets={'01':[0,0,0],'02':[-205,0,0],'03':[70,0,0],'04':[70,0,0],
+ '05':[-250,0,12],'06':[-250,0,-12],'B':[65,0,0],'S':[-70,0,0],'T':[-105,0,0]}
+ annotated(ids,offsets,(1,-1.05,1.55),(45,235,875,525),[
+ ([20,-40,-96],[87,-40,-96]),([20,90,-96],[87,90,-96]),([-80,0,-120],[-285,0,-120]),
+ ([20,13.16,-96.91578],[-55,13.16,-96.91578]),([20,33.16,-96.91578],[-90,33.16,-96.91578]),
+ ([-310,-69.89,-96.92],[-359,-69.89,-75.43]),([-310,-69.89,-96.92],[-359,-69.89,-118.40])],anchor_sides={'05':-1,'06':-1})
+ text(65,780,'E7 / UNDER THE BASE CEILING',16,True,color=RED)
+ text(505,780,'05 + 06 / OUTSIDE PLATE 02',16,True,color=RED)
+ annotated(['V','L'],{},(.35,-.15,-1.8),(60,815,405,205),padding=.08,label_ids=['L'])
+ annotated(['02','05','06'],{'02':[0,0,0],'05':[-35,0,10],'06':[-35,0,-10]},(-1,-1.2,.6),(500,815,420,205),[([-105,-69.89,-96.92],[-144,-69.89,-79.43]),([-105,-69.89,-96.92],[-144,-69.89,-114.40])],padding=.08,label_ids=['02','05','06'])
+ text(65,1025,'Cutaway: cover 02 and lower lip hidden.',12,color=GREY)
+ text(505,1025,'Upper: 05 / Lower: 06. Clamp the power lead.',12,color=GREY)
+ steps_block('base',975,225,width=570,size=15.2,leading=22)
+ text(975,1010,'Final base closure: 2 screws/bolts + 2 nuts.',14,True)
  finish()
- # 4 / Camera body added between the shells.
+ # 4 / Shallow camera, ending at the middle divider of lower shell 11.
+ header('CAMERA','04 / LOGITECH C270 AND CAMERA SHELLS','The shallow camera reaches only to the middle divider in 11. Part 12 is the upper shell; ring 13 finishes the front.',4)
  ids=['11','12','13','C'];offsets={'11':[0,0,0],'12':[0,0,90],'13':[58,0,0],'C':[0,0,43]}
- header('CAMERA','04 / LOGITECH C270 AND CAMERA SHELLS','Shells 11 and 12 surround the camera. Ring 13 sits in front of the large lens opening.',4)
- annotated(ids,offsets,(1,-1.15,.85),(45,230,1080,675),[
+ annotated(ids,offsets,(1,-1.15,.85),(45,230,1000,675),[
  ([-25,0,73],[-25,0,200]),([-3,-16.9,92.9],[58,-16.9,92.9])])
- text(1173,219,'PRINTED PARTS',18,True,color=RED);yy=252
- for id in ['11','12','13']:yy=partrow(id,yy)
- yy=refrow('E3','Logitech C270','Purchased USB webcam.',yy+12)
- yy=note('1 / ALIGN THE CAMERA','Put E3 in lower shell 11. Align its lens with the large round opening. Keep the USB cable clear.',yy)
- yy=note('2 / CLOSE THE SHELL','Align lower shell 11 with the top of the display housing. Fit upper shell 12 from above.',yy)
- yy=note('3 / FIT THE FRONT RING','Place ring 13 around the front lens opening. Its location follows the supplied CAD coordinates.',yy)
- note('CAMERA SHAPE','E3 is a rough shape, aligned to the lens opening. It does not define a measured camera model or a disassembly method.',yy)
- band(65,935,1040,'E3 / POSITION REFERENCE','The grey body and black lens show where the webcam sits. The red ring is printed part 13. The camera itself is not a part to print.')
- finish()
- # 5 / Actual assembled coordinates. Covers are removed, not exploded.
- header('INSTALLED PARTS','05 / WHERE THE ELECTRONICS SIT','These views use the original assembled positions. Covers are hidden so the purchased parts are visible.',5)
- text(65,226,'A / DISPLAY REAR',19,True,color=RED);text(837,226,'B / CAMERA INTERIOR',19,True,color=RED)
- text(65,258,'Rear cover 10 removed.',16);text(837,258,'Upper shell 12 removed.',16)
- line(800,225,800,900,MID,1)
- annotated(['07','08','09','D','P'],{},(-1,-1.15,.72),(55,295,720,525),padding=.10,label_ids=['07','D','P'],anchor_sides={'P':-1,'D':1,'07':1})
- annotated(['11','13','C'],{},(1,-1.2,1.5),(825,295,720,525),padding=.13,label_ids=['11','13','C'],anchor_sides={'C':-1})
- wrap(65,836,'E2 sits behind E1. The Pi and cooler are shown within the supplied Pi reference envelope. Keep space for the display ribbon and USB cables.',width=690,size=17,leading=26)
- wrap(837,836,'E3 sits inside lower shell 11, below upper shell 12. Its lens faces ring 13. The body is approximate; the lens opening sets its position.',width=690,size=17,leading=26)
- band(65,941,1470,'PRINT SCOPE / 13 FILES / MM / 100% SCALE','Print parts 01-13 once each. Purchased parts E1-E7 do not belong on the print bed. Front controls and the 12 NeoPixels are shown on page 06.')
- finish()
- # 6 / Purchased front controls and the confirmed LED position.
- header('CONTROLS AND LEDS','06 / BUTTON, SWITCHES AND 12 NEOPIXELS','The button has its own LED. The separate 12 NeoPixels sit under the base ceiling and shine through the side vents.',6)
- text(65,226,'A / FRONT CONTROLS',19,True,color=RED);text(837,226,'B / BASE INTERIOR, FROM BELOW',19,True,color=RED)
- text(65,258,'Installed in the front holes.',16);text(837,258,'Cutaway: cover 02 and lower lip hidden.',16)
- line(800,225,800,900,MID,1)
- annotated(['01','03','04','B','S','T'],{},(1,-.12,.18),(55,295,720,490),padding=.13,label_ids=['B','S','T'],anchor_sides={'B':1,'S':-1,'T':-1})
- annotated(['V','L'],{},(.35,-.15,-1.8),(825,295,720,490),padding=.12,label_ids=['V','L'],anchor_sides={'L':-1})
- yy=809
- for ref,body in [('E4','Illuminated arcade button, including its LED.'),('E5','SW01: Local AI / Cloud AI + Cam.'),('E6','SW02: EN / DE.')]:
-  bubble(86,yy+10,ref);wrap(120,yy,body,width=650,size=16,leading=23);yy+=40
- wrap(837,809,'E7: 12 WS2812B NeoPixels fixed inside the base, under its ceiling. Their light shines through the side ventilation slots. Spacing in this view is schematic.',width=690,size=17,leading=26)
- band(65,946,1470,'PURCHASED PARTS / DO NOT PRINT','E4 includes the button LED. E7 is the separate 12-LED strip. Wire E4-E7 using hardware/WIRING.md; the assembly views show positions, not electrical connections.')
+ y=steps_block('camera',1100,235,width=440,size=16,leading=24)
+ text(1100,y+12,'PARTS IN THIS VIEW',17,True,color=RED);y+=48
+ for label,name in [('11','Lower camera shell'),('12','Upper camera shell'),('13','Front ring'),('E3','Logitech C270')]:
+  bubble(1121,y+8,label,radius=14);text(1154,y,name,15);y+=40
+ band(65,940,980,'SHALLOW CAMERA / REAR CABLE EXIT','Secure E3 in the front half of 11. Run its USB cable out at the back, then into the device. Coil the spare length in the base (page 03).')
  finish();C.save()
  import fitz
  doc=fitz.open(OUT/'assembly-guide.pdf')
- names=['exploded-overview','display-assembly','base-assembly','camera-assembly','electronics-placement','controls-and-leds']
+ names=['exploded-overview','display-assembly','base-assembly','camera-assembly']
  for page,name in zip(doc,names):page.get_pixmap(matrix=fitz.Matrix(1.6,1.6),alpha=False).save(OUT/(name+'.png'))
- print('Created six English assembly pages in the project wiring style.')
+ # Superseded pages are intentionally removed from the four-page delivery.
+ for name in ['electronics-placement.png','controls-and-leds.png']:(OUT/name).unlink(missing_ok=True)
+ print('Created four English assembly pages with confirmed build steps (revision 03).')
 
 if __name__=='__main__':build()

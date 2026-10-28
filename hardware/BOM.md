@@ -27,15 +27,29 @@ These are the components I have collected for my prototype. I keep the [Galaxus 
 
 I have counted **12 LEDs on my actual strip**. I use that count for the build and software configuration, regardless of the length in the shopping-list product wording.
 
+## Enclosure fixings and adhesive
+
+I use these with my [four-page assembly guide](../mechanical/assembly/assembly-guide.pdf):
+
+| Item | Quantity / use |
+| --- | --- |
+| Screws supplied with the Touch Display 2 | Mount the Pi on the display, then the display/Pi unit on the four outer points of bracket 07 |
+| 2.9 x 9.5 mm sheet-metal or wood screws, or a similar fitting type | **3** to close the screen unit onto rear cover 10 |
+| Suitable screws/bolts with matching nuts | **2 screws/bolts + 2 nuts** to close bottom/rear cover 02 onto base 01; size to fit the printed holes |
+| UHU Kraftkleber (strong adhesive) | Glue 10 to 01 before wiring |
+| Adhesive | Glue trims 03/04 into their guides and front ring 13 into place |
+| Glue or tape | Secure the camera in shell 11 |
+| NeoPixel self-adhesive backing | Fix the **12 LEDs** under the inside ceiling of the base so light exits the side vents |
+
 ## Printed parts and assembly materials
 
-My enclosure uses [13 numbered print files, one of each](../mechanical/README.md). The [print pack](../mechanical/enclosure-print-pack.zip) includes the matching six-page illustrated enclosure guide. Purchased-component placeholders are excluded.
+My enclosure uses [13 numbered print files, one of each](../mechanical/README.md). The [print pack](../mechanical/enclosure-print-pack.zip) includes the matching four-page illustrated enclosure guide. Purchased-component placeholders are excluded.
 
 | Material | My listed product | What I still need to add |
 | --- | --- | --- |
-| Dark filament | Bambu Lab PLA Matte - Charcoal, 1.75 mm, 1000 g spool | Part/color mapping and grams used |
-| Light filament | Bambu Lab PLA Matte - Ivory White, 1.75 mm, 1000 g spool | Part/color mapping and grams used |
-| Fixings and connectors | My actual assembly materials | Screws, inserts, brackets, insulation and any adhesives used |
+| Dark filament | Bambu Lab PLA Matte - Charcoal, 1.75 mm, 1000 g spool | Black trims, cable guides, inner bezel and camera ring; material use depends on slicing |
+| Light filament | Bambu Lab PLA Matte - Ivory White, 1.75 mm, 1000 g spool | Light housings, covers, outer frame and bracket; material use depends on slicing |
+| Fixings and connectors | My actual assembly materials | Enclosure fixings are listed above; record the remaining connector and insulation quantities |
 
 A spool's 1000 g weight is its purchase size, not the material needed for one enclosure. I will calculate a useful build cost once I have recorded the quantities and actual consumption.
 
@@ -43,4 +57,4 @@ A spool's 1000 g weight is its purchase size, not the material needed for one en
 
 - Exact toggle switch models.
 - Display signal cable type, length and actual CAM/DISP socket.
-- Fasteners, connectors, tools and print settings.
+- Remaining connector quantities, tools and print settings.

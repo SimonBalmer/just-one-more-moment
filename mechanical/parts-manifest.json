@@ -42,7 +42,7 @@
       "file": "02-base-bottom-cover.stl",
       "name": "Bottom and rear cover",
       "group": "base",
-      "color": "#c7c7c7",
+      "color": "#eeeeee",
       "quantity": 1,
       "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_SoulHousing_BottomCover.stl",
       "sha256": "e68ae3ed8ed16a5369f231a652d5e7e3fcf2b7457e120023da7676cf6f909b4e",
@@ -76,7 +76,7 @@
       "file": "03-base-front-trim-left.stl",
       "name": "Front trim, left",
       "group": "base",
-      "color": "#bf1827",
+      "color": "#202020",
       "quantity": 1,
       "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_SoulHousing_ReliefL.stl",
       "sha256": "cbf0e993bf6798977081e528f5e30b0f3d6454b254085efee90d1bae7e274b93",
@@ -110,7 +110,7 @@
       "file": "04-base-front-trim-right.stl",
       "name": "Front trim, right",
       "group": "base",
-      "color": "#bf1827",
+      "color": "#202020",
       "quantity": 1,
       "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_SoulHousing_ReliefR.stl",
       "sha256": "50e1e922632a798f711cce46f4887f3a883c30be414e3058c64248ac0ee8a22a",
@@ -144,7 +144,7 @@
       "file": "05-rear-cable-guide-upper.stl",
       "name": "Cable guide, upper",
       "group": "base",
-      "color": "#656565",
+      "color": "#202020",
       "quantity": 1,
       "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_SoulHousing_PlugL.stl",
       "sha256": "f3cfd21e761ce28587b0b6d3da6d79ffc77a4154caa0f010c20b0baa8baad557",
@@ -178,7 +178,7 @@
       "file": "06-rear-cable-guide-lower.stl",
       "name": "Cable guide, lower",
       "group": "base",
-      "color": "#999999",
+      "color": "#202020",
       "quantity": 1,
       "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_SoulHousing_PlugR.stl",
       "sha256": "b3e386b9da522b397c52db5091b4e8399ebb7cdd116b310e17990f344a91e45b",
@@ -212,7 +212,7 @@
       "file": "07-display-main-bracket.stl",
       "name": "Display main bracket",
       "group": "display",
-      "color": "#b9b9b9",
+      "color": "#eeeeee",
       "quantity": 1,
       "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_Screen_MainBraket.stl",
       "sha256": "36065733203f8234dd63afe3b772660d465f4f0e332d7074ad5fd77f1061ff7e",
@@ -246,7 +246,7 @@
       "file": "08-display-inner-bezel.stl",
       "name": "Display inner bezel",
       "group": "display",
-      "color": "#555555",
+      "color": "#202020",
       "quantity": 1,
       "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_Screen_InnerFrame.stl",
       "sha256": "a3613b1c17df9827c37e6ac8e57aaa5aa184404d654c368c66955a14e10639df",
@@ -314,7 +314,7 @@
       "file": "10-display-rear-cover.stl",
       "name": "Display rear cover",
       "group": "display",
-      "color": "#c7c7c7",
+      "color": "#eeeeee",
       "quantity": 1,
       "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_Screen_BackCover.stl",
       "sha256": "1f2b1cd7cdffc5aea0c0b39e31ea2a7881c4fc001e15f64bc3246461caf7e765",
@@ -351,7 +351,7 @@
       "file": "11-camera-lower-shell.stl",
       "name": "Camera lower shell",
       "group": "camera",
-      "color": "#dddddd",
+      "color": "#eeeeee",
       "quantity": 1,
       "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_Cam_Lower.stl",
       "sha256": "afc91f7448cdc2f73f8b970670c75debc6ba5a4edcb567326875a1e850d126a8",
@@ -419,7 +419,7 @@
       "file": "13-camera-lens-ring.stl",
       "name": "Camera front ring",
       "group": "camera",
-      "color": "#bf1827",
+      "color": "#202020",
       "quantity": 1,
       "source": "PHKI_P1_SIBL_Gehäuse_PHKI_P1_SIBL_Gehäuse_Cam_Ring.stl",
       "sha256": "26a4c27b4b6a57ff27550e0303eabeb5574ee80665b54285cf634363a907b71e",
@@ -465,7 +465,7 @@
     {
       "id": "E3",
       "name": "Logitech C270 camera",
-      "geometry": "Approximate body and lens, aligned to the lens opening. No camera CAD model was supplied.",
+      "geometry": "Shallow approximate body with rear at the middle divider of shell 11; lens aligned to the front opening. Depth corrected from Simon's assembly notes.",
       "print": false
     },
     {
@@ -497,5 +497,100 @@
       "print": false
     }
   ],
-  "drawing_revision": "02"
+  "drawing_revision": "03",
+  "colour_key": {
+    "printed_parts": "White / grey housings and brackets; black trims, cable guides, inner bezel and front ring.",
+    "purchased_components": "Red, including E1-E7 geometry. Red is a diagram code, not the physical component colour."
+  },
+  "assembly_steps": {
+    "display": [
+      {
+        "title": "1 / MOUNT THE PI ON THE DISPLAY",
+        "body": "Screw Pi E2 to display E1 using the supplied display screws and its threaded mounting points. Connect the display power and data cables to the Pi now. Follow the official Touch Display 2 instructions."
+      },
+      {
+        "title": "2 / BUILD THE FRONT SCREEN UNIT",
+        "body": "Use the display screws to attach the display/Pi unit to bracket 07 at the four outer threaded mounting points. Slide 08 and 09 into each other, then click this pair onto 07. The front screen unit is complete."
+      },
+      {
+        "title": "3 / GLUE THE REAR COVER TO THE BASE",
+        "body": "Before wiring the device, glue rear cover 10 to base housing 01. I use UHU Kraftkleber (strong adhesive). Let the bond set as directed on the adhesive packaging."
+      },
+      {
+        "title": "4 / CONNECT AND ROUTE THE CABLES",
+        "body": "Prepare the camera and base controls as shown on pages 03-04. Connect all leads to the Pi using hardware/WIRING.md. Route the jumper leads, camera USB cable and Pi power cable through the lower opening in 10 into the base."
+      },
+      {
+        "title": "5 / CLOSE THE DISPLAY HOUSING",
+        "body": "Fit the front screen unit onto 10. Use its three screw guides and three 2.9 x 9.5 mm sheet-metal or wood screws, or similar screws that fit. Complete all Pi connections before this step; no further access is needed."
+      }
+    ],
+    "base": [
+      {
+        "title": "1 / PREPARE THE CONTROL LEADS",
+        "body": "Prepare and solder the jumper leads in advance using hardware/WIRING.md. Insulate the solder joints as shown in the wiring guide."
+      },
+      {
+        "title": "2 / GLUE TRIMS AND FIT THE CONTROLS",
+        "body": "Glue trims 03 and 04 into their guides. Insert the large arcade button E4 from the front. Insert switches E5 and E6 from inside the housing, then secure them with their mounting nuts."
+      },
+      {
+        "title": "3 / PLACE AND WIRE THE LEDS",
+        "body": "Use the self-adhesive backing to place the 12 NeoPixels E7 under the inside ceiling of 01. Spread them so their light shines through the side vents. Wire E4-E7 to the Pi using the wiring guide before closing the display housing."
+      },
+      {
+        "title": "4 / STORE AND ROUTE THE CABLES",
+        "body": "With the wiring complete, loosely coil the spare camera USB cable inside the base. Lead the Pi power cable out through rear plate 02. Fit cable-guide halves 05 and 06 from the outside of 02 around the cable and secure it."
+      },
+      {
+        "title": "5 / CLOSE THE BASE",
+        "body": "Fit bottom/rear cover 02 to housing 01 and fasten it with two suitable screws or bolts and two matching nuts. Choose pairs that fit the printed fixing holes."
+      }
+    ],
+    "camera": [
+      {
+        "title": "1 / FIT AND SECURE THE CAMERA",
+        "body": "Place camera E3 in lower shell 11, with the lens at the front opening. The shallow body reaches only to the middle divider in 11. Secure it with glue or tape, and lead its USB cable out through the rear."
+      },
+      {
+        "title": "2 / CLICK THE TWO SHELLS TOGETHER",
+        "body": "Push 11 and 12 together. Slight pressure from the left and right sides of upper shell 12 makes it easier to fit."
+      },
+      {
+        "title": "3 / GLUE THE FRONT RING",
+        "body": "Glue front ring 13 into place to join and finish the camera housing."
+      }
+    ]
+  },
+  "assembly_hardware": [
+    {
+      "item": "Supplied display screws",
+      "use": "Pi to display, then display/Pi unit to the four outer mounting points of bracket 07.",
+      "quantity": "Use the display kit screws; 4 outer bracket points."
+    },
+    {
+      "item": "2.9 x 9.5 mm sheet-metal or wood screws, or a similar fitting type",
+      "quantity": 3,
+      "use": "Front screen unit to rear cover 10, through its three screw guides."
+    },
+    {
+      "item": "Suitable screws/bolts with matching nuts",
+      "quantity_screws": 2,
+      "quantity_nuts": 2,
+      "use": "Bottom/rear cover 02 to base housing 01; select size to fit the printed holes."
+    },
+    {
+      "item": "UHU Kraftkleber (strong adhesive)",
+      "use": "Rear cover 10 to base housing 01 before wiring; glue trims into their guides."
+    },
+    {
+      "item": "Glue or tape",
+      "use": "Secure the camera in shell 11; glue front ring 13."
+    }
+  ],
+  "assembly_sources": {
+    "build_method": "Confirmed by Simon Balmer in his assembly notes, 28 October 2026.",
+    "display_instructions": "https://www.raspberrypi.com/documentation/accessories/touch-display-2.html",
+    "wiring": "../hardware/WIRING.md"
+  }
 }
