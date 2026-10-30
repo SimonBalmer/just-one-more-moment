@@ -1,3 +1,5 @@
+![Just One More Moment](../../../../hardware/diagrams/project-banner.svg)
+
 # Cloud prompt comparison — 30 October 2026
 
 [Prompt notes](../../PROMPTS.md)

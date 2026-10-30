@@ -1,3 +1,5 @@
+![Just One More Moment](../../hardware/diagrams/project-banner.svg)
+
 # Prompts & process evidence
 
 [Software setup](../README.md) · [Product & design](../../docs/product-design.md) · [AI disclosure](../../docs/AI_DISCLOSURE.md)

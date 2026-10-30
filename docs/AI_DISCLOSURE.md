@@ -1,3 +1,5 @@
+![Just One More Moment](../hardware/diagrams/project-banner.svg)
+
 # AI disclosure
 
 **Simon Balmer · Just One More Moment · HSLU PHKI HS26**

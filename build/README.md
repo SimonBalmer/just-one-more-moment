@@ -1,3 +1,5 @@
+![Just One More Moment](../hardware/diagrams/project-banner.svg)
+
 # Build the device
 
 [Overview](../README.md) · [Software](../software/README.md) · [Product & design](../docs/product-design.md)

@@ -1,3 +1,5 @@
+![Just One More Moment](../hardware/diagrams/project-banner.svg)
+
 # Final product & design
 
 [Overview](../README.md) · [Build](../build/README.md) · [Software](../software/README.md) · [AI disclosure](AI_DISCLOSURE.md)
