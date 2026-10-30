@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+.coverage
+.pytest_cache/
+.lgd-nfy*
+
+# Local credentials must never be published.
+openai.json
+openai.local.json
+.env
+.env.*
+openai.key
+*.secret

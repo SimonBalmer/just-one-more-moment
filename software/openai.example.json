@@ -1,0 +1,8 @@
+{
+  "enabled": false,
+  "model": "gpt-6.1-terra",
+  "api_key_file": "openai.key",
+  "reasoning_effort": "none",
+  "temperature": 1.0,
+  "max_output_tokens": 1024
+}
