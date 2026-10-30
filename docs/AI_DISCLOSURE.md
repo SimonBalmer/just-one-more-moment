@@ -4,46 +4,33 @@
 
 **Simon Balmer · Just One More Moment · HSLU PHKI HS26**
 
-**Template — I will complete and review this before submission.** The confirmed uses below are a starting point, not a complete declaration of my development process.
+I used generative AI throughout this project as a creative, technical and documentation assistant. The concept, physical construction and final design decisions are mine. I remain responsible for the submitted work and its limitations.
 
-## My contribution
+## My own contribution
 
-I am responsible for the final project and every submitted claim. I will describe which parts I made independently, which decisions I made, and how I checked AI-assisted work.
+I developed the central idea and philosophical question, chose the interaction and emotional progression across the ten sessions, and defined the device's visual identity and user experience. I designed **all CAD parts myself**, then 3D-printed, soldered, wired and assembled the physical device without generative AI. The enclosure evolved through practical decisions about component placement, connections, maintenance and repair. Pinterest moodboards were more useful for my final design than the AI-generated device mockups, which I largely rejected.
 
-| Area | What I made or decided myself | Evidence |
-| --- | --- | --- |
-| Project question and philosophical position | [Complete in my own words] | [Brief / notes] |
-| Enclosure, printing and physical assembly | [State my independent work and any assistance] | [CAD / build photos] |
-| Interaction, interface and visual design | [State my decisions and what I changed] | [Versions / photos] |
-| Testing, interpretation and reflection | [Describe what I personally tested or observed] | [Test notes / reflection] |
+I specified the UI's appearance and behaviour, but **did not write its code myself**. I tested the hardware and software in person, tried to anticipate edge cases, and requested changes where necessary.
 
-## AI tools and their influence
+## AI tools and influence
 
-| Tool / model and date | What it was used for | Influence on the final work / my review |
-| --- | --- | --- |
-| Ollama / `gemma4:e2b` | Live text and emotion labels in local mode | The dialogue is generated during use. I set the prompts and interaction rules. [Review / extend] |
-| OpenAI Responses API / [actual model used] | Live text and emotion labels using fresh camera images in cloud mode | [Record the actual configuration, selection and review] |
-| OpenAI Codex / [model, dates] | Assistance with code and repository documentation | [Describe scope, accepted changes, corrections and tests] |
-| [Image generation / editing tool, model and date] | Project cover artwork | [Record source photographs, image edits and my review of the supplied cover] |
-| [Other tool, model and date, if used] | [Purpose] | [Influence and review] |
+| Tool | Use and influence on the final project |
+| --- | --- |
+| **ChatGPT (OpenAI), including image generation and Work** | Brainstorming and challenging project ideas; combining my ideas into a focused PHKI concept; researching hardware, local models and prompting approaches; creating exploratory device images, sticker artwork, assembly instructions and wiring diagrams. I selected, directed and reviewed the results. |
+| **OpenAI Codex in VS Code over SSH** | Set up the Raspberry Pi, ran commands and hardware tests, implemented **all software and the UI**, and helped write and organize the GitHub documentation from my project knowledge and structural goals. This was an iterative process of testing, feedback and revision, not a single prompt. I wrote no code lines myself. Codex also created the SVG project banner. |
+| **Ollama / `gemma4:e2b`** | Generates the device's live text locally. My system prompts and session-specific instructions steer its apparent emotions and the planned progression across ten sessions. |
+| **OpenAI Responses API / GPT-6.1 Terra** | Generates live text in cloud mode using camera input. The same designed emotional and narrative framing influences its output. |
+| **ChatGPT image generation** | Created the PNG project banner from images of my enclosure and my visual instructions. The banner is AI-generated artwork, not a photograph documenting the completed device. |
 
-## Decisions and process evidence
+## Decisions, checks and limits
 
-- **Accepted:** [One output I kept, and why.]
-- **Changed:** [One output I revised, what I changed, and why.]
-- **Rejected:** [One output I rejected, and why.]
-- **Checks and limits:** [How I checked the result and what remains uncertain.]
+- **Accepted:** AI-assisted software and documentation when they matched my intended interaction and the device worked in practical tests. I also used generated stickers and illustrations where they suited the visual concept.
+- **Changed:** I repeatedly asked Codex to revise UI details and technical behaviour after trying them on the Raspberry Pi. Prompt wording was also refined iteratively, informed in part by publicly available prompting guidance.
+- **Rejected:** Most early AI-generated enclosure concepts. I developed the final shape directly in CAD based on available components, assembly needs and my own visual references.
+- **Verified:** I checked the assembled hardware and software by using them and considering possible edge cases. **Limit:** Codex performed the implementation, and I could not independently review or fully understand every technical detail within the project timeframe. Functional tests do not guarantee that all code or edge cases are correct. The model's emotional language is deliberately prompted; it is not evidence of genuine feelings or consciousness.
 
-The [prompt notes](../software/docs/PROMPTS.md) explain the current design. Earlier prompt versions and the cloud comparison remain in the [development archive in Git history](https://github.com/SimonBalmer/just-one-more-moment/tree/b98c5406c81a261ddac57efb7e0c18094be5c5c8/software/docs) as process evidence. They do not establish which work I made without AI; I must state that accurately above.
+## Process evidence and media
 
-## Cover image record
+The repository contains the final [hardware files](../hardware), [software](../software) and [project documentation](README.md). Current prompts are described in [prompt notes](../software/docs/PROMPTS.md); earlier prompt material and iterations can also be traced through [Git history](https://github.com/SimonBalmer/just-one-more-moment/tree/b98c5406c81a261ddac57efb7e0c18094be5c5c8/software/docs). The project banner (`../media/project-banner.png` and `../hardware/diagrams/project-banner.svg`) is AI-assisted artwork; photographs of the built prototype are separate documentation. External visual inspiration included Pinterest moodboards; external hardware and prompting guidance informed development.
 
-Asset: [project-banner.png](../media/project-banner.png), copied unchanged from my supplied `Main_Project_Photo_Banner.png`.
-
-- **Source photograph / artwork:** [Complete]
-- **AI tools and edits, if used:** [Complete]
-- **My selection and changes:** [Complete]
-
-The cover is presented as artwork. The separate photo series documents the physical prototype.
-
-**Final review by Simon Balmer:** [Date]
+**Final review and responsibility: Simon Balmer · 30 October 2026**
