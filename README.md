@@ -37,6 +37,8 @@ Mode and language changes during a life apply to the next life. Cloud mode needs
 
 ## Ultra quick setup
 
+**My setup tip:** I recommend connecting to the Pi with VS Code's [Remote - SSH](https://code.visualstudio.com/docs/remote/ssh) extension and opening an agent extension such as Codex in that remote window, so it can edit files and run commands directly on the Pi for setup and troubleshooting.
+
 Want to start with a coding agent such as Claude Code or Codex? Connect it to your Raspberry Pi, or let it guide you through the terminal, and paste this prompt:
 
 ```text
