@@ -23,7 +23,9 @@ The words and emotion bars are generated. They do not show that the machine has 
 
 ## The device
 
-![My finished physical prototype](media/photos/finished-device-front.jpg)
+| Front | Rear | Emotional language |
+| --- | --- | --- |
+| ![Finished device from the front](media/photos/finished-device-front.jpg) | ![Rear enclosure and ventilation](media/photos/enclosure-rear-and-ventilation.jpg) | ![AI-generated emotional language on screen](media/photos/emotional-ai-message-screen.jpg) |
 
 | Control | Function |
 | --- | --- |
@@ -33,15 +35,28 @@ The words and emotion bars are generated. They do not show that the machine has 
 
 Mode and language changes during a life apply to the next life. Cloud mode needs internet and a private API configuration. Local mode runs on the Raspberry Pi without the camera. This is a text-based experience; it has no spoken audio.
 
-## Quick preview
+## Ultra quick setup
 
-On Linux with Python 3.13 installed, run from the repository root:
+Want to start with a coding agent such as Claude Code or Codex? Connect it to your Raspberry Pi, or let it guide you through the terminal, and paste this prompt:
 
-```bash
-python3 software/main.py --simulate
+```text
+Set up Just One More Moment on my Raspberry Pi 5 (8 GB):
+https://github.com/SimonBalmer/just-one-more-moment
+
+Clone the repo. Read software/AGENTS.md and software/README.md;
+build/README.md contains the hardware and wiring guide.
+Check 64-bit Raspberry Pi OS with Desktop, system Python 3.13,
+landscape display (1280 x 720), SPI0.0 and user permissions.
+Follow the guide to install packages, Ollama and gemma4:e2b,
+then prepare the launcher and user autostart. Keep existing files
+and settings; do not replace unrelated configuration.
+Use simulation for checks. Ask me before live hardware/camera tests,
+cloud activation, optional boot/network changes or a reboot.
+Keep API keys outside the repo and out of chat. Finish with the
+checks performed, any steps I must do, and how to start and stop.
 ```
 
-Open [localhost:8765](http://127.0.0.1:8765/) in a browser. Windows users need a Linux environment such as WSL; native Windows Python cannot provide the application's Linux file locks. The preview uses simulated text, controls and camera images; it makes no model or API calls. Stop it with Ctrl+C. Full setup is in the [software guide](software/README.md).
+Then follow [Build](build/README.md) for the physical assembly. For a first look without hardware, use the [quick preview](software/README.md#1-preview-without-hardware); the [software guide](software/README.md) also works without an agent.
 
 ## What is included
 
@@ -49,6 +64,10 @@ The repository contains the application, local font, tests, setup scripts, 13 nu
 
 Follow [Build](build/README.md) for the physical device and [Software](software/README.md) for installation. The OS, model weights and private API key are installed separately.
 
+Feel free to reuse the enclosure and LEDs for other ideas — my [desktop ambient light prototype](software/docs/MAINTENANCE.md#desktop-ambient-light) is one example.
+
 ## Credits and use
 
-Project by **Simon Balmer**. AI-assisted development and generated media are covered in the [disclosure template](docs/AI_DISCLOSURE.md). VT323 is included under its [SIL Open Font License](software/web/fonts/OFL.txt). Local and cloud models have their own provider terms. No general reuse licence has been granted for my project files.
+Project by **Simon Balmer**, created as a student project for HSLU PHKI. You may reuse, adapt, share and rebuild my work for **non-commercial personal and educational purposes**, with credit and a link to this repository. Identify your changes and do not present it as an official HSLU product, HSLU-owned work or claim my original work as your own. See the [use permission](LICENSE). For other uses or to share a build, [get in touch](https://github.com/SimonBalmer/just-one-more-moment/issues) — I would be happy to hear from you!
+
+AI-assisted development and generated media are covered in the [disclosure template](docs/AI_DISCLOSURE.md). VT323 retains its [SIL Open Font License](software/web/fonts/OFL.txt); third-party software, models, logos and media retain their own terms.

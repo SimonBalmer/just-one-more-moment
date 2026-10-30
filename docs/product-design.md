@@ -56,7 +56,6 @@ For a new build, print the PDF at **100% / actual size**, check the fit against 
 | --- | --- | --- |
 | Visitor | Curiosity, empathy and freedom to leave | Can start, extend or end the encounter; emotional language may feel like pressure |
 | Me as designer | A clear question and a convincing experience | I shape the apparent personality and limits, so I also shape the pressure |
-| Person in the camera view | Awareness of image use | In cloud mode, an image can leave the Pi; local mode offers an encounter without the camera |
 
 ## What the project can and cannot show
 

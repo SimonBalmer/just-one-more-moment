@@ -65,14 +65,22 @@ Removing the profile disconnects it if active; use another connection first. For
 
 ## Desktop ambient light
 
+<img src="../../media/photos/desktop-ambient-light.jpg" alt="My prototype playing a fireplace scene with warm case lighting" width="150" align="right">
+
 This separate helper reads local Wayland screen colours with `grim` and Pillow. It uses neither camera nor cloud. The main installation owns the pixel lock and takes priority; the helper avoids taking screen captures while the installation owns it.
+
+For example, a fireplace video turns the enclosure into a small ambient display, with LEDs following the screen colours. This is another way to reuse the same case and lighting.
+
+Close the installation with Escape. To try the helper from a graphical Wayland session in `software/`:
 
 ```bash
 sudo apt install python3-pil grim
-./install-autostart.sh --ambient
+./start-screen-pixels.sh
 ```
 
-Remove `~/.config/autostart/screen-pixels.desktop` to disable its future autostart. Do not run independent SPI writers alongside the installation. The shared lock name `please-dont-unplug-me-neopixels.lock` is retained for compatibility.
+Play your chosen content on the desktop; Ctrl+C stops the helper. For automatic startup, use `./install-autostart.sh --ambient`. Remove `~/.config/autostart/screen-pixels.desktop` to disable its future autostart. Do not run independent SPI writers alongside the installation. The shared lock name `please-dont-unplug-me-neopixels.lock` is retained for compatibility.
+
+<br clear="all">
 
 ## Documentation generators
 

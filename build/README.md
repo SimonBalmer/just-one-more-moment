@@ -14,21 +14,21 @@ My [Galaxus shopping list](https://www.galaxus.ch/de/shopping-list/OdSpfGWFvwsEg
 
 | Part | Quantity | Specification / use |
 | --- | --- | --- |
-| Raspberry Pi 5 | 1 | **8 GB RAM** |
-| Pi 5 cooler | 1 | Official active cooler / compatible cooling assembly |
+| [Raspberry Pi 5](https://www.galaxus.ch/de/s1/product/raspberry-pi-5-8gb-entwicklungsboard-kit-38955607) | 1 | **8 GB RAM** |
+| [Pi 5 cooler](https://www.galaxus.ch/de/s1/product/raspberry-pi-official-fan-heat-sink-for-5-entwicklungsboard-zubehoer-38955610) | 1 | Official active cooler / compatible cooling assembly |
 | [Raspberry Pi Touch Display 2](https://www.galaxus.ch/de/s1/product/raspberry-pi-official-touch-display-2-display-elektronikmodul-52316874) | 1 | **7-inch, SC1635**, 720 × 1280; mounted in landscape |
 | Display cables and screws | 1 kit | Pi 5-compatible 22-way to 15-way DSI ribbon, power lead and mounting screws |
-| Logitech C270 | 1 | USB camera; case parts 11–13 are shaped for this camera |
-| microSD card | 1 | SanDisk Ultra 128 GB in my materials list; OS and model storage |
-| Pi 5 USB-C supply | 1 | Official 27 W supply |
-| Illuminated arcade button | 1 | Purecrea, 33 mm, white; separate switch and LED contacts |
+| [Logitech C270](https://www.galaxus.ch/de/s1/product/logitech-c270-090-mpx-webcam-5751463) | 1 | USB camera; case parts 11–13 are shaped for this camera |
+| [microSD card](https://www.galaxus.ch/de/s1/product/sandisk-ultra-microsdxc-ssd-adapter-128-gb-microsdxc-u1-uhs-i-speicherkarte-22648088) | 1 | SanDisk Ultra 128 GB in my materials list; OS and model storage |
+| [Pi 5 USB-C supply](https://www.galaxus.ch/de/s1/product/raspberry-pi-official-5-power-supply-27w-usb-c-entwicklungsboard-zubehoer-39631602) | 1 | Official 27 W supply |
+| [Illuminated arcade button](https://www.galaxus.ch/de/s4/product/purecrea-arcade-taster-button-beleuchtet-33mm-weiss-schalter-taster-36705080) | 1 | Purecrea, 33 mm, white; separate switch and LED contacts |
 | [Goobay subminiature toggle switch](https://www.galaxus.ch/de/s4/product/goobay-kippschalter-subminiatur-schalter-taster-14269955) | 2 | **Goobay 10013**, maintained ON/OFF, 2 solder terminals; SW01 mode, SW02 language |
-| WS2812B RGB NeoPixels | **11 LEDs** | Grouped `3 | 3 | 1 | 1 | 3` from DIN; self-adhesive strip |
+| [WS2812B RGB NeoPixels](https://www.galaxus.ch/de/s1/product/purecrea-ws2812b-144ledm-led-neopixel-strip-69cm-entwicklungsboard-kit-39044922) | **11 LEDs** | Grouped `3 | 3 | 1 | 1 | 3` from DIN; self-adhesive strip |
 | MIC 1N4001 diode | 1 | In the strip's 5 V supply lead |
-| Female jumper leads | As needed | 13 Pi-header connections; cut and solder the control ends as shown below |
+| [Female jumper leads](https://www.galaxus.ch/de/s1/product/purecrea-jumperkabel-elektronikkabel-stecker-36133363) | As needed | 13 Pi-header connections; cut and solder the control ends as shown below |
 | Heat-shrink tubing / insulation | As needed | Cover every exposed solder joint and diode lead |
-| PLA Matte, Ivory White | As sliced | Light housings, frames and bracket; my listed filament is Bambu Lab 1.75 mm |
-| PLA Matte, Charcoal | As sliced | Dark trim, inner bezel, cable guide and camera ring |
+| [PLA Matte, Ivory White](https://www.galaxus.ch/de/s1/product/bambu-lab-pla-matte-ivory-white-pla-1000-g-175-mm-filament-37002427) | As sliced | Light housings, frames and bracket; my listed filament is Bambu Lab 1.75 mm |
+| [PLA Matte, Charcoal](https://www.galaxus.ch/de/s1/product/bambu-lab-pla-matte-charcoal-pla-1000-g-175-mm-filament-37002422) | As sliced | Dark trim, inner bezel, cable guide and camera ring |
 | 2.9 × 9.5 mm screws | 3 | Sheet-metal/wood type, or a suitable equivalent; close display rear cover 10 |
 | Suitable bolts/screws and nuts | 2 + 2 | Close base cover 02; choose diameter to fit printed holes |
 | UHU Kraftkleber / suitable adhesive | As needed | Join rear cover 10 to base 01, trims and ring |
