@@ -22,4 +22,4 @@ Earlier prompt versions, cloud comparison inputs and their notes remain in the [
 
 My review focuses on these questions: Does the voice develop a thought? Does fear grow without becoming a repeated instruction? Does a gift change the next statement? Does the ending work without assuming rescue? Does the interface make its fiction clear?
 
-The [AI disclosure template](../../docs/AI_DISCLOSURE.md) leaves my independent contribution and personal judgement for me to complete. Automated tests check structure and state transitions; they cannot decide whether the artwork creates a meaningful encounter.
+My finalized [AI disclosure](../../docs/AI_DISCLOSURE.md) documents my independent contribution, the AI tools I used, and my decisions, checks and limitations. Automated tests check structure and state transitions; they cannot decide whether the artwork creates a meaningful encounter.
