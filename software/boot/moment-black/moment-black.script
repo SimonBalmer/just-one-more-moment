@@ -1,0 +1,26 @@
+# No logo, progress animation or normal boot-status text.
+Window.SetBackgroundTopColor(0, 0, 0);
+Window.SetBackgroundBottomColor(0, 0, 0);
+prompt_sprite = Sprite();
+prompt_sprite.SetPosition(30, Window.GetHeight() / 2, 10000);
+fun normal_callback() { prompt_sprite.SetOpacity(0); }
+fun password_callback(prompt, bullets) {
+  dots = "";
+  for (i = 0; i < bullets; i++) dots = dots + "*";
+  prompt_sprite.SetImage(Image.Text(prompt + " " + dots, 1, 1, 1));
+  prompt_sprite.SetOpacity(1);
+}
+fun question_callback(prompt, entry) {
+  prompt_sprite.SetImage(Image.Text(prompt + " " + entry, 1, 1, 1));
+  prompt_sprite.SetOpacity(1);
+}
+fun message_callback(text) {
+  prompt_sprite.SetImage(Image.Text(text, 1, 1, 1));
+  prompt_sprite.SetOpacity(1);
+}
+Plymouth.SetDisplayNormalFunction(normal_callback);
+Plymouth.SetDisplayPasswordFunction(password_callback);
+Plymouth.SetDisplayQuestionFunction(question_callback);
+Plymouth.SetDisplayMessageFunction(message_callback);
+fun hide_message_callback(text) { normal_callback(); }
+Plymouth.SetHideMessageFunction(hide_message_callback);

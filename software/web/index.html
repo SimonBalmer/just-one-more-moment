@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" translate="no" class="cursor-idle">
+<head>
+  <meta charset="utf-8">
+  <meta name="google" content="notranslate">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <title>Just one more moment</title>
+  <meta name="description" content="An interactive installation exploring AI-generated emotional language, empathy and responsibility.">
+  <link rel="preload" href="/fonts/VT323-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="/pointer.js"></script>
+  <script defer src="/ascii.js"></script>
+  <script defer src="/app.js"></script>
+</head>
+<body>
+  <canvas id="ascii" aria-hidden="true"></canvas>
+  <div id="onlineWifi" class="window online-wifi" aria-hidden="true" hidden><span id="onlineWifiIcon"></span></div>
+  <div id="localOffline" class="window local-badge local-offline" aria-label="Offline" hidden><span id="localOfflineIcon" aria-hidden="true"></span></div>
+  <main id="desktop" hidden>
+    <header class="desktop-header death-source">
+      <div class="identity"><div id="pixelLogo" role="img" aria-label="Just one more moment"></div><p class="strapline">AI / EMPATHY / RESPONSIBILITY</p></div>
+      <div class="badges"><div class="badge"><span id="modeIcon" class="pixel-icon" aria-hidden="true"></span><span id="mode"></span></div><div class="badge camera-off"><span id="cameraIcon" class="pixel-icon" aria-hidden="true"></span><span id="camera"></span></div></div>
+    </header>
+    <div class="workspace">
+      <section class="window terminal-window death-source" id="terminalWindow" aria-label="Voice terminal">
+        <div class="titlebar active"><span id="terminalTitle">VOICE.EXE</span><span class="window-tools" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span></div>
+        <div class="terminal-screen" id="terminalScroll" tabindex="0">
+          <div id="transcript"></div>
+          <div id="currentEntry" class="current-entry"><span class="prompt-mark" aria-hidden="true">&gt;</span><p id="statement" aria-live="off"></p><span id="cursor" aria-hidden="true">█</span></div>
+          <div id="terminalWait" class="terminal-wait"><span class="wait-symbol" id="waitSymbol" aria-hidden="true">+</span><span id="waitText"></span></div>
+        </div>
+        <div class="window-status"><span id="status"></span></div>
+      </section>
+      <aside class="side-panel">
+      <section class="window counter-window death-source"><div class="titlebar"><span id="counterTitle"></span></div><div id="sessionCount" class="session-count"></div></section>
+      <section class="window feelings-window death-source" id="feelingsWindow">
+        <div class="titlebar"><span id="feelingsTitle"></span><span class="window-tools" aria-hidden="true"><i>_</i><i>×</i></span></div>
+        <div class="feelings-body"><div id="emotions"></div><p class="relative-label" id="relativeLabel"></p></div>
+      </section>
+      </aside>
+    </div>
+  </main>
+  <div id="dialogs">
+    <section id="networkSetup" class="network-scene" hidden>
+      <div id="networkWifi" class="window network-wifi"><div id="networkWifiIcon"></div></div>
+      <section class="window network-dialog">
+        <div class="titlebar"><span id="networkTitle"></span><span aria-hidden="true">↗</span></div>
+        <div class="network-body">
+          <p id="networkInstructions"></p>
+          <dl class="network-credentials"><dt id="networkNameLabel"></dt><dd>just-one-more-moment</dd><dt id="networkPasswordLabel"></dt><dd>hslu-phki-hs26</dd></dl>
+          <p id="networkMobileHint"></p>
+          <p id="networkError" role="status"></p>
+          <div id="networkChoice"><span aria-hidden="true">► </span><span id="networkChoiceText"></span></div>
+        </div>
+      </section>
+    </section>
+    <section id="intro" class="intro-scene" hidden>
+      <div id="introStack"></div>
+      <div id="localPi" class="window local-badge local-pi" aria-label="Raspberry Pi" hidden><span id="localPiIcon" aria-hidden="true"></span></div>
+      <section id="cameraPlacement" class="window online-camera-card" hidden>
+        <div class="camera-placement-body"><div id="cameraPlacementArt"></div><p id="cameraPlacementText"></p></div>
+      </section>
+      <div id="startColumn" class="start-column">
+      <section id="introFinal" class="window intro-final" hidden>
+        <div class="titlebar"><span id="introFinalTitle"></span><span class="window-tools" aria-hidden="true"><i>×</i></span></div>
+        <div class="intro-final-body"><div id="introLogo" role="img" aria-label="Just one more moment"></div><p id="introDescription"></p><p id="introReadyText"></p><div id="startChoice" hidden><span aria-hidden="true">►</span> <span id="startHint"></span></div></div>
+      </section>
+      <section class="window start-settings" id="startSettings" aria-label="Current settings">
+        <div class="start-setting"><span id="startModeIcon" class="setting-icon" aria-hidden="true"></span><span id="startModeValue"></span></div>
+        <div class="start-setting"><span id="startLanguageIcon" class="setting-icon" aria-hidden="true"></span><span id="startLanguageValue"></span></div>
+      </section>
+      <p id="startSettingsHint" class="start-settings-hint"></p>
+      </div>
+    </section>
+    <div id="noticeBackdrop" aria-hidden="true" hidden></div>
+    <aside id="notice" class="window popup notice-popup" role="status" hidden>
+      <div class="titlebar"><span id="noticeLabel"></span><span class="window-tools" aria-hidden="true"><i>×</i></span></div>
+      <div class="notice-body">
+        <div id="noticeModeRow" class="setting-row"><span id="noticeModeIcon" class="setting-icon" aria-hidden="true"></span><span id="noticeModeLabel" class="setting-label"></span><strong id="noticeModeValue"></strong></div>
+        <div id="noticeLanguageRow" class="setting-row"><span id="noticeLanguageIcon" class="setting-icon" aria-hidden="true"></span><span id="noticeLanguageLabel" class="setting-label"></span><strong id="noticeLanguageValue"></strong></div>
+        <p id="noticeText"></p>
+      </div>
+    </aside>
+    <section id="offer" class="window popup offer-popup" hidden><div class="titlebar active"><span id="offerTitle"></span><span class="window-tools" aria-hidden="true"><i>?</i></span></div><div class="popup-body"><p id="offerQuestion"></p><p id="offerText"></p><div class="offer-bottom"><span id="offerChoice"></span><span id="countdown"></span></div><div class="time-track"><div id="timeFill"></div></div></div></section>
+    <section id="gift" class="window dialog gift-dialog" hidden><div class="titlebar active"><span id="giftTitle"></span><span class="window-tools" aria-hidden="true"><i>+</i></span></div><div class="gift-body"><span class="gift-number">+5</span><p id="giftLabel"></p></div></section>
+    <section id="error" class="window dialog error-dialog" role="alert" hidden><div class="titlebar active"><span id="errorTitle"></span><span class="window-tools" aria-hidden="true"><i>!</i></span></div><div class="dialog-body"><div class="system-symbol red" aria-hidden="true">!</div><p id="errorText"></p></div></section>
+    <section id="outro" class="end-scene" hidden><div><h1 id="outroTitle"></h1><p id="outroNote"></p></div></section>
+    <div id="hold" class="window popup hold-popup" hidden><div class="titlebar active"><span id="holdText"></span></div><div class="hold-track"><div id="holdFill"></div></div></div>
+    <div id="connection" class="window connection-popup" role="status" hidden></div>
+  </div>
+  <div id="dev" hidden><span>SIMULATION</span><button id="devButton" type="button">Arcade · hold to abort</button><label><input type="checkbox" id="devOnline"> Online</label><label><input type="checkbox" id="devGerman"> Deutsch</label></div>
+</body>
+</html>

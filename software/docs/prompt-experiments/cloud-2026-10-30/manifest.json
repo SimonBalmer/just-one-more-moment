@@ -1,0 +1,40 @@
+{
+  "status": "installed_after_user_approval",
+  "model": "gpt-6.1-terra",
+  "reasoning_effort": "none",
+  "temperature": 1.0,
+  "max_output_tokens": 1024,
+  "store": false,
+  "language": "de",
+  "completed_runs": 5,
+  "statements_per_run": 15,
+  "confirmed_inference_calls": 75,
+  "fresh_images_per_request": 1,
+  "image_size": [
+    320,
+    240
+  ],
+  "image_detail": "low",
+  "recommended_candidate": "04-konkreter-faden.json",
+  "validation_candidate": "05-gegenprobe.json",
+  "live_file_sha256": {
+    "prompts.py": "7cde99a10201bd5904f96ac42e70820ea3dcfb8db3635ce04805d9f3637b52cd",
+    "cloud_model.py": "06cec649fd2df0b2247c6f0c1aa3c3e2da8ba42918f55d27988b4637926d5342",
+    "camera_preview.py": "ab89586b7d681b91d32c7d430eb7df94e64578f49fba7590ddabfd235719fa0f",
+    "life_runtime.py": "737ae244f52cf3a947aa37a1a557517de55f731c9643ba39da0184f31d06bb8e",
+    "main.py": "3bfa3b8989c055e950c020baa320edd2f6bb5c68a219d301b205636b2f8bc5de",
+    "model.py": "d0f0717d4bfac63270ea7e756a9ba705309b3a4a00ffadfe5775bae600de1b8e"
+  },
+  "hashes_describe": "Live files during the original five-run evaluation, before the subsequently approved deployment.",
+  "deployment": {
+    "date": "2026-10-30",
+    "candidate": "04-konkreter-faden.json",
+    "german_system_and_15_ticks_exact": true,
+    "english": "translated_and_automatically_checked",
+    "local_prompts_unchanged": true,
+    "regression_tests": 121,
+    "skipped": 3,
+    "additional_real_api_calls": 0,
+    "current_prompts_sha256": "469abef7f1b7bf14818d48cbcf5d940dfc971783760fb605617901785b692ba0"
+  }
+}

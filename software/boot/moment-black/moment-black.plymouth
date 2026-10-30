@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=Just one more moment — Black opening
+Description=Black early boot; the installation renders the opening after graphics are ready
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/moment-black
+ScriptFile=/usr/share/plymouth/themes/moment-black/moment-black.script

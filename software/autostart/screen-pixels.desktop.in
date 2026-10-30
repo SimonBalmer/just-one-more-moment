@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Screen NeoPixels
+Comment=Lokale Bildschirmfarben auf den NeoPixels, Anwendungen haben Vorrang
+Exec=/bin/bash @STARTER@
+Path=@APP_DIR@
+Terminal=false
+StartupNotify=false

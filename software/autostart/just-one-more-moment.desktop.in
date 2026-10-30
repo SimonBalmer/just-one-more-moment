@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Just one more moment
+Comment=Local interactive installation
+Exec=/bin/bash @STARTER@ --boot-animation
+Path=@APP_DIR@
+Terminal=false
+StartupNotify=false

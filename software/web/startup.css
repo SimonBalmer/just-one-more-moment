@@ -1,0 +1,16 @@
+/* The opening is its own page, never an overlay on a model life. */
+#startupBrand {
+  position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  width: min(1180px, 94vw); background: transparent; border-left: 11px solid #bd1730;
+  padding: 23px 30px 24px; opacity: 0; z-index: 4; pointer-events: none;
+}
+.startup-credit { font: 26px VT323, monospace; color: #f4f4f2; margin-bottom: 19px; }
+#startupLogo { width: min(840px,100%); color: #fff; }
+#startupLogo svg { display: block; width: 100%; height: auto; shape-rendering: crispEdges; }
+.startup-tagline { color: #ce1934; font-size: 28px; margin-top: 24px; }
+.startup-accessible { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+@media (max-width: 650px) {
+  #startupBrand { padding: 20px 15px; border-left-width: 7px; }
+  .startup-credit { font-size: 20px; }
+  .startup-tagline { font-size: 22px; }
+}
