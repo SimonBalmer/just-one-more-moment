@@ -69,5 +69,5 @@ My [AI disclosure](AI_DISCLOSURE.md) separates my own contribution from AI assis
 - HSLU, **PHKI HS26 Syllabus V1**, sections 5.1 and 6; Shaelom Fischer, **PHKI Week 6**, 19 October 2026, slides 3–12. These module materials informed the question, stakeholder view and disclosure structure. Course documents remain outside this public repository.
 - Simon Balmer, **PHKI A1 Project Card – Please Don’t Unplug Me**, 11 October 2026, and **PHKI SW06 – Notes / finalize project-idea**, 19 October 2026, personal Notion course notes. These describe the initial local-only idea, the technical/emotional comparison and my intended physical contribution.
 - VT323: Peter Hull; [included SIL Open Font License](../software/web/fonts/OFL.txt).
-- README cover: the supplied project artwork, `Main_Project_Photo.png`. It is used as cover artwork; the photo series above documents the real device. Image-tool details belong in the [AI disclosure](AI_DISCLOSURE.md#cover-image-record).
+- README cover: the supplied project artwork, `Main_Project_Photo_Banner.png`. It is used as cover artwork; the photo series above documents the real device. Image-tool details belong in the [AI disclosure](AI_DISCLOSURE.md#cover-image-record).
 - Hardware and software references are linked at the relevant steps in the [build](../build/README.md) and [software](../software/README.md) guides.
