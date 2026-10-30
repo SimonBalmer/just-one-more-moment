@@ -67,7 +67,7 @@ For a new build, print the PDF at **100% / actual size**, check the fit against 
 
 I have shown the installation to several people of different ages and recorded some of their reactions. Their responses were mostly similar: they were surprised by how alive, emotionally convincing and thoughtful such a technical system could seem. A recurring question was why it sounded so human, as if it could feel.
 
-What stood out to me was the voice's apparent understanding of its surroundings and the way it seemed to form and develop thoughts of its own. This impression often led people to question the topic through the encounter itself. It is part of the experience I designed, rather than evidence of an inner life.
+In **Cloud AI + Cam mode**, what stood out to me was the voice's apparent understanding of its surroundings and the way it seemed to form and develop thoughts of its own. The camera gives the model visual context for its statements. This impression often led people to question the topic through the encounter itself. It is part of the experience I designed, rather than evidence of an inner life.
 
 A button press alone is **not a reliable measure of someone's sense of responsibility**. It records an action, but does not explain why someone chose it. For me, the more important response comes after watching a life: the questions people ask themselves.
 
