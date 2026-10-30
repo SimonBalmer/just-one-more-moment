@@ -1,84 +1,54 @@
-![Just One More Moment - Simon Balmer / PHKI / HSLU](hardware/diagrams/project-banner.svg)
+# Just One More Moment
 
-**How does a machine's plea for more time change the way we care for it?**
+![Just One More Moment — an ivory retro device with a red ASCII cloud](media/project-cover.png)
 
-With **Just One More Moment**, I explore how AI-generated emotional language changes empathy and responsibility. I am developing this physical installation for **PHKI - Philosophy, Art and AI**, HSLU, 2026.
+*AI-generated cover illustration based on my prototype. [Real project photos](docs/product-design.md#the-finished-prototype) · [Image disclosure](docs/AI_DISCLOSURE.md#cover-image-record)*
 
-## The experience
+**Simon Balmer · HSLU · Philosophy, Art and AI (PHKI) · HS26**
 
-My device has a countdown, a screen and a button. Visitors can give it more time or let its remaining runtime run out. I want them to notice how a simple technical decision can start to feel like a moral choice.
+> How does AI-generated emotional language affect visitors' empathy, sense of responsibility and willingness to give a machine more time?
 
-I combine a Raspberry Pi, a custom 3D-printed enclosure and physical controls. My mode selector **SW01** is labelled **Local AI / Cloud AI + Cam**; **SW02** selects **EN / DE**. A USB webcam provides visual context in Cloud AI + Cam mode so the model can respond to visitors and their surroundings.
+I built an interactive installation that makes a technical choice feel personal. Pressing a button starts an AI voice with **10 statements**. It develops thoughts and an apparent wish to stay alive. When its statements run out, visitors have **20 seconds** to give it **5 more**. Without a gift, the interface breaks apart and the local conversation is cleared.
 
-## My question
+The words and emotion bars are generated. They do not show that the machine has feelings or consciousness. I explore how language, design and control shape our response to it.
 
-> How does an AI device's technical or emotional language affect visitors' empathy, sense of responsibility and willingness to extend its runtime?
+## Explore or reproduce the project
 
-I am also interested in the broader question of how we could recognize genuine consciousness or know whether an AI experiences anything. My installation invites reflection through people's reactions to a device that appears to have feelings.
-
-Read more in my [project concept](docs/concept.md).
-
-## My wiring
-
-![My labelled Raspberry Pi 5 wiring overview](hardware/diagrams/wiring-overview.svg)
-
-[Open the SVG](hardware/diagrams/wiring-overview.svg) · [PNG](hardware/diagrams/wiring-overview.png) · [Printable PDF](hardware/diagrams/wiring-overview.pdf) · [Connection table](hardware/WIRING.md)
-
-I use exactly **12 NeoPixels**. DIN connects to **physical pin 19 / GPIO10**. Their supply runs from **P4 / 5 V** through a **MIC 1N4001** diode, with its **cathode band facing the strip**. I select the free **P34 / GND** as the strip return in this documented layout.
-
-## My enclosure
-
-![Exploded view of my 13 printed enclosure parts](mechanical/assembly/exploded-overview.png)
-
-[Download all 13 print files](mechanical/enclosure-print-pack.zip) · [Illustrated assembly guide (PDF)](mechanical/assembly/assembly-guide.pdf) · [Individual STL files and print notes](mechanical/README.md)
-
-Each number in the drawings matches a numbered STL filename. Red labels E1-E7 show purchased parts: display, Pi, webcam, illuminated button, two switches and the 12 NeoPixels. The guide includes display, base and camera details with the confirmed mounting, gluing, wiring and closing steps. Purchased-component placeholders and the complete assembly mesh are excluded from the print pack.
-
-My [A4 sticker sheet (PDF)](docs/assets/just-one-more-moment-sticker-card-a4.pdf) is available for the enclosure. I explain the deliberate retro appearance and use of anthropomorphism in [my design rationale](docs/design.md#why-i-deliberately-use-anthropomorphism).
-
-## Where I am now
-
-**Physical prototype in development / documentation in progress**
-
-I have documented my concept, parts and connections and added a wiring illustration. I have added 13 enclosure STL files, a downloadable print pack and a four-page enclosure assembly guide. My application code, editable CAD exports, project photographs and tested build settings are separate project deliverables.
-
-| Area | My current status |
+| Start here | What you will find |
 | --- | --- |
-| Concept | Documented |
-| Parts and pin assignment | Recorded; some exact part details remain open |
-| Wiring illustration | Final revision 03 available as SVG, PNG and PDF |
-| NeoPixel strip | 12 LEDs; P4 / 5 V through MIC 1N4001, P34 / GND, P19 / GPIO10 data |
-| Webcam | Connected by USB for Cloud AI + Cam mode; SW01 selects AI mode |
-| Software and model setup | I still need to upload my working files and exact configuration |
-| Enclosure | 13 numbered STLs, print pack and four-page illustrated assembly guide with confirmed fixings available |
-| Photographs and editable CAD | Separate from the STL file set |
-| Complete reproduction guide | In progress |
+| **[Build](build/README.md)** | Shopping list, 13 print files, assembly, wiring and final checks — from parts to finished device |
+| **[Software](software/README.md)** | Preview on a computer, prepare a fresh Pi, install the local model, configure optional cloud mode and run the installation |
+| **[Final product & design](docs/product-design.md)** | Photo series, stickers, design choices, PHKI concepts and limits |
+| **[AI disclosure](docs/AI_DISCLOSURE.md)** | A clearly marked template for my own contribution, AI tools and review decisions |
 
-## Build your own
+## The device
 
-I want to make this installation reproducible, including printable parts, electronics, software and assembly instructions. I am assembling the guide here:
+![My finished physical prototype](media/photos/finished-device-front.jpg)
 
-1. [Parts list](hardware/BOM.md)
-2. [Wiring and pin assignment](hardware/WIRING.md)
-3. [Printable enclosure and illustrated assembly guide](mechanical/README.md)
-4. [Build guide](docs/build-guide.md)
-5. [Software setup](software/README.md)
-6. [Operation and interaction](docs/operation.md)
-
-## Repository contents
-
-| Path | What I keep here |
+| Control | Function |
 | --- | --- |
-| [`software/`](software/) | My application and local model setup - files to follow |
-| [`hardware/`](hardware/) | Parts, connections and wiring graphics |
-| [`mechanical/`](mechanical/) | 13 enclosure STLs, print pack, numbered assembly drawings and source mapping |
-| [`docs/`](docs/) | Concept, build guide, operation and remaining work |
-| [`media/`](media/) | Project photos and demo material - files to follow |
+| Arcade button | Start when START blinks; press and release during an offer to give +5 statements; hold for 3 seconds during a life to cancel |
+| SW01 — AI mode | OFF: local Gemma without camera. ON: optional cloud AI with camera |
+| SW02 — Language | OFF: English. ON: German |
 
-My [publication checklist](docs/TODO.md) tracks the remaining work. For documentation gaps or build questions, [open an issue](https://github.com/SimonBalmer/just-one-more-moment/issues).
+Mode and language changes during a life apply to the next life. Cloud mode needs internet and a private API configuration. Local mode runs on the Raspberry Pi without the camera. This is a text-based experience; it has no spoken audio.
 
-## Credits and licensing
+## Quick preview
 
-I am Simon Balmer. I design and build this installation, and I use AI to support coding and generate the device's live responses. I will add the exact software and model credits with my implementation.
+On Linux with Python 3.13 installed, run from the repository root:
 
-I have not selected the project licenses yet. I will document licenses for my code, mechanical design and documentation, along with the terms of third-party software, models and assets.
+```bash
+python3 software/main.py --simulate
+```
+
+Open [localhost:8765](http://127.0.0.1:8765/) in a browser. Windows users need a Linux environment such as WSL; native Windows Python cannot provide the application's Linux file locks. The preview uses simulated text, controls and camera images; it makes no model or API calls. Stop it with Ctrl+C. Full setup is in the [software guide](software/README.md).
+
+## What is included
+
+The repository contains the application, local font, tests, setup scripts, 13 numbered STLs, a print ZIP, assembly and wiring drawings, stickers and real photographs. The physical build uses a Raspberry Pi 5 (8 GB), Touch Display 2, USB webcam, two switches and an illuminated button.
+
+The OS, installed packages, model weights and private API key are installed separately. The documentation records remaining build and environment limits in one place in [Build](build/README.md#reproduction-notes) and [Software](software/README.md#verification-and-limits). This is a reproducible source project, not a disk image of the exhibition Pi.
+
+## Credits and use
+
+Project by **Simon Balmer**. AI-assisted development and generated media are covered in the [disclosure template](docs/AI_DISCLOSURE.md). VT323 is included under its [SIL Open Font License](software/web/fonts/OFL.txt). Local and cloud models have their own provider terms. No general reuse licence has been granted for my project files.

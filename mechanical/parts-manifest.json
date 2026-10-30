@@ -497,7 +497,7 @@
       "print": false
     }
   ],
-  "drawing_revision": "03",
+  "drawing_revision": "04",
   "colour_key": {
     "printed_parts": "White / grey housings and brackets; black trims, cable guides, inner bezel and front ring.",
     "purchased_components": "Red, including E1-E7 geometry. Red is a diagram code, not the physical component colour."
@@ -518,7 +518,7 @@
       },
       {
         "title": "4 / CONNECT AND ROUTE THE CABLES",
-        "body": "Prepare the camera and base controls as shown on pages 03-04. Connect all leads to the Pi using hardware/WIRING.md. Route the jumper leads, camera USB cable and Pi power cable through the lower opening in 10 into the base."
+        "body": "Prepare the camera and base controls as shown on pages 03-04. Connect all leads to the Pi using build/README.md, step 5. Route the jumper leads, camera USB cable and Pi power cable through the lower opening in 10 into the base."
       },
       {
         "title": "5 / CLOSE THE DISPLAY HOUSING",
@@ -528,7 +528,7 @@
     "base": [
       {
         "title": "1 / PREPARE THE CONTROL LEADS",
-        "body": "Prepare and solder the jumper leads in advance using hardware/WIRING.md. Insulate the solder joints as shown in the wiring guide."
+        "body": "Prepare and solder the jumper leads in advance using build/README.md, step 5. Insulate the solder joints as shown in the wiring guide."
       },
       {
         "title": "2 / GLUE TRIMS AND FIT THE CONTROLS",
@@ -591,6 +591,8 @@
   "assembly_sources": {
     "build_method": "Confirmed by Simon Balmer in his assembly notes, 28 October 2026.",
     "display_instructions": "https://www.raspberrypi.com/documentation/accessories/touch-display-2.html",
-    "wiring": "../hardware/WIRING.md"
-  }
+    "wiring": "../build/README.md#5-wire-the-electronics"
+  },
+  "software_pixel_count": 11,
+  "pixel_count_note": "Earlier physical inventory lists 12 LEDs; current source drives 11 (indices 0-10). See build reproduction notes."
 }

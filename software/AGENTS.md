@@ -33,7 +33,7 @@ Beispielsätze oder festen Themen. Recherche/Qualitätskriterien: docs/PROMPTS.m
 - `hardware_io.py`, `hardware_pins.py`: verbindlicher Hardwarezugriff und Belegung.
 - `life_hardware.py`: Hardwarefeedback; `pixel_lock.py`: gemeinsame Pixelsperre.
 - `screen_pixels.py`: optionales, separates Desktop-Ambientlicht.
-- README und HARDWARE sind aktuelle Anleitungen; docs/DEVELOPMENT fasst Historie zusammen.
+- README.md ist die Softwareanleitung; ../build/README.md beschreibt die Hardware; docs/PROMPTS.md fasst den Prozess zusammen.
 
 SW01 AUS = lokal ohne Kamera, AN = Online-Einstieg mit lokaler USB-Vorschau;
 OpenAI Responses ist vorbereitet und nur mit bewusst aktivierter privater
@@ -178,7 +178,7 @@ Flackerndes ASCII-Zeichenfeld → HSLU → PHKI HS26 → Simon Balmer (gleiche Z
 Refresh setzt fort; Ausblenden/Verbindungsausfall holt keine Zeit nach. Keine
 Modell-/Kameraaktivität oder Instanzzählung während der Sequenz. Aktueller Boot wird
 beim Installieren als gesehen markiert. --preview-startup nur mit --simulate.
-Bootdateien niemals als Routinecheck ändern; Anleitung und Rückweg: docs/STARTUP.md.
+Bootdateien niemals als Routinecheck ändern; Anleitung und Rückweg: docs/MAINTENANCE.md.
 Lokale Entwicklung via `python3 main.py --simulate`, ohne GPIO oder Modellanfragen.
 Keine virtuelle Umgebung. Optionale USB-Vorschau nutzt vorhandenes ffmpeg/V4L2
 und MJPEG-Kamera; lokales Gemma benötigt keine Kameraabhängigkeit. Keine Downloads beim Start.

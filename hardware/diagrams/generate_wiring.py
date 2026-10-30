@@ -219,7 +219,7 @@ def main():
     end=pixel(a,85,108,'JUST ONE MORE MOMENT',7)
     a.rect(end+12,108,22,49,RED,None)
     a.text(1870,108,'WIRING OVERVIEW',29)
-    a.text(1870,150,'REV 04 / 28 OCT 2026',22,RED)
+    a.text(1870,150,'REV 05 / 30 OCT 2026',22,RED)
     a.text(90,200,'Connections grouped by component. Physical J8 pin positions: locator below.',23)
 
     # Main functional view. The central block explicitly does not depict the
@@ -265,7 +265,7 @@ def main():
 
     # Twelve emitters are shown in a recognisable vertical strip. Terminal
     # positions on this illustration are functional, not a solder-pad template.
-    a.text(1910,260,'05 / WS2812B / 12 LEDs',27,RED)
+    a.text(1910,260,'05 / WS2812B / 11 DRIVEN',27,RED)
     a.rect(1910,285,600,445,LIGHT,BLACK,3,12)
     a.rect(2255,316,150,382,BLACK,BLACK,2,6)
     for i in range(12):
@@ -274,7 +274,7 @@ def main():
         a.rect(2287,y+6,11,11,RED,None)
         a.text(2323,y+18,f'{i+1:02}',20,WHITE)
     a.text(1940,692,'DIN -> PIXEL 01',23)
-    a.text(1940,721,'-> ... -> 12',20)
+    a.text(1940,721,'12 listed / 11 driven',20)
 
     # Camera and PSU have their own cable category, unlike GND wires.
     a.text(1910,823,'06 / LOGITECH C270',27,RED)

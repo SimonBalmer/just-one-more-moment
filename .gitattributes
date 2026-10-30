@@ -1,0 +1,10 @@
+*.sh text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.pdf binary
+*.stl binary
+*.zip binary
+*.png binary
+*.jpg binary
+*.ttf binary
