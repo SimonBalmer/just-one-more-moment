@@ -6,6 +6,10 @@
 
 I used generative AI throughout this project as a creative, technical and documentation assistant. The concept, physical construction and final design decisions are mine. I remain responsible for the submitted work and its limitations.
 
+## AI as an enabler
+
+> **AI did not replace my ideas or craftsmanship — it made this project possible at this scale.** With ChatGPT and Codex, I built the project in roughly two weeks instead of the months I estimate it would have taken me manually. Generative AI also makes the device's individual, changing expressions of apparent emotion possible. Even documenting the entire project for public reuse and research on GitHub took just one afternoon with AI assistance. For me, its greatest contribution was **expanding what I could realistically create, test and share within the time available**.
+
 ## My own contribution
 
 I developed the central idea and philosophical question, chose the interaction and emotional progression across the ten sessions, and defined the device's visual identity and user experience. I designed **all CAD parts myself**, then 3D-printed, soldered, wired and assembled the physical device without generative AI. The enclosure evolved through practical decisions about component placement, connections, maintenance and repair. Pinterest moodboards were more useful for my final design than the AI-generated device mockups, which I largely rejected.
