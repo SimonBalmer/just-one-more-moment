@@ -10,7 +10,7 @@ Follow these steps in order. I keep the parts list, printing, assembly and wirin
 
 ## 1. Order and prepare
 
-I bought the linked components through [Galaxus](https://www.galaxus.ch/de/shopping-list/OdSpfGWFvwsEgOHc0J7WXnqzFrZIh4Vq). I am not affiliated with Galaxus; these links are simply for convenience. The table below is the build list, so the guide does not depend on the shop page staying available. Check dimensions against the STLs before substituting parts.
+My [Galaxus shopping list — all linked parts](https://www.galaxus.ch/de/shopping-list/OdSpfGWFvwsEgOHc0J7WXnqzFrZIh4Vq) brings together all twelve shop products listed below. I bought these components there and am not affiliated with Galaxus; the links are simply for convenience. The table below is the full build list, including extra assembly materials. Check dimensions against the STLs before substituting parts.
 
 | Part | Quantity | Specification / use |
 | --- | --- | --- |
