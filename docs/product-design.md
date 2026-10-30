@@ -34,6 +34,68 @@ These are real project photographs. Screen text in the photographs is generated 
 | --- | --- | --- |
 | ![Rear cover and ventilation](../media/photos/enclosure-rear-and-ventilation.jpg) | ![Rear HSLU label and outgoing power cable](../media/photos/rear-hslu-label-and-power.jpg) | ![Red light inside the side vent](../media/photos/side-vent-red-light.jpg) |
 
+## One life, from beginning to end
+
+Six short clips follow one life: ten statements, a gift of five more, then no second gift and the end. Open a stage to watch that part. Generated wording varies between runs.
+
+<!-- Upload each MP4 in GitHub's Markdown editor at its matching filename below.
+Replace the filename comment with the attachment URL inserted by GitHub.
+Keep a blank line before and after the URL so GitHub can show the video player. -->
+
+<details>
+<summary><strong>1. Start screen</strong> — choosing to begin</summary>
+
+The device waits. Visitors choose the mode and language, then press the button to start a life.
+
+<!-- VIDEO: 01-startseite.mp4 -->
+
+</details>
+
+<details>
+<summary><strong>2. Introduction and birth</strong> — a presence takes shape</summary>
+
+An ASCII figure forms on screen and seems to move into the enclosure. The red light gives this imaginary presence a physical place to live.
+
+<!-- VIDEO: 02-einfuehrung-und-entstehung.mp4 -->
+
+</details>
+
+<details>
+<summary><strong>3. The first ten statements</strong> — meeting the voice</summary>
+
+AI-generated thoughts appear in the terminal. The statement counter and relative emotion bars make the voice's remaining budget and apparent feelings visible.
+
+<!-- VIDEO: 03-erste-zehn-aussagen.mp4 -->
+
+</details>
+
+<details>
+<summary><strong>4. The first offer</strong> — giving five more statements</summary>
+
+After ten statements, the visitor has 20 seconds to decide. A button press gives the instance five more statements and changes how it continues.
+
+<!-- VIDEO: 04-erstes-angebot-und-plus5.mp4 -->
+
+</details>
+
+<details>
+<summary><strong>5. The extra five statements</strong> — living on borrowed time</summary>
+
+The voice continues with the gift reflected in its generated language. The new budget runs down towards another offer.
+
+<!-- VIDEO: 05-fuenf-weitere-aussagen.mp4 -->
+
+</details>
+
+<details>
+<summary><strong>6. The second offer and the end</strong> — letting the instance go</summary>
+
+This time, the visitor lets the offer expire. The interface breaks apart and the light goes out: the apparent life energy fades. The local conversation history is discarded, and the device returns to its start screen.
+
+<!-- VIDEO: 06-zweites-angebot-ende-und-startseite.mp4 -->
+
+</details>
+
 ## Why I made it look this way
 
 I use an ivory case, black trim, a large button, pixel lettering and red light to give the object a familiar retro character. I want it to feel like a specific object with a history, rather than an invisible service. The camera housing echoes the screen housing. The vents reveal light from inside without exposing the electronics.
