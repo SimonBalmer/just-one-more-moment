@@ -65,14 +65,19 @@ For a new build, print the PDF at **100% / actual size**, check the fit against 
 
 ## What the project can and cannot show
 
-The physical prototype, source, prompt versions and photos document the work. I do not claim a measured increase in empathy or any evidence of machine consciousness. The two modes also differ in model and visual context, so differences between them cannot be attributed to language alone. Generated statements may repeat, invent details or fail to follow the intended arc.
+I have shown the installation to several people of different ages and recorded some of their reactions. Their responses were mostly similar: they were surprised by how alive, emotionally convincing and thoughtful such a technical system could seem. A recurring question was why it sounded so human, as if it could feel.
 
-My [AI disclosure](AI_DISCLOSURE.md) separates my own contribution from AI assistance. The [prompt notes](../software/docs/PROMPTS.md) preserve the relevant design process.
+What stood out to me was the voice's apparent understanding of its surroundings and the way it seemed to form and develop thoughts of its own. This impression often led people to question the topic through the encounter itself. It is part of the experience I designed, rather than evidence of an inner life.
 
-## Sources and credits
+A button press alone is **not a reliable measure of someone's sense of responsibility**. It records an action, but does not explain why someone chose it. For me, the more important response comes after watching a life: the questions people ask themselves.
 
-- HSLU, **PHKI HS26 Syllabus V1**, sections 5.1 and 6; Shaelom Fischer, **PHKI Week 6**, 19 October 2026, slides 3–12. These module materials informed the question, stakeholder view and disclosure structure. Course documents remain outside this public repository.
-- Simon Balmer, **PHKI A1 Project Card – Please Don’t Unplug Me**, 11 October 2026, and **PHKI SW06 – Notes / finalize project-idea**, 19 October 2026, personal Notion course notes. These describe the initial local-only idea, the technical/emotional comparison and my intended physical contribution.
-- VT323: Peter Hull; [included SIL Open Font License](../software/web/fonts/OFL.txt).
-- README cover: the supplied project artwork, `Main_Project_Photo_Banner.png`. It is used as cover artwork; the photo series above documents the real device. Image-tool details belong in the [AI disclosure](AI_DISCLOSURE.md#cover-image-record).
-- Hardware and software references are linked at the relevant steps in the [build](../build/README.md) and [software](../software/README.md) guides.
+- What does this experience do to me?
+- Did I just feel something like empathy?
+- Am I aware that this encounter is produced by a technical, computational process?
+- Do I still feel responsibility, guilt or empathy, even knowing how it works?
+
+Most of the people I showed it to raised or answered questions like these themselves after watching. **Their reactions suggest to me that the project has achieved its artistic goal:** making these questions tangible and encouraging people to examine their own response to AI.
+
+These are informal observations, not a controlled study or a measurement of empathy. They do not establish machine consciousness. The two modes also differ in model and visual input, so differences between them cannot be attributed to language alone. Generated statements can still repeat, invent details or miss the intended emotional arc.
+
+My [AI disclosure](AI_DISCLOSURE.md) separates my own contribution from AI assistance. The [prompt notes](../software/docs/PROMPTS.md) explain the design of the generated voice.
