@@ -38,7 +38,7 @@ The [prompt notes](../software/docs/PROMPTS.md), [saved prompt versions](../soft
 
 ## Cover image record
 
-Asset: [project-cover.png](../media/project-cover.png), copied unchanged from my supplied `Main_Project_Photo_Banner.png`.
+Asset: [project-banner.png](../media/project-banner.png), copied unchanged from my supplied `Main_Project_Photo_Banner.png`.
 
 - **Source photograph / artwork:** [Complete]
 - **AI tools and edits, if used:** [Complete]

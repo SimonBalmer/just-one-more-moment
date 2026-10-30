@@ -1,6 +1,6 @@
 # Just One More Moment
 
-![Just One More Moment — project cover](media/project-cover.png)
+![Just One More Moment — wide project banner](media/project-banner.png)
 
 *Project cover artwork. [See the real device and photo series](docs/product-design.md#the-finished-prototype).*
 
