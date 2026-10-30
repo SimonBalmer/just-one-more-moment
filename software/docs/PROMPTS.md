@@ -14,18 +14,9 @@ The local prompt is compact. It describes a voice without senses. The cloud prom
 
 The output is structured JSON containing text and emotion values. The interface displays the parsed text, not raw JSON or hidden reasoning. Each visible statement is limited to 600 characters. Past prompts and accepted responses stay in the current life's text history; an error retries the same text prompt. Cloud retries obtain a fresh image. No image history is retained.
 
-## Recorded iteration
+## Process archive
 
-The original development notes recorded a move from a simple display to a local web interface, physical button/selector control, synchronised light, statement gifts, optional cloud vision and the once-per-boot opening. Earlier long handover notes and obsolete setup pages are available in Git history rather than duplicated in the final reader path.
-
-| Evidence | What it preserves |
-| --- | --- |
-| [Before local refinement](prompt-versions/prompts-before-local-refinement-2026-10-30.py.txt) | Earlier full prompt source |
-| [Before cloud rollout](prompt-versions/prompts-before-cloud-rollout-2026-10-30.py.txt) | Prompt source immediately before cloud revision 04 |
-| [Cloud comparison, 30 October 2026](prompt-experiments/cloud-2026-10-30/README.md) | Five recorded runs across four prompt versions; test inputs and comparison notes |
-| [Original development record](https://github.com/SimonBalmer/just-one-more-moment/blob/22725495e9560f38ee870e9db9f0674f85ca5277/software/docs/DEVELOPMENT.md) | Historical implementation notes, including earlier behaviour |
-
-These files are process evidence. The application does not load them. They contain no retained live camera frames or full response transcripts. The recorded comparisons are qualitative development checks, not blinded visitor research or proof of emotions.
+Earlier prompt versions, cloud comparison inputs and their notes remain in the [development archive in Git history](https://github.com/SimonBalmer/just-one-more-moment/tree/b98c5406c81a261ddac57efb7e0c18094be5c5c8/software/docs). They document qualitative design checks, not a visitor study; full response transcripts and camera images were not retained. The current installation uses only [prompts.py](../prompts.py).
 
 ## Review criteria
 

@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
-"""Generate my labelled wiring illustration as SVG, PDF and PNG.
+"""Generate my labelled wiring illustration as SVG and PDF.
 
-Dependencies: reportlab, fonttools; pdftoppm is used for PNG rendering.
+Dependencies: reportlab, fonttools.
 Run from any directory: python3 hardware/diagrams/generate_wiring.py
 Set JOMM_MONO_FONT to a compatible monospaced TrueType font if needed.
 """
 from pathlib import Path
 import os
-import subprocess
 from html import escape
 
 from fontTools.ttLib import TTFont as Font
@@ -356,8 +355,7 @@ def main():
         a.text(x+93,1798,label,22)
     a.text(90,1840,'Component and port positions in the main view are grouped for clarity.',21,GREY)
     a.save(OUT/'wiring-overview.svg')
-    subprocess.run(['pdftoppm','-singlefile','-scale-to','3000','-png',str(OUT/'wiring-overview.pdf'),str(OUT/'wiring-overview')],check=True)
-    print('Generated wiring SVG, A3 PDF and PNG. All 13 GPIO connections are explicit.')
+    print('Generated wiring SVG and A3 PDF. All 13 GPIO connections are explicit.')
 
 
 if __name__=='__main__':main()

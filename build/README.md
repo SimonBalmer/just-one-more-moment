@@ -93,7 +93,7 @@ Use a calibrated PLA profile for your printer. Check support placement, openings
 
 ![Labelled Raspberry Pi wiring](../hardware/diagrams/wiring-overview.svg)
 
-[Printable A3 PDF](../hardware/diagrams/wiring-overview.pdf) · [PNG](../hardware/diagrams/wiring-overview.png)
+[Printable A3 PDF](../hardware/diagrams/wiring-overview.pdf)
 
 | Lead | Pi physical pin | Function |
 | --- | --- | --- |
@@ -155,6 +155,6 @@ The print files use millimetres and one part per STL. Printer orientation, suppo
 
 The final build uses **11 NeoPixels**, matching the software and drawings. [hardware_pins.py](../software/hardware_pins.py) contains the pin assignment and pixel count.
 
-STLs keep their original geometry. Part 10 had four opposite duplicate facets removed in the first print release; its [original export](../mechanical/source/10-display-rear-cover-original.stl) is retained. The [parts manifest](../mechanical/parts-manifest.json) records names, dimensions and hashes. Mesh checks do not replace checking sliced supports and physical fit.
+The print set contains the final meshes. Part 10 had four opposite duplicate facets removed in the first print release, with every retained coordinate unchanged. The [parts manifest](../mechanical/parts-manifest.json) records names, dimensions and hashes. Mesh checks do not replace checking sliced supports and physical fit.
 
-Drawing sources are included: [wiring generator](../hardware/diagrams/generate_wiring.py) and [assembly generator](../mechanical/assembly/generate_assembly.py). They are optional documentation tools, not runtime dependencies. Regeneration requires Python with `reportlab`, `fonttools`, `numpy`, `Pillow`, `PyMuPDF` and Poppler's `pdftoppm`. Set `JOMM_MONO_FONT` and `JOMM_MONO_BOLD_FONT` to compatible TrueType font paths, then run the generators from the repository root. Pre-rendered files are supplied so builders do not need these tools.
+Drawing sources are included: [wiring generator](../hardware/diagrams/generate_wiring.py) and [assembly generator](../mechanical/assembly/generate_assembly.py). They are optional documentation tools, not runtime dependencies. Regeneration requires Python with `reportlab`, `fonttools`, `numpy`, `Pillow` and `PyMuPDF`. Set `JOMM_MONO_FONT` and `JOMM_MONO_BOLD_FONT` to compatible TrueType font paths, then run the generators from the repository root. Pre-rendered files are supplied so builders do not need these tools.

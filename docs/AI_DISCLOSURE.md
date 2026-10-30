@@ -34,7 +34,7 @@ I am responsible for the final project and every submitted claim. I will describ
 - **Rejected:** [One output I rejected, and why.]
 - **Checks and limits:** [How I checked the result and what remains uncertain.]
 
-The [prompt notes](../software/docs/PROMPTS.md), [saved prompt versions](../software/docs/prompt-versions/) and [cloud comparison](../software/docs/prompt-experiments/cloud-2026-10-30/) provide process evidence. They do not establish which work I made without AI; I must state that accurately above.
+The [prompt notes](../software/docs/PROMPTS.md) explain the current design. Earlier prompt versions and the cloud comparison remain in the [development archive in Git history](https://github.com/SimonBalmer/just-one-more-moment/tree/b98c5406c81a261ddac57efb7e0c18094be5c5c8/software/docs) as process evidence. They do not establish which work I made without AI; I must state that accurately above.
 
 ## Cover image record
 

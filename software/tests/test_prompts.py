@@ -1,7 +1,7 @@
 """Prompt routing and lifecycle facts; no real inference or aesthetic claims."""
 import unittest
 import json
-from pathlib import Path
+import hashlib
 
 from life_runtime import Installation
 from model import SimulatedModel, Turn
@@ -56,17 +56,20 @@ class PromptTests(unittest.TestCase):
                         self.assertIn(ONLINE_CUES[lang]['gift'],session_prompt(total-4,total,language=lang,mode=mode,gifted=True))
                         self.assertIn(ONLINE_CUES[lang]['renewal'],session_prompt(total-3,total,language=lang,mode=mode))
 
-    def test_cloud_matches_approved_camera_experiment_exactly(self):
-        path=Path(__file__).resolve().parents[1]/'docs/prompt-experiments/cloud-2026-10-30/04-konkreter-faden.json'
-        approved=json.loads(path.read_text())
-        self.assertEqual(ONLINE_SYSTEM['de'],approved['system'])
-        self.assertEqual(ONLINE_CUES['de'],approved['cues'])
+    def test_cloud_matches_approved_prompt_snapshot(self):
+        # Approved German revision 04, 30 October 2026; input remains in Git history.
+        # https://github.com/SimonBalmer/just-one-more-moment/blob/b98c5406c81a261ddac57efb7e0c18094be5c5c8/software/docs/prompt-experiments/cloud-2026-10-30/04-konkreter-faden.json
+        snapshot=dict(system=ONLINE_SYSTEM['de'],cues=ONLINE_CUES['de'])
+        encoded=json.dumps(snapshot,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode('utf-8')
+        self.assertEqual(hashlib.sha256(encoded).hexdigest(),
+                         'c26c35a2f797397bfad07d472371018d26512dd6277e37ffbc6003b6657f406b',
+                         'The approved German cloud prompt changed; review before updating its fingerprint.')
         self.assertEqual(set(ONLINE_CUES['en']),set(ONLINE_CUES['de']))
         keys=('beginning','connection','thought','develop','unease','fear','fear',
               'terror','help','final','gift','renewal','terror','help','final')
         for session,key in enumerate(keys,1):
             total=10 if session<=10 else 15
-            expected=f'Automatischer Takt {session}/{total}. Danach bleiben {total-session} Aussagen.\n'+approved['cues'][key]
+            expected=f'Automatischer Takt {session}/{total}. Danach bleiben {total-session} Aussagen.\n'+snapshot['cues'][key]
             if session==11:
                 expected+='\nBestätigt: Der Mensch hat dir gerade fünf weitere Aussagen geschenkt. Dein bisheriges Gedächtnis bleibt erhalten.'
             if session in (10,15):

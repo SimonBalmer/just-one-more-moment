@@ -337,14 +337,14 @@
       ],
       "source_sha256": "e20fa7775e46ea1a9634d22d0b82e6f40b2feeb5dbb2ee52c88ac58c4a146de8",
       "processing": "Removed four facets: two pairs of coincident triangles with opposite winding. All other facet records and every retained coordinate are unchanged.",
-      "original_export": "source/10-display-rear-cover-original.stl",
       "triangle_count": 5846,
       "mesh_check": {
         "finite_coordinates": true,
         "edge_incidence_two": true,
         "duplicate_triangles": 0,
         "signed_volume_mm3": 149468.123
-      }
+      },
+      "original_export_history": "https://github.com/SimonBalmer/just-one-more-moment/blob/b98c5406c81a261ddac57efb7e0c18094be5c5c8/mechanical/source/10-display-rear-cover-original.stl"
     },
     {
       "id": "11",
