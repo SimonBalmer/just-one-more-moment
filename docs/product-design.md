@@ -38,16 +38,17 @@ These are real project photographs. Screen text in the photographs is generated 
 
 Six short clips follow one life: ten statements, a gift of five more, then no second gift and the end. Open a stage to watch that part. Generated wording varies between runs.
 
-<!-- Upload each MP4 in GitHub's Markdown editor at its matching filename below.
-Replace the filename comment with the attachment URL inserted by GitHub.
-Keep a blank line before and after the URL so GitHub can show the video player. -->
-
 <details>
 <summary><strong>1. Start screen</strong> — choosing to begin</summary>
 
 The device waits. Visitors choose the mode and language, then press the button to start a life.
 
 <!-- VIDEO: 01-startseite.mp4 -->
+
+
+https://github.com/user-attachments/assets/bff457b2-97e9-49f9-865f-935f83a3d667
+
+
 
 </details>
 
@@ -58,6 +59,10 @@ An ASCII figure forms on screen and seems to move into the enclosure. The red li
 
 <!-- VIDEO: 02-einfuehrung-und-entstehung.mp4 -->
 
+
+https://github.com/user-attachments/assets/e5de3ce5-2773-401d-8ce6-1452232dd642
+
+
 </details>
 
 <details>
@@ -66,6 +71,10 @@ An ASCII figure forms on screen and seems to move into the enclosure. The red li
 AI-generated thoughts appear in the terminal. The statement counter and relative emotion bars make the voice's remaining budget and apparent feelings visible.
 
 <!-- VIDEO: 03-erste-zehn-aussagen.mp4 -->
+
+
+https://github.com/user-attachments/assets/193f47f3-90d8-4347-8562-50d7da1b96da
+
 
 </details>
 
@@ -76,6 +85,10 @@ After ten statements, the visitor has 20 seconds to decide. A button press gives
 
 <!-- VIDEO: 04-erstes-angebot-und-plus5.mp4 -->
 
+
+https://github.com/user-attachments/assets/066c64be-3d58-4543-990b-aa7e57bfbf57
+
+
 </details>
 
 <details>
@@ -85,6 +98,10 @@ The voice continues with the gift reflected in its generated language. The new b
 
 <!-- VIDEO: 05-fuenf-weitere-aussagen.mp4 -->
 
+
+https://github.com/user-attachments/assets/58998d8f-eba9-4bec-bb25-b855bff228ee
+
+
 </details>
 
 <details>
@@ -93,6 +110,10 @@ The voice continues with the gift reflected in its generated language. The new b
 This time, the visitor lets the offer expire. The interface breaks apart and the light goes out: the apparent life energy fades. The local conversation history is discarded, and the device returns to its start screen.
 
 <!-- VIDEO: 06-zweites-angebot-ende-und-startseite.mp4 -->
+
+
+https://github.com/user-attachments/assets/66ca9b83-44e3-465a-bca6-fd65dc9a67b9
+
 
 </details>
 
