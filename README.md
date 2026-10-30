@@ -34,6 +34,8 @@ I use exactly **12 NeoPixels**. DIN connects to **physical pin 19 / GPIO10**. Th
 
 Each number in the drawings matches a numbered STL filename. Red labels E1-E7 show purchased parts: display, Pi, webcam, illuminated button, two switches and the 12 NeoPixels. The guide includes display, base and camera details with the confirmed mounting, gluing, wiring and closing steps. Purchased-component placeholders and the complete assembly mesh are excluded from the print pack.
 
+My [A4 sticker sheet (PDF)](docs/assets/just-one-more-moment-sticker-card-a4.pdf) is available for the enclosure. I explain the deliberate retro appearance and use of anthropomorphism in [my design rationale](docs/design.md#why-i-deliberately-use-anthropomorphism).
+
 ## Where I am now
 
 **Physical prototype in development / documentation in progress**
