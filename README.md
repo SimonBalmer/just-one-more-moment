@@ -19,7 +19,7 @@ The words and emotion bars are generated. They do not show that the machine has 
 | **[Build](build/README.md)** | Shopping list, 13 print files, assembly, wiring and final checks — from parts to finished device |
 | **[Software](software/README.md)** | Preview on a computer, prepare a fresh Pi, install the local model, configure optional cloud mode and run the installation |
 | **[Final product & design](docs/product-design.md)** | Photo series, stickers, design choices, PHKI concepts and limits |
-| **[AI disclosure](docs/AI_DISCLOSURE.md)** | A clearly marked template for my own contribution, AI tools and review decisions |
+| **[AI disclosure](docs/AI_DISCLOSURE.md)** | Final account of my own contribution, AI tools, creative decisions and verification |
 
 ## The device
 
@@ -72,4 +72,4 @@ Feel free to reuse the enclosure and LEDs for other ideas — my [desktop ambien
 
 Project by **Simon Balmer**, created as a student project for HSLU PHKI. You may reuse, adapt, share and rebuild my work for **non-commercial personal and educational purposes**, with credit and a link to this repository. Identify your changes and do not present it as an official HSLU product, HSLU-owned work or claim my original work as your own. See the [use permission](LICENSE). For other uses or to share a build, [get in touch](https://github.com/SimonBalmer/just-one-more-moment/issues) — I would be happy to hear from you!
 
-AI-assisted development and generated media are covered in the [disclosure template](docs/AI_DISCLOSURE.md). VT323 retains its [SIL Open Font License](software/web/fonts/OFL.txt); third-party software, models, logos and media retain their own terms.
+AI-assisted development and generated media are documented in the [AI disclosure](docs/AI_DISCLOSURE.md). VT323 retains its [SIL Open Font License](software/web/fonts/OFL.txt); third-party software, models, logos and media retain their own terms.
