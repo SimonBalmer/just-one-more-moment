@@ -20,6 +20,12 @@ For SVG graphics I outline the lettering so it stays consistent when viewed on a
 
 I describe my own build directly. When information is still missing, I write what I still need to add or confirm. I distinguish implemented behavior from ideas I plan to add.
 
+## Printable sticker set
+
+I use these stickers as part of the device's familiar retro appearance and apparent personality.
+
+[Download the A4 sticker sheet (PDF)](assets/just-one-more-moment-sticker-card-a4.pdf)
+
 ## Why I deliberately use anthropomorphism
 
 The retro enclosure, pixel lettering and stickers are a deliberate design decision. I want the device to feel old and familiar, with an apparent personality, so the emotional distance is already small before it says anything. My intention is that its words can then feel more personal and carry more emotional weight.
