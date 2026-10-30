@@ -82,7 +82,7 @@ component('C',[
 
 # Front control centres are measured from the supplied openings/reference model.
 # Toggle shapes are symbols. The guide assigns SW01 to the left hole and SW02
-# to the right hole. Match these names to hardware/WIRING.md when wiring.
+# to the right hole. Match these names to build/README.md when wiring.
 BUTTON_Y=68.1465;CONTROL_Z=-96.91578
 component('B',[
  (cylinder(-5,19,BUTTON_Y,CONTROL_Z,13.8),'#656565'),
@@ -95,12 +95,12 @@ for id,y in [('S',13.16),('T',33.16)]:
   (cylinder(18,21.5,y,CONTROL_Z,4.0),'#999999'),
   (cylinder(21.5,30,y,CONTROL_Z,1.3),'#656565'),
   (cylinder(29,32,y,CONTROL_Z,1.8),'#ffffff')])
-# Simon confirmed: 12 NeoPixels fixed under the base ceiling; light leaves
+# Simon confirmed: 11 NeoPixels fixed under the base ceiling; light leaves
 # through the side vents. The spacing below is schematic, not a measured layout.
 led_segments=[]
 for y in [-101.5,101.5]:
  led_segments.append((box([-90,y-3,-75.3],[-6,y+3,-74.4]),'#111111'))
- for x in [-83,-69,-55,-41,-27,-13]:
+ for x in ([-83,-69,-55,-41,-27,-13] if y < 0 else [-83,-69,-55,-41,-27]):
   led_segments.extend([(box([x-2.8,y-2.8,-77.2],[x+2.8,y+2.8,-75.3]),'#ffffff'),(box([x-1.2,y-1.2,-77.4],[x+1.2,y+1.2,-77.2]),'#bf1827')])
 component('L',led_segments)
 
@@ -265,11 +265,11 @@ def header(section,title,subtitle,page):
  rect(0,0,1600,1131,WHITE);rect(18,18,1564,1095,WHITE,BLACK,1)
  text(45,36,'PHKI / HSLU / SIMON BALMER',14,color=RED)
  pixel_title(45,64,'JUST ONE MORE MOMENT',5)
- text(1120,65,'ENCLOSURE / ASSEMBLY',20);text(1120,99,'REV 04 / 30 OCT 2026',14,color=RED)
+ text(1120,65,'ENCLOSURE / ASSEMBLY',20);text(1120,99,'REV 05 / 30 OCT 2026',14,color=RED)
  text(45,131,title,25,bold=True);text(45,168,subtitle,15)
  line(45,198,1555,198,GREY,.8)
  line(45,1055,1555,1055,BLACK,.8)
- text(45,1074,'SIMON BALMER / '+section+' / REV 04',13,color=GREY)
+ text(45,1074,'SIMON BALMER / '+section+' / REV 05',13,color=GREY)
  text(1400,1074,f'{page:02d} / 04',14,color=RED)
 
 def bubble(x,y,label,radius=17):
@@ -355,9 +355,9 @@ def build():
    if p['group']==group:bubble(1189,yy+10,p['id'],radius=11);text(1215,yy,p['name'],15);yy+=24
   yy+=8
  text(1173,yy,'PURCHASED / DO NOT PRINT',15,True,color=RED);yy+=32
- for label,name in [('E1','Touch Display 2'),('E2','Raspberry Pi 5 + cooler'),('E3','Logitech C270 camera'),('E4','Arcade button + LED'),('E5','SW01 / AI mode'),('E6','SW02 / EN-DE'),('E7','WS2812B / 11 driven')]:
+ for label,name in [('E1','Touch Display 2'),('E2','Raspberry Pi 5 + cooler'),('E3','Logitech C270 camera'),('E4','Arcade button + LED'),('E5','SW01 / AI mode'),('E6','SW02 / EN-DE'),('E7','11 NeoPixels / WS2812B')]:
   bubble(1194,yy+10,label);text(1227,yy,name,15);yy+=34
- yy+=7;wrap(1173,yy,'05 and 06 fit from OUTSIDE rear plate 02. Earlier strip inventory: 12 LEDs; software: 11. All red shapes are purchased parts. Dashed lines link the positions. Not to scale.',width=365,size=15,leading=22)
+ yy+=7;wrap(1173,yy,'05 and 06 fit from OUTSIDE rear plate 02. All red shapes are purchased parts. Dashed lines link the positions. Not to scale.',width=365,size=15,leading=22)
  wrap(65,1000,'Before closing 10: prepare the camera and base controls (pages 03-04) and connect every Pi lead (page 02). Close base cover 02 last.',width=1040,size=14,leading=21)
  finish()
  # 2 / Detailed screen build. Gluing 10 to 01 is independent of the front unit.
@@ -410,6 +410,6 @@ def build():
  for page,name in zip(doc,names):page.get_pixmap(matrix=fitz.Matrix(1.6,1.6),alpha=False).save(OUT/(name+'.png'))
  # Superseded pages are intentionally removed from the four-page delivery.
  for name in ['electronics-placement.png','controls-and-leds.png']:(OUT/name).unlink(missing_ok=True)
- print('Created four English assembly pages with confirmed build steps (revision 04).')
+ print('Created four English assembly pages with confirmed build steps (revision 05).')
 
 if __name__=='__main__':build()

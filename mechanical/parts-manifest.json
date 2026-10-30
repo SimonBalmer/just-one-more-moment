@@ -452,7 +452,7 @@
   "illustration_references": [
     {
       "id": "E1",
-      "name": "Raspberry Pi Touch Display 2",
+      "name": "Raspberry Pi Touch Display 2, 7-inch, SC1635",
       "geometry": "Simplified envelope measured from the supplied display reference model.",
       "print": false
     },
@@ -480,24 +480,26 @@
       "name": "SW01: Local AI / Cloud AI + Cam",
       "geometry": "Schematic toggle in the left small front opening; match the wiring labels.",
       "quantity": 1,
-      "print": false
+      "print": false,
+      "model": "Goobay 10013, maintained ON/OFF, 2 solder terminals"
     },
     {
       "id": "E6",
       "name": "SW02: EN / DE",
       "geometry": "Schematic toggle in the right small front opening; match the wiring labels.",
       "quantity": 1,
-      "print": false
+      "print": false,
+      "model": "Goobay 10013, maintained ON/OFF, 2 solder terminals"
     },
     {
       "id": "E7",
       "name": "WS2812B NeoPixels",
-      "geometry": "12 LEDs under the inside ceiling of the base, shining through the side vents. Position confirmed by Simon; spacing is schematic.",
-      "quantity_leds": 12,
+      "geometry": "11 LEDs under the inside ceiling of the base, shining through the side vents. Spacing is schematic.",
+      "quantity_leds": 11,
       "print": false
     }
   ],
-  "drawing_revision": "04",
+  "drawing_revision": "05",
   "colour_key": {
     "printed_parts": "White / grey housings and brackets; black trims, cable guides, inner bezel and front ring.",
     "purchased_components": "Red, including E1-E7 geometry. Red is a diagram code, not the physical component colour."
@@ -536,7 +538,7 @@
       },
       {
         "title": "3 / PLACE AND WIRE THE LEDS",
-        "body": "Use the self-adhesive backing to place the 12 NeoPixels E7 under the inside ceiling of 01. Spread them so their light shines through the side vents. Wire E4-E7 to the Pi using the wiring guide before closing the display housing."
+        "body": "Use the self-adhesive backing to place the 11 NeoPixels E7 under the inside ceiling of 01. Spread them so their light shines through the side vents. Wire E4-E7 to the Pi using the wiring guide before closing the display housing."
       },
       {
         "title": "4 / STORE AND ROUTE THE CABLES",
@@ -593,6 +595,5 @@
     "display_instructions": "https://www.raspberrypi.com/documentation/accessories/touch-display-2.html",
     "wiring": "../build/README.md#5-wire-the-electronics"
   },
-  "software_pixel_count": 11,
-  "pixel_count_note": "Earlier physical inventory lists 12 LEDs; current source drives 11 (indices 0-10). See build reproduction notes."
+  "software_pixel_count": 11
 }

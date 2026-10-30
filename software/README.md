@@ -161,7 +161,7 @@ The [maintenance notes](docs/MAINTENANCE.md) cover optional black boot graphics,
 
 Launcher logs are in `${XDG_STATE_HOME:-~/.local/state}/just-one-more-moment/`, in `autostart.log` and `autostart.previous.log`. Conversation content is not intentionally logged. Keep logs private when diagnosing errors.
 
-## Verification and limits
+## Checks
 
 From `software/`:
 
@@ -176,7 +176,8 @@ MOMENT_BROWSER_TEST=1 python3 -m unittest -q tests.test_browser tests.test_start
 bash -n start-installation.sh install-autostart.sh start-screen-pixels.sh install-network-setup.sh
 ```
 
-During the documentation cleanup on 30 October 2026, 55 platform-independent tests passed on Windows/Python 3.12 and shell syntax checks passed. The full suite and simulation require Linux (cntl) and were not certified on this Windows host. These checks do not establish fresh-Pi reproducibility or real camera/model behaviour. The original handover records Python 3.13 and a simulated Linux run of 121 tests, 2 skipped. A clean OS image version, exact package/Ollama versions and the local model digest were not captured. The setup above is derived from the shipped source and official install paths; it has not been reinstalled on a fresh Pi during this documentation cleanup. Record `cat /etc/os-release`, `python3 --version`, `ollama --version` and `ollama list` when reproducing it. Outputs vary between runs and model updates. The full cloud path requires separate live verification with your own credentials.
+These tests check the software with simulated hardware and model responses. Use the [build checks](../build/README.md#6-install-and-check-before-closing) for the assembled device. A fresh-Pi installation was not rerun during this documentation update. Model outputs vary between runs and model versions.
+
 
 ## Source map and process
 

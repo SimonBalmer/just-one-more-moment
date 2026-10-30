@@ -22,7 +22,7 @@ I am responsible for the final project and every submitted claim. I will describ
 | Ollama / `gemma4:e2b` | Live text and emotion labels in local mode | The dialogue is generated during use. I set the prompts and interaction rules. [Review / extend] |
 | OpenAI Responses API / [actual model used] | Live text and emotion labels using fresh camera images in cloud mode | [Record the actual configuration, selection and review] |
 | OpenAI Codex / [model, dates] | Assistance with code and repository documentation | [Describe scope, accepted changes, corrections and tests] |
-| OpenAI built-in image generation / 30 October 2026 | README cover illustration, based on a project photograph | A conceptual cover, labelled as AI-generated. It is separate from the real product photos. [Confirm selection / edits] |
+| [Image generation / editing tool, model and date] | Project cover artwork | [Record source photographs, image edits and my review of the supplied cover] |
 | [Other tool, model and date, if used] | [Purpose] | [Influence and review] |
 
 ## Decisions and process evidence
@@ -36,12 +36,12 @@ The [prompt notes](../software/docs/PROMPTS.md), [saved prompt versions](../soft
 
 ## Cover image record
 
-Asset: [project-cover.png](../media/project-cover.png). Tool: OpenAI built-in image generation. Reference: [my finished-device photo](../media/photos/finished-device-front.jpg).
+Asset: [project-cover.png](../media/project-cover.png), copied unchanged from my supplied `Main_Project_Photo.png`.
 
-Generation prompt:
+- **Source photograph / artwork:** [Complete]
+- **AI tools and edits, if used:** [Complete]
+- **My selection and changes:** [Complete]
 
-> Use case: stylized-concept. Asset type: wide GitHub README cover for Just One More Moment, an HSLU student art installation by Simon Balmer. Use the reference photo to faithfully inform the object's proportions: ivory 3D-printed retro computer housing, black recessed landscape screen, wide base with red glowing horizontal vents on the left, two small metal toggle switches, a large white/chrome arcade button on the right, and a separate small ivory webcam perched above the screen. Create a restrained editorial illustration, NOT a documentary photograph. Wide 16:9 banner, warm ivory background with subtle paper texture, black and dark charcoal lines and a single deep red accent. Isometric three-quarter device on the right, full webcam visible. On the screen only a glowing abstract red ASCII particle cloud, no fake dialogue. On the left ample space with beautiful clear monospaced typography reading exactly 'JUST ONE' then 'MORE MOMENT' and a small line 'AI / EMPATHY / RESPONSIBILITY'. Small footer 'SIMON BALMER / HSLU PHKI 2026'. Quiet, thoughtful art-school publication aesthetic, crisp readable text and generous negative space, no extra objects, no faces, no human robot, no watermarks, no added product claims. This is a conceptual cover illustration and should visually read as illustrated.
-
-No AI illustration is presented as a photograph of the physical build.
+The cover is presented as artwork. The separate photo series documents the physical prototype.
 
 **Final review by Simon Balmer:** [Date]

@@ -25,8 +25,8 @@ The original development notes recorded a move from a simple display to a local 
 
 These files are process evidence. The application does not load them. They contain no retained live camera frames or full response transcripts. The recorded comparisons are qualitative development checks, not blinded visitor research or proof of emotions.
 
-## What I still need to judge myself
+## Review criteria
 
-I must explain which outputs I accepted, changed or rejected and why. A useful review asks: Does the voice develop a thought? Does fear grow without becoming a repeated instruction? Does a gift change the next statement? Does the ending work without assuming rescue? Does the interface make its fiction clear?
+My review focuses on these questions: Does the voice develop a thought? Does fear grow without becoming a repeated instruction? Does a gift change the next statement? Does the ending work without assuming rescue? Does the interface make its fiction clear?
 
 The [AI disclosure template](../../docs/AI_DISCLOSURE.md) leaves my independent contribution and personal judgement for me to complete. Automated tests check structure and state transitions; they cannot decide whether the artwork creates a meaningful encounter.

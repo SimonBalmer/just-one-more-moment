@@ -10,7 +10,7 @@
 
 I built a small physical installation to let people experience this question. A visitor starts an AI voice with ten statements. When these run out, the visitor can give it five more or let it end. There is no typed conversation or microphone input. The tension comes from having control over something that speaks as if it wants to stay alive.
 
-My Project Card (11 October 2026, working title “Please Don’t Unplug Me”) and SW06 notes (19 October) described a countdown and a contrast between technical and emotional language. The final version uses a **statement budget** and two modes: **Local AI** and **Cloud AI + Cam**. Both use emotional language. This is an artistic exploration, rather than a controlled comparison or a study proving an effect on visitors.
+The final version uses a **statement budget** and two modes: **Local AI** and **Cloud AI + Cam**. Both use emotional language. I focus on the visitor’s choice to give the voice more time and the responsibility that this choice can seem to carry.
 
 ## The finished prototype
 
@@ -60,13 +60,12 @@ For a new build, print the PDF at **100% / actual size**, check the fit against 
 
 The physical prototype, source, prompt versions and photos document the work. I do not claim a measured increase in empathy or any evidence of machine consciousness. The two modes also differ in model and visual context, so differences between them cannot be attributed to language alone. Generated statements may repeat, invent details or fail to follow the intended arc.
 
-My personal observations, learning and final assessment of the process belong in my own reflection. I will complete the [AI disclosure](AI_DISCLOSURE.md) with my actual independent and AI-assisted contributions.
+My [AI disclosure](AI_DISCLOSURE.md) separates my own contribution from AI assistance. The [prompt notes](../software/docs/PROMPTS.md) preserve the relevant design process.
 
 ## Sources and credits
 
 - HSLU, **PHKI HS26 Syllabus V1**, sections 5.1 and 6; Shaelom Fischer, **PHKI Week 6**, 19 October 2026, slides 3–12. These module materials informed the question, stakeholder view and disclosure structure. Course documents remain outside this public repository.
 - Simon Balmer, **PHKI A1 Project Card – Please Don’t Unplug Me**, 11 October 2026, and **PHKI SW06 – Notes / finalize project-idea**, 19 October 2026, personal Notion course notes. These describe the initial local-only idea, the technical/emotional comparison and my intended physical contribution.
-- Original public project concept: the earlier [concept document in Git history](https://github.com/SimonBalmer/just-one-more-moment/blob/22725495e9560f38ee870e9db9f0674f85ca5277/docs/concept.md). The final implementation is described above.
 - VT323: Peter Hull; [included SIL Open Font License](../software/web/fonts/OFL.txt).
-- README cover: AI-generated illustration based on a project photo; [generation record](AI_DISCLOSURE.md#cover-image-record). The photo series above documents the real device.
+- README cover: the supplied project artwork, `Main_Project_Photo.png`. It is used as cover artwork; the photo series above documents the real device. Image-tool details belong in the [AI disclosure](AI_DISCLOSURE.md#cover-image-record).
 - Hardware and software references are linked at the relevant steps in the [build](../build/README.md) and [software](../software/README.md) guides.

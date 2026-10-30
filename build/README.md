@@ -14,14 +14,14 @@ My [Galaxus shopping list](https://www.galaxus.ch/de/shopping-list/OdSpfGWFvwsEg
 | --- | --- | --- |
 | Raspberry Pi 5 | 1 | **8 GB RAM** |
 | Pi 5 cooler | 1 | Official active cooler / compatible cooling assembly |
-| Raspberry Pi Touch Display 2 | 1 | DSI touchscreen; match the display outline and mounting points in bracket 07 |
+| [Raspberry Pi Touch Display 2](https://www.galaxus.ch/de/s1/product/raspberry-pi-official-touch-display-2-display-elektronikmodul-52316874) | 1 | **7-inch, SC1635**, 720 × 1280; mounted in landscape |
 | Display cables and screws | 1 kit | Pi 5-compatible 22-way to 15-way DSI ribbon, power lead and mounting screws |
 | Logitech C270 | 1 | USB camera; case parts 11–13 are shaped for this camera |
 | microSD card | 1 | SanDisk Ultra 128 GB in my materials list; OS and model storage |
 | Pi 5 USB-C supply | 1 | Official 27 W supply |
 | Illuminated arcade button | 1 | Purecrea, 33 mm, white; separate switch and LED contacts |
-| Toggle switches with nuts | 2 | SW01: AI mode; SW02: language. Use a maintained contact between signal and GND |
-| WS2812B RGB NeoPixel strip | 1 length | Earlier hardware inventory: **12 LEDs**; current software drives **11**, grouped `3 | 3 | 1 | 1 | 3` from DIN. See reproduction notes |
+| [Goobay subminiature toggle switch](https://www.galaxus.ch/de/s4/product/goobay-kippschalter-subminiatur-schalter-taster-14269955) | 2 | **Goobay 10013**, maintained ON/OFF, 2 solder terminals; SW01 mode, SW02 language |
+| WS2812B RGB NeoPixels | **11 LEDs** | Grouped `3 | 3 | 1 | 1 | 3` from DIN; self-adhesive strip |
 | MIC 1N4001 diode | 1 | In the strip's 5 V supply lead |
 | Female jumper leads | As needed | 13 Pi-header connections; cut and solder the control ends as shown below |
 | Heat-shrink tubing / insulation | As needed | Cover every exposed solder joint and diode lead |
@@ -59,7 +59,7 @@ Print **one of each part, 01–13**. E1–E7 in the drawings are purchased compo
 
 Check the scale: part 01 has a CAD envelope of **125 × 225 × 50 mm**. The assembled printed enclosure is about **138 × 225 × 237.3 mm**. Left and right refer to the front view.
 
-Use the slicer's PLA profile for your printer. Check support placement, openings and mating surfaces before printing. Dry-fit the parts and remove support material before gluing. The original build's layer height, infill and support settings are not recorded; a suggested starting profile must not be presented as a tested one.
+Use a calibrated PLA profile for your printer. Check support placement, openings and mating surfaces in the sliced preview. Keep supports off visible surfaces where possible. Remove support material and dry-fit the parts before gluing; check screw fit and cable clearance before final assembly.
 
 ![Numbered enclosure parts and purchased components](../mechanical/assembly/exploded-overview.png)
 
@@ -77,7 +77,7 @@ Use the slicer's PLA profile for your printer. Check support placement, openings
 ## 4. Assemble the display and Pi
 
 1. Screw the Pi and cooler onto the back of the display using the display kit's mounting points and fixings.
-2. With power disconnected, connect the display ribbon and power cable using the [official Touch Display 2 instructions](https://www.raspberrypi.com/documentation/accessories/touch-display-2.html). Use the Pi 5 ribbon, not the wider Pi 4 end. The project does not record which CAM/DISP socket was used; match the socket and OS configuration on your Pi.
+2. With power disconnected, connect the display ribbon and power cable using the [official Touch Display 2 instructions](https://www.raspberrypi.com/documentation/accessories/touch-display-2.html). Use the Pi 5 ribbon and connect it to a CAM/DISP socket as shown in the official guide. Check display and touch operation before closing the case.
 3. Attach the display/Pi unit to the four outer mounting points on bracket **07**. Fit inner bezel **08** into outer frame **09**, then clip the pair onto 07.
 4. Glue rear cover **10** to base **01**. Let the adhesive cure before wiring.
 5. Position the camera housing at the top of the display housing as shown in the overview. Route its USB lead to the Pi; keep the spare cable in the base.
@@ -147,11 +147,11 @@ Both selector inputs use internal pull-ups. **Closed to GND / LOW = OFF; open / 
 4. Close cover **02** last, using two suitable screws/bolts and matching nuts.
 5. Apply the [stickers](../docs/assets/just-one-more-moment-sticker-card-a4.pdf), reconnect power and repeat the short display/control check.
 
-## Reproduction notes
+## Files and build settings
 
-The files contain all 13 printable parts, dimensions, component placement and wiring. A few original build details were not captured: exact display variant, switch part numbers, base-bolt size, wire lengths, material consumption and tested slicer settings. Check these against the supplied geometry before ordering or printing. Editable CAD/STEP and a slicer project are not included.
+The print files use millimetres and one part per STL. Printer orientation, supports and screw fit depend on the printer and material, so check the sliced preview and dry-fit the parts. Choose base fasteners that fit the printed holes and trim the wire lengths to your cable routing. Keep the cooler and vents clear.
 
-**Pixel count:** the earlier physical inventory and assembly drawings specify 12 LEDs, while `NEOPIXEL_COUNT` in [hardware_pins.py](../software/hardware_pins.py) is 11 and the light choreography uses indices 0–10. The supplied application therefore controls 11 pixels. Do not increase the constant alone to 12: the group layout and animations would also need review. The build drawings identify the strip's position and wiring; their physical count is not evidence that the software drives 12.
+The final build uses **11 NeoPixels**, matching the software and drawings. [hardware_pins.py](../software/hardware_pins.py) contains the pin assignment and pixel count.
 
 STLs keep their original geometry. Part 10 had four opposite duplicate facets removed in the first print release; its [original export](../mechanical/source/10-display-rear-cover-original.stl) is retained. The [parts manifest](../mechanical/parts-manifest.json) records names, dimensions and hashes. Mesh checks do not replace checking sliced supports and physical fit.
 

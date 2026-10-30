@@ -74,4 +74,4 @@ Remove `~/.config/autostart/screen-pixels.desktop` to disable its future autosta
 
 ## Documentation generators
 
-The [build guide](../../build/README.md#reproduction-notes) lists the optional drawing dependencies. The PDF, PNG, SVG and print pack are ready to use; running a generator is not part of device setup. Runtime Python modules, GPIO assignments and prompt versions remain at their original paths.
+The [build guide](../../build/README.md#files-and-build-settings) lists the optional drawing dependencies. The PDF, PNG, SVG and print pack are ready to use; running a generator is not part of device setup. Runtime Python modules, GPIO assignments and prompt versions remain at their original paths.

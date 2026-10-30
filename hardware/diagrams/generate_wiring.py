@@ -210,7 +210,7 @@ def main():
           'Connection view grouped by component; separate physical 40-pin J8 locator. '
           'Display P2/P6 plus DSI; button COM P9, NO P11 GPIO17, LED+ P13 GPIO27, LED- P14. '
           'SW01 P15 GPIO22/P20 GND; SW02 P16 GPIO23/P25 GND. '
-          '12 NeoPixels: P4 through MIC 1N4001 to +V, cathode ring toward strip; '
+          '11 NeoPixels: P4 through MIC 1N4001 to +V, cathode ring toward strip; '
           'P19 GPIO10 directly to DIN; P34 to GND. Webcam USB; official PSU USB-C.')
     a=Art(W,H,OUT/'wiring-overview.pdf',desc)
     a.rect(0,0,W,H,WHITE,None)
@@ -219,7 +219,7 @@ def main():
     end=pixel(a,85,108,'JUST ONE MORE MOMENT',7)
     a.rect(end+12,108,22,49,RED,None)
     a.text(1870,108,'WIRING OVERVIEW',29)
-    a.text(1870,150,'REV 05 / 30 OCT 2026',22,RED)
+    a.text(1870,150,'REV 06 / 30 OCT 2026',22,RED)
     a.text(90,200,'Connections grouped by component. Physical J8 pin positions: locator below.',23)
 
     # Main functional view. The central block explicitly does not depict the
@@ -263,18 +263,18 @@ def main():
     toggle(a,995,'03 / SW01 / AI MODE',('LOCAL AI /','CLOUD AI + CAM'))
     toggle(a,1205,'04 / SW02 / LANGUAGE',('EN / DE',''))
 
-    # Twelve emitters are shown in a recognisable vertical strip. Terminal
+    # Eleven emitters are shown in a recognisable vertical strip. Terminal
     # positions on this illustration are functional, not a solder-pad template.
-    a.text(1910,260,'05 / WS2812B / 11 DRIVEN',27,RED)
+    a.text(1910,260,'05 / WS2812B / 11 LEDs',27,RED)
     a.rect(1910,285,600,445,LIGHT,BLACK,3,12)
     a.rect(2255,316,150,382,BLACK,BLACK,2,6)
-    for i in range(12):
+    for i in range(11):
         y=330+i*29
         a.rect(2281,y,23,23,WHITE,MID,1,2)
         a.rect(2287,y+6,11,11,RED,None)
         a.text(2323,y+18,f'{i+1:02}',20,WHITE)
     a.text(1940,692,'DIN -> PIXEL 01',23)
-    a.text(1940,721,'12 listed / 11 driven',20)
+    a.text(1940,721,'-> ... -> PIXEL 11',20)
 
     # Camera and PSU have their own cable category, unlike GND wires.
     a.text(1910,823,'06 / LOGITECH C270',27,RED)

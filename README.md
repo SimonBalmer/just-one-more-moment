@@ -1,8 +1,8 @@
 # Just One More Moment
 
-![Just One More Moment — an ivory retro device with a red ASCII cloud](media/project-cover.png)
+![Just One More Moment — project cover](media/project-cover.png)
 
-*AI-generated cover illustration based on my prototype. [Real project photos](docs/product-design.md#the-finished-prototype) · [Image disclosure](docs/AI_DISCLOSURE.md#cover-image-record)*
+*Project cover artwork. [See the real device and photo series](docs/product-design.md#the-finished-prototype).*
 
 **Simon Balmer · HSLU · Philosophy, Art and AI (PHKI) · HS26**
 
@@ -47,7 +47,7 @@ Open [localhost:8765](http://127.0.0.1:8765/) in a browser. Windows users need a
 
 The repository contains the application, local font, tests, setup scripts, 13 numbered STLs, a print ZIP, assembly and wiring drawings, stickers and real photographs. The physical build uses a Raspberry Pi 5 (8 GB), Touch Display 2, USB webcam, two switches and an illuminated button.
 
-The OS, installed packages, model weights and private API key are installed separately. The documentation records remaining build and environment limits in one place in [Build](build/README.md#reproduction-notes) and [Software](software/README.md#verification-and-limits). This is a reproducible source project, not a disk image of the exhibition Pi.
+Follow [Build](build/README.md) for the physical device and [Software](software/README.md) for installation. The OS, model weights and private API key are installed separately.
 
 ## Credits and use
 
